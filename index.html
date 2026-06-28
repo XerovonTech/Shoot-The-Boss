@@ -2514,16 +2514,24 @@
     splashScreen.style.display = 'flex';
 
     // Load game data and show start screen after 2 seconds (skip sound loading)
-    loadSkins();
-    loadMatchmakingData();
-    resizeCanvas();
-    $('loadingScreen').style.display = 'none';
+   // Load game data & show start screen after 2 seconds
+loadSkins();
+loadMatchmakingData();
+resizeCanvas();
+$('loadingScreen').style.display = 'none';
 
-    setTimeout(function() {
-        splashScreen.style.display = 'none';
-        $('startScreen').style.display = 'flex';
-        updateEloPreview();
-    }, 2000);
+setTimeout(function() {
+    splashScreen.style.display = 'none';
+    $('startScreen').style.display = 'flex';
+    updateEloPreview();
+}, 2000);
+
+// Load sounds in the background
+loadAllSounds().then(function() {
+    console.log('✅ Sounds ready');
+}).catch(function() {
+    console.warn('⚠️ Some sounds missing, game still works');
+});
 
     setTimeout(resizeCanvas, 100);
 })();
