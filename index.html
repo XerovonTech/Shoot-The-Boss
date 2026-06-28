@@ -40,6 +40,7 @@
         .skill-btn { min-width:22px; font-size:10px; padding:3px 6px; }
         .skill-btn.cooldown { background:#444 !important; cursor:not-allowed; opacity:0.5; }
         .cooldown-text { font-size:10px; color:#ffd700; background:rgba(0,0,0,0.6); padding:1px 6px; border-radius:4px; min-width:30px; text-align:center; white-space:nowrap; }
+        .turbo-btn-on { background:#ff6b00 !important; color:#fff; border-color:#ff6b00; box-shadow:0 0 20px #ff6b00; }
 
         #exitBtn { position:absolute; top:8px; right:8px; padding:4px 10px; background:rgba(255,0,0,0.3); border:1px solid rgba(255,0,0,0.3); border-radius:8px; color:#fff; cursor:pointer; z-index:6; font-weight:bold; display:none; font-size:12px; }
         #exitBtn:hover { background:rgba(255,0,0,0.5); }
@@ -245,6 +246,7 @@
             <button class="btn skill-btn" id="skill2Btn" data-i18n="skill_dmg">🔴 6x Dmg</button>
             <button class="btn skill-btn" id="skill3Btn" data-i18n="skill_hp">🟢 +1000 HP</button>
             <button class="btn skill-btn" id="skillTeamBtn" data-i18n="skill_team">🛡️ Use Team</button>
+            <button class="btn skill-btn" id="turboBtn" style="background:#444;border-color:#ff6b00;" data-i18n="turbo_off">🔥 Turbo: OFF</button>
         </div>
         <div class="row">
             <span class="cooldown-text" id="cd1" data-i18n="cooldown_ready">✅ Ready</span>
@@ -387,6 +389,8 @@
             skill_dmg:'🔴 6x Dmg',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Use Team',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Ready',
             move_left:'⬅️ Left',
             move_right:'Right ➡️',
@@ -467,6 +471,8 @@
             skill_dmg:'🔴 x6 Daño',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Usar Equipo',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Listo',
             move_left:'⬅️ Izquierda',
             move_right:'Derecha ➡️',
@@ -547,6 +553,8 @@
             skill_dmg:'🔴 x6 Dégâts',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Équipe',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Prêt',
             move_left:'⬅️ Gauche',
             move_right:'Droite ➡️',
@@ -627,6 +635,8 @@
             skill_dmg:'🔴 6x Schaden',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Team',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Bereit',
             move_left:'⬅️ Links',
             move_right:'Rechts ➡️',
@@ -707,6 +717,8 @@
             skill_dmg:'🔴 x6 Danni',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Squadra',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Pronto',
             move_left:'⬅️ Sinistra',
             move_right:'Destra ➡️',
@@ -787,6 +799,8 @@
             skill_dmg:'🔴 x6 Dano',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Equipe',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Pronto',
             move_left:'⬅️ Esquerda',
             move_right:'Direita ➡️',
@@ -867,6 +881,8 @@
             skill_dmg:'🔴 x6 Урон',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Команда',
+            turbo_off:'🔥 Турбо: ВЫКЛ',
+            turbo_on:'🔥 Турбо: ВКЛ',
             cooldown_ready:'✅ Готово',
             move_left:'⬅️ Влево',
             move_right:'Вправо ➡️',
@@ -947,6 +963,8 @@
             skill_dmg:'🔴 6倍ダメ',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ チーム',
+            turbo_off:'🔥 ターボ: OFF',
+            turbo_on:'🔥 ターボ: ON',
             cooldown_ready:'✅ 準備完了',
             move_left:'⬅️ 左',
             move_right:'右 ➡️',
@@ -1027,6 +1045,8 @@
             skill_dmg:'🔴 6배 데미지',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ 팀',
+            turbo_off:'🔥 터보: OFF',
+            turbo_on:'🔥 터보: ON',
             cooldown_ready:'✅ 준비됨',
             move_left:'⬅️ 왼쪽',
             move_right:'오른쪽 ➡️',
@@ -1107,6 +1127,8 @@
             skill_dmg:'🔴 6倍伤害',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ 团队',
+            turbo_off:'🔥 加速: OFF',
+            turbo_on:'🔥 加速: ON',
             cooldown_ready:'✅ 就绪',
             move_left:'⬅️ 左',
             move_right:'右 ➡️',
@@ -1187,6 +1209,8 @@
             skill_dmg:'🔴 ضرر x6',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ فريق',
+            turbo_off:'🔥 توربو: OFF',
+            turbo_on:'🔥 توربو: ON',
             cooldown_ready:'✅ جاهز',
             move_left:'⬅️ يسار',
             move_right:'يمين ➡️',
@@ -1267,6 +1291,8 @@
             skill_dmg:'🔴 6x क्षति',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ टीम',
+            turbo_off:'🔥 टर्बो: OFF',
+            turbo_on:'🔥 टर्बो: ON',
             cooldown_ready:'✅ तैयार',
             move_left:'⬅️ बाएं',
             move_right:'दाएं ➡️',
@@ -1347,6 +1373,8 @@
             skill_dmg:'🔴 6x Schade',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Team',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Klaar',
             move_left:'⬅️ Links',
             move_right:'Rechts ➡️',
@@ -1427,6 +1455,8 @@
             skill_dmg:'🔴 6x Obrażenia',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Drużyna',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Gotowe',
             move_left:'⬅️ Lewo',
             move_right:'Prawo ➡️',
@@ -1507,6 +1537,8 @@
             skill_dmg:'🔴 6x Hasar',
             skill_hp:'🟢 +1000 HP',
             skill_team:'🛡️ Takım',
+            turbo_off:'🔥 Turbo: OFF',
+            turbo_on:'🔥 Turbo: ON',
             cooldown_ready:'✅ Hazır',
             move_left:'⬅️ Sol',
             move_right:'Sağ ➡️',
@@ -1562,6 +1594,21 @@
         }
         updateModeInfoText();
         updateWinScreen(isUnlimited, level);
+        // Update turbo button label
+        updateTurboButton();
+    }
+
+    function updateTurboButton() {
+        var btn = document.getElementById('turboBtn');
+        if(!btn) return;
+        var dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+        if(window.turboActive) {
+            btn.textContent = dict.turbo_on || '🔥 Turbo: ON';
+            btn.classList.add('turbo-btn-on');
+        } else {
+            btn.textContent = dict.turbo_off || '🔥 Turbo: OFF';
+            btn.classList.remove('turbo-btn-on');
+        }
     }
 
     function updateModeInfoText() {
@@ -1681,6 +1728,8 @@
     var teamAmmoDisplay = $('teamAmmoDisplay'), teamAmmoValue = $('teamAmmoValue');
     var eloBadge = $('eloBadge'), eloBadgeValue = $('eloBadgeValue');
     var vsLabel = $('vsLabel'), splashScreen = $('splashScreen'), searchScreen = $('searchScreen'), searchBarFill = $('searchBarFill');
+    var turboBtn = $('turboBtn');
+    var turboActive = false;
 
     // ============================================================
     //  GAME STATE
@@ -1878,7 +1927,8 @@
     }
 
     function spawnAiOpponent() {
-        var size = 30, aiSkinChoice = pickAiSkin();
+        var size = isMatchmaking ? 50 : 30; // bigger in matchmaking
+        var aiSkinChoice = pickAiSkin();
         boss = {
             x: Math.random()*(W*0.7-size*2)+size,
             y: Math.random()*(H*0.4-size*2)+size,
@@ -2016,8 +2066,9 @@
 
     function startAutoShoot() {
         if(autoShootInterval) clearInterval(autoShootInterval);
+        var interval = turboActive ? 50 : Math.max(450 - level*20, 180);
         autoShootInterval = setInterval(function() {
-            if(boss && level >= 4 && !gamePaused) {
+            if(boss && !gamePaused) {
                 var tx = boss.x + (Math.random()-0.5)*boss.size*0.4;
                 var ty = boss.y + (Math.random()-0.5)*boss.size*0.4;
                 var dmgMult = 1;
@@ -2025,7 +2076,7 @@
                 bullets.push({ x:heart.x, y:heart.y, targetX:tx, targetY:ty, color:getBulletColor(), damageMult:dmgMult });
                 playSound('playerShoot');
             }
-        }, Math.max(450 - level*20, 180));
+        }, interval);
     }
 
     // ---- AI OPPONENT TICK ----
@@ -2633,6 +2684,14 @@
         // Do NOT play BGM here – it's started by user click
         playSound('matchgo');
 
+        // Make hearts bigger in matchmaking
+        heart.size = 50;
+        // Reset turbo to OFF for new match
+        if(turboActive) {
+            turboActive = false;
+            updateTurboButton();
+        }
+
         playerHealth = 25000;
         playerHealthEl.textContent = playerHealth.toFixed(0);
         playerTeam = []; aiTeam = [];
@@ -2651,6 +2710,8 @@
         ui.style.display = 'block';
         bossBar.style.display = 'block';
         controls.style.display = 'flex';
+        // Show turbo button only in matchmaking
+        turboBtn.style.display = 'inline-block';
         levelDisplay.textContent = '1v1';
         timerRemaining = 370;
         timerDisplay.textContent = timerRemaining;
@@ -2670,6 +2731,14 @@
     function startLevel() {
         if(autoShootInterval) clearInterval(autoShootInterval);
         // Do NOT play BGM here – it's started by user click
+        // Reset heart size to normal for non-matchmaking
+        heart.size = 30;
+        // Hide turbo button
+        turboBtn.style.display = 'none';
+        if(turboActive) {
+            turboActive = false;
+            updateTurboButton();
+        }
         playerHealth = Math.max(3000 * Math.pow(0.92, level-1), 500);
         playerHealthEl.textContent = playerHealth.toFixed(0);
         playerTeam = []; aiTeam = [];
@@ -2802,6 +2871,12 @@
         if(animId) cancelAnimationFrame(animId);
         $('startScreen').style.display = 'flex';
         updateEloPreview();
+        // Reset turbo
+        if(turboActive) {
+            turboActive = false;
+            updateTurboButton();
+        }
+        heart.size = 30;
     }
 
     // ============================================================
@@ -3050,6 +3125,18 @@
     $('matchRematchBtn').onclick = function(){ $('matchResultScreen').style.display = 'none'; stopAllOneShotSounds(); startMatchLevel(); };
     $('matchHomeBtn').onclick = goHome;
     $('quitMatchResult').onclick = goHome;
+
+    // Turbo Toggle
+    turboBtn.addEventListener('click', function() {
+        if(!isMatchmaking) return;
+        turboActive = !turboActive;
+        updateTurboButton();
+        // Restart auto-shoot with new interval
+        if(autoShootInterval) {
+            clearInterval(autoShootInterval);
+            startAutoShoot();
+        }
+    });
 
     // ============================================================
     //  LANGUAGE & VISIBILITY
