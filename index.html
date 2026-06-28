@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>Shoot The Boss!</title>
     <style>
-        /* (your CSS unchanged – same as before) */
         * { margin:0; padding:0; box-sizing:border-box; }
         body { overflow:hidden; background:#0a0a1a; touch-action:none; width:100vw; height:100vh; position:fixed; font-family:'Segoe UI',Roboto,sans-serif; }
         #gameContainer { position:relative; width:100vw; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; background:radial-gradient(ellipse at center,#1a1a3e,#0a0a1a); overflow:hidden; }
@@ -135,45 +134,43 @@
 
     <!-- SPLASH -->
     <div id="splashScreen">
-        <div style="font-size:13px;color:#aaa;letter-spacing:3px;font-weight:300;margin-bottom:12px;text-transform:uppercase;" data-i18n="splash_by">Game made by:</div>
-        <img src="logo/xerovonlogo.jpg" alt="Xerovon Logo" />
-        <div class="splash-text" data-i18n="splash_loading">Loading your adventure...</div>
+        <div style="font-size:13px;color:#aaa;letter-spacing:3px;font-weight:300;margin-bottom:12px;text-transform:uppercase;">Game made by:</div>
+        <img src="xerovonLogo.jpg" alt="Xerovon Logo" />
+        <div class="splash-text">Loading your adventure...</div>
     </div>
 
     <!-- LOADING -->
     <div id="loadingScreen" class="screen" style="display:flex;">
-        <h2 style="color:#4CAF50;" data-i18n="loading_title">🎮 Loading...</h2>
+        <h2 style="color:#4CAF50;">🎮 Loading...</h2>
         <div class="spinner"></div>
-        <p style="color:#888; margin-top:16px;" data-i18n="loading_sub">Preparing your adventure</p>
+        <p style="color:#888; margin-top:16px;">Preparing your adventure</p>
     </div>
 
     <!-- START -->
     <div id="startScreen" class="screen">
-        <h1 data-i18n="start_title">🎯 Shoot The Boss!</h1>
-        <p style="color:#ccc;" data-i18n="start_subtitle">⚔️ Choose your adventure! ⚔️</p>
-        <button id="playBtn" data-i18n="start_play">▶ Select Mode</button>
-        <button id="skinBtn" style="background:linear-gradient(135deg,#FF6BFF,#FF1493);" data-i18n="start_skins">🎨 Skins</button>
+        <h1>🎯 Shoot The Boss!</h1>
+        <p style="color:#ccc;">⚔️ Choose your adventure! ⚔️</p>
+        <button id="playBtn">▶ Select Mode</button>
+        <button id="skinBtn" style="background:linear-gradient(135deg,#FF6BFF,#FF1493);">🎨 Skins</button>
     </div>
 
     <!-- MODE SELECT -->
     <div id="modeScreen" class="screen">
-        <button class="quit-btn" id="quitModeBtn" data-i18n="quit">✕ Quit</button>
-        <h2 data-i18n="mode_title">🎮 Select Game Mode</h2>
+        <button class="quit-btn" id="quitModeBtn">✕ Quit</button>
+        <h2>🎮 Select Game Mode</h2>
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;width:100%;max-width:380px;align-items:center;">
             <button class="mode-btn" id="mode15Btn" style="width:100%;">
-                <span data-i18n="mode_15_label">⚔️ 15 Levels</span><br>
-                <span style="font-size:13px;font-weight:normal;" data-i18n="mode_15_desc">Defeat all 15 bosses</span>
+                <span>⚔️ 15 Levels</span><br>
+                <span style="font-size:13px;font-weight:normal;">Defeat all 15 bosses</span>
             </button>
             <button class="mode-btn unlimited" id="modeUnlimitedBtn" style="width:100%;">
-                <span data-i18n="mode_unlimited_label">🔥 Unlimited Mode</span><br>
-                <span style="font-size:13px;font-weight:normal;" data-i18n="mode_unlimited_desc">Beat the clock! ⏱️</span>
+                <span>🔥 Unlimited Mode</span><br>
+                <span style="font-size:13px;font-weight:normal;">Beat the clock! ⏱️</span>
             </button>
             <button class="mode-btn matchmaking-btn" id="modeMatchBtn" style="width:100%;">
-                <span id="modeMatchDesc" style="font-size:15px;font-weight:bold;" data-i18n="mode_match_desc_prefix">⚔️ 1v1 Matchmaking</span><br>
-                <span style="font-size:13px;font-weight:normal;" id="modeMatchSub">
-                    <span data-i18n="mode_match_desc_prefix" style="display:none;"></span>
-                    <span data-i18n="mode_match_suffix">Battle an AI rival!</span>
-                    <span style="color:#ffd700;font-weight:bold;">Elo: <span id="modeMatchEloValue">1000</span></span>
+                <span id="modeMatchDesc" style="font-size:15px;font-weight:bold;">⚔️ 1v1 Matchmaking</span><br>
+                <span style="font-size:13px;font-weight:normal;">
+                    Battle an AI rival! <span style="color:#ffd700;font-weight:bold;">Elo: <span id="modeMatchEloValue">1000</span></span>
                 </span>
             </button>
         </div>
@@ -182,46 +179,46 @@
     <!-- SEARCH -->
     <div id="searchScreen">
         <div class="search-spinner"></div>
-        <h2 data-i18n="search_title">🔍 Searching for opponent...</h2>
-        <p data-i18n="search_sub">Finding a worthy rival</p>
+        <h2>🔍 Searching for opponent...</h2>
+        <p>Finding a worthy rival</p>
         <div class="search-bar"><div class="search-bar-fill" id="searchBarFill"></div></div>
     </div>
 
     <!-- HOW TO PLAY -->
     <div id="howScreen" class="screen">
-        <button class="quit-btn" id="quitHowBtn" data-i18n="quit">✕ Quit</button>
-        <h2 data-i18n="how_title">⚔️ How to Play</h2>
-        <p data-i18n="how_instruction1">🎯 Click on enemy projectiles to destroy them!</p>
-        <p data-i18n="how_instruction2">💙 Click anywhere to shoot at the boss!</p>
-        <p data-i18n="how_instruction3">⬅️➡️ Use Move buttons to dodge!</p>
-        <p style="margin-top:12px;" data-i18n="how_skills_title">⚡ Skills:</p>
-        <p data-i18n="how_skill1_desc">🔵 Skill 1: 5 Laser Beams (-15% boss health)</p>
-        <p data-i18n="how_skill2_desc">🔴 Skill 2: 6x Damage for 30 seconds</p>
-        <p data-i18n="how_skill3_desc">🟢 Skill 3: +1000 Health</p>
-        <p data-i18n="how_skill4_desc">🛡️ Skill 4: Use Team – 4 teammates (10k HP each, 2500 ammo each, 2.5x dmg)</p>
-        <p id="modeInfo" style="font-size:12px; color:#aaa; margin-top:8px;" data-i18n="how_mode_info">📱 Defeat bosses before time runs out!</p>
-        <button id="startGameBtn" data-i18n="how_start">⚔️ Start Game</button>
+        <button class="quit-btn" id="quitHowBtn">✕ Quit</button>
+        <h2>⚔️ How to Play</h2>
+        <p>🎯 Click on enemy projectiles to destroy them!</p>
+        <p>💙 Click anywhere to shoot at the boss!</p>
+        <p>⬅️➡️ Use Move buttons to dodge!</p>
+        <p style="margin-top:12px;">⚡ Skills:</p>
+        <p>🔵 Skill 1: 5 Laser Beams (-15% boss health)</p>
+        <p>🔴 Skill 2: 6x Damage for 30 seconds</p>
+        <p>🟢 Skill 3: +1000 Health</p>
+        <p>🛡️ Skill 4: Use Team – 4 teammates (10k HP each, 2500 ammo each, 2.5x dmg)</p>
+        <p id="modeInfo" style="font-size:12px; color:#aaa; margin-top:8px;">📱 Defeat bosses before time runs out!</p>
+        <button id="startGameBtn">⚔️ Start Game</button>
     </div>
 
     <!-- SKINS -->
     <div id="skinScreen" class="screen">
-        <button class="back-btn" id="skinBackBtn" data-i18n="back">← Back</button>
-        <h2 data-i18n="skin_title">🎨 Choose Your Skin</h2>
-        <p style="color:#aaa; font-size:13px;" data-i18n="skin_subtitle">Select a skin for your character</p>
-        <div class="score-label"><span data-i18n="skin_score_label">⭐ Your Score:</span> <span id="skinScore">0</span></div>
+        <button class="back-btn" id="skinBackBtn">← Back</button>
+        <h2>🎨 Choose Your Skin</h2>
+        <p style="color:#aaa; font-size:13px;">Select a skin for your character</p>
+        <div class="score-label">⭐ Your Score: <span id="skinScore">0</span></div>
         <div class="skin-grid" id="skinGrid"></div>
-        <p id="skinStatus" style="color:#aaa; font-size:10px; margin-top:6px;" data-i18n="skin_status_select">Select a skin to equip</p>
+        <p id="skinStatus" style="color:#aaa; font-size:10px; margin-top:6px;">Select a skin to equip</p>
     </div>
 
     <!-- IN-GAME UI -->
     <div id="ui" style="display:none;">
-        <div><span data-i18n="game_health">❤️</span> <span id="playerHealth">3000</span></div>
-        <div><span data-i18n="game_boss">👹</span> <span id="bossHealth">100</span>%</div>
-        <div><span data-i18n="game_level">📊</span> <span id="levelDisplay">1</span>/<span id="maxLevelDisplay">15</span></div>
-        <div><span data-i18n="game_timer">⏱️</span> <span id="timerDisplay">500</span>s</div>
-        <div style="color:#ffd700;display:none;" id="scoreDisplay"><span data-i18n="game_score">⭐ Score:</span> <span id="scoreValue">0</span></div>
-        <div style="color:#00ffaa;" id="teamHealthDisplay"><span data-i18n="team_hp">🛡️ Team HP:</span> <span id="teamHealthValue">0</span></div>
-        <div style="color:#ffaa00;" id="teamAmmoDisplay"><span data-i18n="team_ammo">🔫 Team Ammo:</span> <span id="teamAmmoValue">0</span></div>
+        <div style="color:#ff6b6b;">❤️ <span id="playerHealth">3000</span></div>
+        <div style="color:#ffd93d;">👹 <span id="bossHealth">100</span>%</div>
+        <div style="color:#6bcbff;">📊 <span id="levelDisplay">1</span>/<span id="maxLevelDisplay">15</span></div>
+        <div style="color:#ff6bff;">⏱️ <span id="timerDisplay">500</span>s</div>
+        <div style="color:#ffd700;display:none;" id="scoreDisplay">⭐ Score: <span id="scoreValue">0</span></div>
+        <div style="color:#00ffaa;" id="teamHealthDisplay">🛡️ Team HP: <span id="teamHealthValue">0</span></div>
+        <div style="color:#ffaa00;" id="teamAmmoDisplay">🔫 Team Ammo: <span id="teamAmmoValue">0</span></div>
     </div>
 
     <div id="bossHealthBar" style="display:none;"><div id="bossHealthFill"></div></div>
@@ -232,73 +229,73 @@
 
     <!-- PAUSE -->
     <div id="pauseOverlay">
-        <h2 data-i18n="pause_title">⏸️ PAUSED</h2>
-        <p data-i18n="pause_sub">Game is paused</p>
-        <button class="resume-btn" id="manualResumeBtn" data-i18n="resume_btn">▶ Resume</button>
+        <h2>⏸️ PAUSED</h2>
+        <p>Game is paused</p>
+        <button class="resume-btn" id="manualResumeBtn">▶ Resume</button>
     </div>
 
-    <button id="exitBtn" data-i18n="quit">✕ Exit</button>
+    <button id="exitBtn">✕ Exit</button>
 
     <!-- CONTROLS -->
     <div id="controls" style="display:none;">
         <div class="row">
-            <button class="btn skill-btn" id="skill1Btn" data-i18n="skill_lasers">🔵 Lasers</button>
-            <button class="btn skill-btn" id="skill2Btn" data-i18n="skill_dmg">🔴 6x Dmg</button>
-            <button class="btn skill-btn" id="skill3Btn" data-i18n="skill_hp">🟢 +1000 HP</button>
-            <button class="btn skill-btn" id="skillTeamBtn" data-i18n="skill_team">🛡️ Use Team</button>
+            <button class="btn skill-btn" id="skill1Btn">🔵 Lasers</button>
+            <button class="btn skill-btn" id="skill2Btn">🔴 6x Dmg</button>
+            <button class="btn skill-btn" id="skill3Btn">🟢 +1000 HP</button>
+            <button class="btn skill-btn" id="skillTeamBtn">🛡️ Use Team</button>
         </div>
         <div class="row">
-            <span class="cooldown-text" id="cd1" data-i18n="cooldown_ready">✅ Ready</span>
-            <span class="cooldown-text" id="cd2" data-i18n="cooldown_ready">✅ Ready</span>
-            <span class="cooldown-text" id="cd3" data-i18n="cooldown_ready">✅ Ready</span>
-            <span class="cooldown-text" id="cdTeam" data-i18n="cooldown_ready">✅ Ready</span>
+            <span class="cooldown-text" id="cd1">✅ Ready</span>
+            <span class="cooldown-text" id="cd2">✅ Ready</span>
+            <span class="cooldown-text" id="cd3">✅ Ready</span>
+            <span class="cooldown-text" id="cdTeam">✅ Ready</span>
         </div>
         <div class="row" style="margin-top:3px;">
-            <button class="btn" id="moveLeft" data-i18n="move_left">⬅️ Left</button>
-            <button class="btn" id="moveRight" data-i18n="move_right">Right ➡️</button>
+            <button class="btn" id="moveLeft">⬅️ Left</button>
+            <button class="btn" id="moveRight">Right ➡️</button>
         </div>
     </div>
 
     <!-- RETRY -->
     <div id="retryScreen" class="screen">
-        <button class="quit-btn" id="quitRetry" data-i18n="quit">✕ Quit</button>
-        <h2 style="color:#ff4444;" data-i18n="retry_title">💀 Defeated!</h2>
-        <p data-i18n="retry_desc">The boss was too strong! Try again!</p>
-        <button id="retryBtn" data-i18n="retry_btn">🔄 Retry Level</button>
+        <button class="quit-btn" id="quitRetry">✕ Quit</button>
+        <h2 style="color:#ff4444;">💀 Defeated!</h2>
+        <p>The boss was too strong! Try again!</p>
+        <button id="retryBtn">🔄 Retry Level</button>
     </div>
 
     <!-- TIME UP -->
     <div id="timeUpScreen" class="screen">
-        <button class="quit-btn" id="quitTimeUp" data-i18n="quit">✕ Quit</button>
-        <h2 style="color:#ff6b35;" data-i18n="timeup_title">⏱️ Time's Up!</h2>
-        <p data-i18n="timeup_desc">You ran out of time!</p>
-        <div style="color:#ffd700;font-size:22px;"><span data-i18n="timeup_score">⭐ Score:</span> <span id="finalScore">0</span></div>
-        <button id="timeUpRetry" data-i18n="timeup_retry">🔄 Try Again</button>
+        <button class="quit-btn" id="quitTimeUp">✕ Quit</button>
+        <h2 style="color:#ff6b35;">⏱️ Time's Up!</h2>
+        <p>You ran out of time!</p>
+        <div style="color:#ffd700;font-size:22px;">⭐ Score: <span id="finalScore">0</span></div>
+        <button id="timeUpRetry">🔄 Try Again</button>
     </div>
 
     <!-- WIN -->
     <div id="winScreen" class="screen">
-        <button class="quit-btn" id="quitWin" data-i18n="quit">✕ Quit</button>
-        <h2 id="winTitle" data-i18n="win_title_15">🏆 YOU ARE A LEGEND!</h2>
-        <p id="winSubtitle" style="color:#ffd700;font-size:18px;" data-i18n="win_subtitle_15">All 15 bosses defeated!</p>
-        <div style="color:#ffd700;font-size:22px;"><span data-i18n="win_score">⭐ Score:</span> <span id="winScore">0</span></div>
-        <button id="restartBtn" data-i18n="win_restart">🔄 Play Again</button>
+        <button class="quit-btn" id="quitWin">✕ Quit</button>
+        <h2 id="winTitle">🏆 YOU ARE A LEGEND!</h2>
+        <p id="winSubtitle" style="color:#ffd700;font-size:18px;">All 15 bosses defeated!</p>
+        <div style="color:#ffd700;font-size:22px;">⭐ Score: <span id="winScore">0</span></div>
+        <button id="restartBtn">🔄 Play Again</button>
     </div>
 
     <!-- MATCH RESULT -->
     <div id="matchResultScreen" class="screen">
-        <button class="quit-btn" id="quitMatchResult" data-i18n="quit">✕ Quit</button>
-        <h2 id="matchResultTitle" style="font-size:clamp(28px,6vw,48px);" data-i18n="match_result_title_win">🏆 Victory!</h2>
-        <p id="matchResultSub" style="font-size:18px;color:#aaa;" data-i18n="match_result_sub_win">You defeated the AI opponent!</p>
+        <button class="quit-btn" id="quitMatchResult">✕ Quit</button>
+        <h2 id="matchResultTitle" style="font-size:clamp(28px,6vw,48px);">🏆 Victory!</h2>
+        <p id="matchResultSub" style="font-size:18px;color:#aaa;">You defeated the AI opponent!</p>
         <div style="font-size:20px;margin:8px 0;">
-            <span data-i18n="match_result_hits">💥 Your hits:</span> <span id="matchYourHitsDisplay">0</span>
-            <span style="margin-left:16px;" data-i18n="match_result_ai_hits">🤖 AI hits:</span> <span id="matchAiHitsDisplay">0</span>
+            💥 Your hits: <span id="matchYourHitsDisplay">0</span>
+            <span style="margin-left:16px;">🤖 AI hits:</span> <span id="matchAiHitsDisplay">0</span>
         </div>
         <div style="font-size:24px;font-weight:bold;margin:4px 0;" id="matchEloChangeDisplay">+0</div>
         <div style="font-size:18px;color:#ffd700;">⭐ Elo: <span id="matchEloAfterDisplay">1000</span></div>
         <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:12px;">
-            <button id="matchRematchBtn" data-i18n="match_rematch">🔄 Rematch</button>
-            <button id="matchHomeBtn" data-i18n="match_home">🏠 Home</button>
+            <button id="matchRematchBtn">🔄 Rematch</button>
+            <button id="matchHomeBtn">🏠 Home</button>
         </div>
     </div>
 
@@ -335,27 +332,17 @@
     }
 
     // ============================================================
-    //  TRANSLATIONS – FULL 15 LANGUAGES (complete)
+    //  TRANSLATIONS (full set, ad-free)
     // ============================================================
     var TRANSLATIONS = {
         en: {
-            splash_by:'Game made by:',
-            splash_loading:'Loading your adventure...',
-            loading_title:'🎮 Loading...',
-            loading_sub:'Preparing your adventure',
-            start_title:'🎯 Shoot The Boss!',
-            start_subtitle:'⚔️ Choose your adventure! ⚔️',
-            start_play:'▶ Select Mode',
-            start_skins:'🎨 Skins',
+            start_title:'🎯 Shoot The Boss!', start_subtitle:'⚔️ Choose your adventure! ⚔️',
+            start_play:'▶ Select Mode', start_skins:'🎨 Skins',
             mode_title:'🎮 Select Game Mode',
-            mode_15_label:'⚔️ 15 Levels',
-            mode_15_desc:'Defeat all 15 bosses',
-            mode_unlimited_label:'🔥 Unlimited Mode',
-            mode_unlimited_desc:'Beat the clock! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'Battle an AI rival!',
-            search_title:'🔍 Searching for opponent...',
-            search_sub:'Finding a worthy rival',
+            mode_15_label:'⚔️ 15 Levels', mode_15_desc:'Defeat all 15 bosses',
+            mode_unlimited_label:'🔥 Unlimited Mode', mode_unlimited_desc:'Beat the clock! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Searching for opponent...', search_sub:'Finding a worthy rival',
             how_title:'⚔️ How to Play',
             how_instruction1:'🎯 Click on enemy projectiles to destroy them!',
             how_instruction2:'💙 Click anywhere to shoot at the boss!',
@@ -370,72 +357,34 @@
             how_mode_info_unlimited:'🔥 Beat the clock! Each level adds 370 seconds!',
             how_mode_info_matchmaking:'⚔️ Battle an AI rival! Your Elo changes with every match. Use skills to outlast the AI!',
             how_start:'⚔️ Start Game',
-            skin_title:'🎨 Choose Your Skin',
-            skin_subtitle:'Select a skin for your character',
-            skin_score_label:'⭐ Your Score:',
-            skin_status_select:'Select a skin to equip',
-            skin_status_unlock:'🎉 {name} unlocked!',
-            skin_status_not_enough:'❌ Not enough points',
+            skin_title:'🎨 Choose Your Skin', skin_subtitle:'Select a skin for your character',
+            skin_score_label:'⭐ Your Score:', skin_status_select:'Select a skin to equip',
+            skin_status_unlock:'🎉 {name} unlocked!', skin_status_not_enough:'❌ Not enough points',
             skin_status_equip:'✅ {name} equipped!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Score:',
-            team_hp:'🛡️ Team HP:',
-            team_ammo:'🔫 Team Ammo:',
-            skill_lasers:'🔵 Lasers',
-            skill_dmg:'🔴 6x Dmg',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Use Team',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Score:',
+            skill_lasers:'🔵 Lasers', skill_dmg:'🔴 6x Dmg', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Use Team',
             cooldown_ready:'✅ Ready',
-            move_left:'⬅️ Left',
-            move_right:'Right ➡️',
-            quit:'✕ Quit',
-            back:'← Back',
-            pause_title:'⏸️ PAUSED',
-            pause_sub:'Game is paused',
-            resume_btn:'▶ Resume',
-            retry_title:'💀 Defeated!',
-            retry_desc:'The boss was too strong! Try again!',
-            retry_btn:'🔄 Retry Level',
-            timeup_title:'⏱️ Time\'s Up!',
-            timeup_desc:'You ran out of time!',
-            timeup_score:'⭐ Score:',
-            timeup_retry:'🔄 Try Again',
-            win_title_15:'🏆 YOU ARE A LEGEND!',
-            win_subtitle_15:'All 15 bosses defeated!',
-            win_title_unlimited:'🔥 UNLIMITED MODE COMPLETE!',
-            win_subtitle_unlimited:'You survived {level} levels! Amazing!',
-            win_score:'⭐ Score:',
-            win_restart:'🔄 Play Again',
-            match_result_title_win:'🏆 VICTORY!',
-            match_result_title_loss:'💀 DEFEAT!',
-            match_result_sub_win:'You outplayed the AI opponent!',
-            match_result_sub_loss:'The AI was too strong this time!',
-            match_result_hits:'💥 Your hits:',
-            match_result_ai_hits:'🤖 AI hits:',
-            match_rematch:'🔄 Rematch',
-            match_home:'🏠 Home'
+            move_left:'⬅️ Left', move_right:'Right ➡️',
+            quit:'✕ Quit', back:'← Back',
+            pause_title:'⏸️ PAUSED', pause_sub:'Game is paused', resume_btn:'▶ Resume',
+            retry_title:'💀 Defeated!', retry_desc:'The boss was too strong! Try again!', retry_btn:'🔄 Retry Level',
+            timeup_title:'⏱️ Time\'s Up!', timeup_desc:'You ran out of time!', timeup_score:'⭐ Score:', timeup_retry:'🔄 Try Again',
+            win_title_15:'🏆 YOU ARE A LEGEND!', win_subtitle_15:'All 15 bosses defeated!',
+            win_title_unlimited:'🔥 UNLIMITED MODE COMPLETE!', win_subtitle_unlimited:'You survived {level} levels! Amazing!',
+            win_score:'⭐ Score:', win_restart:'🔄 Play Again',
+            match_result_title_win:'🏆 VICTORY!', match_result_title_loss:'💀 DEFEAT!',
+            match_result_sub_win:'You outplayed the AI opponent!', match_result_sub_loss:'The AI was too strong this time!',
+            match_result_hits:'💥 Your hits:', match_result_ai_hits:'🤖 AI hits:',
+            match_rematch:'🔄 Rematch', match_home:'🏠 Home'
         },
         es: {
-            splash_by:'Juego creado por:',
-            splash_loading:'Cargando tu aventura...',
-            loading_title:'🎮 Cargando...',
-            loading_sub:'Preparando tu aventura',
-            start_title:'🎯 ¡Dispara al Jefe!',
-            start_subtitle:'⚔️ ¡Elige tu aventura! ⚔️',
-            start_play:'▶ Seleccionar Modo',
-            start_skins:'🎨 Pieles',
+            start_title:'🎯 ¡Dispara al Jefe!', start_subtitle:'⚔️ ¡Elige tu aventura! ⚔️',
+            start_play:'▶ Seleccionar Modo', start_skins:'🎨 Pieles',
             mode_title:'🎮 Selecciona el Modo de Juego',
-            mode_15_label:'⚔️ 15 Niveles',
-            mode_15_desc:'Derrota a los 15 jefes',
-            mode_unlimited_label:'🔥 Modo Ilimitado',
-            mode_unlimited_desc:'¡Gana el reloj! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'¡Enfréntate a un rival IA!',
-            search_title:'🔍 Buscando oponente...',
-            search_sub:'Encontrando un rival digno',
+            mode_15_label:'⚔️ 15 Niveles', mode_15_desc:'Derrota a los 15 jefes',
+            mode_unlimited_label:'🔥 Modo Ilimitado', mode_unlimited_desc:'¡Gana el reloj! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Buscando oponente...', search_sub:'Encontrando un rival digno',
             how_title:'⚔️ Cómo Jugar',
             how_instruction1:'🎯 ¡Haz clic en los proyectiles enemigos para destruirlos!',
             how_instruction2:'💙 Haz clic en cualquier lugar para disparar al jefe',
@@ -450,72 +399,34 @@
             how_mode_info_unlimited:'🔥 Gana el reloj. Cada nivel añade 370 segundos.',
             how_mode_info_matchmaking:'⚔️ Enfréntate a un rival IA! Tu Elo cambia con cada partida. Usa habilidades para superar a la IA!',
             how_start:'⚔️ Empezar Juego',
-            skin_title:'🎨 Elige tu Piel',
-            skin_subtitle:'Selecciona una piel para tu personaje',
-            skin_score_label:'⭐ Tu puntuación:',
-            skin_status_select:'Selecciona una piel para equipar',
-            skin_status_unlock:'🎉 ¡{name} desbloqueada!',
-            skin_status_not_enough:'❌ Puntos insuficientes',
+            skin_title:'🎨 Elige tu Piel', skin_subtitle:'Selecciona una piel para tu personaje',
+            skin_score_label:'⭐ Tu puntuación:', skin_status_select:'Selecciona una piel para equipar',
+            skin_status_unlock:'🎉 ¡{name} desbloqueada!', skin_status_not_enough:'❌ Puntos insuficientes',
             skin_status_equip:'✅ {name} equipada!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Puntuación:',
-            team_hp:'🛡️ HP del equipo:',
-            team_ammo:'🔫 Munición del equipo:',
-            skill_lasers:'🔵 Láseres',
-            skill_dmg:'🔴 x6 Daño',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Usar Equipo',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Puntuación:',
+            skill_lasers:'🔵 Láseres', skill_dmg:'🔴 x6 Daño', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Usar Equipo',
             cooldown_ready:'✅ Listo',
-            move_left:'⬅️ Izquierda',
-            move_right:'Derecha ➡️',
-            quit:'✕ Salir',
-            back:'← Atrás',
-            pause_title:'⏸️ PAUSADO',
-            pause_sub:'Juego en pausa',
-            resume_btn:'▶ Reanudar',
-            retry_title:'💀 ¡Derrotado!',
-            retry_desc:'¡El jefe era demasiado fuerte! ¡Inténtalo de nuevo!',
-            retry_btn:'🔄 Reintentar nivel',
-            timeup_title:'⏱️ ¡Tiempo agotado!',
-            timeup_desc:'¡Se acabó el tiempo!',
-            timeup_score:'⭐ Puntuación:',
-            timeup_retry:'🔄 Intentar de nuevo',
-            win_title_15:'🏆 ¡ERES UNA LEYENDA!',
-            win_subtitle_15:'¡Derrotaste a los 15 jefes!',
-            win_title_unlimited:'🔥 ¡MODO ILIMITADO COMPLETADO!',
-            win_subtitle_unlimited:'¡Sobreviviste {level} niveles! ¡Increíble!',
-            win_score:'⭐ Puntuación:',
-            win_restart:'🔄 Jugar de nuevo',
-            match_result_title_win:'🏆 VICTORIA!',
-            match_result_title_loss:'💀 DERROTA!',
-            match_result_sub_win:'¡Superaste al rival IA!',
-            match_result_sub_loss:'¡La IA fue demasiado fuerte esta vez!',
-            match_result_hits:'💥 Tus golpes:',
-            match_result_ai_hits:'🤖 Golpes IA:',
-            match_rematch:'🔄 Revancha',
-            match_home:'🏠 Inicio'
+            move_left:'⬅️ Izquierda', move_right:'Derecha ➡️',
+            quit:'✕ Salir', back:'← Atrás',
+            pause_title:'⏸️ PAUSADO', pause_sub:'Juego en pausa', resume_btn:'▶ Reanudar',
+            retry_title:'💀 ¡Derrotado!', retry_desc:'¡El jefe era demasiado fuerte! ¡Inténtalo de nuevo!', retry_btn:'🔄 Reintentar nivel',
+            timeup_title:'⏱️ ¡Tiempo agotado!', timeup_desc:'¡Se acabó el tiempo!', timeup_score:'⭐ Puntuación:', timeup_retry:'🔄 Intentar de nuevo',
+            win_title_15:'🏆 ¡ERES UNA LEYENDA!', win_subtitle_15:'¡Derrotaste a los 15 jefes!',
+            win_title_unlimited:'🔥 ¡MODO ILIMITADO COMPLETADO!', win_subtitle_unlimited:'¡Sobreviviste {level} niveles! ¡Increíble!',
+            win_score:'⭐ Puntuación:', win_restart:'🔄 Jugar de nuevo',
+            match_result_title_win:'🏆 VICTORIA!', match_result_title_loss:'💀 DERROTA!',
+            match_result_sub_win:'¡Superaste al rival IA!', match_result_sub_loss:'¡La IA fue demasiado fuerte esta vez!',
+            match_result_hits:'💥 Tus golpes:', match_result_ai_hits:'🤖 Golpes IA:',
+            match_rematch:'🔄 Revancha', match_home:'🏠 Inicio'
         },
         fr: {
-            splash_by:'Jeu créé par :',
-            splash_loading:'Chargement de votre aventure...',
-            loading_title:'🎮 Chargement...',
-            loading_sub:'Préparation de votre aventure',
-            start_title:'🎯 Tire sur le Boss!',
-            start_subtitle:'⚔️ Choisissez votre aventure! ⚔️',
-            start_play:'▶ Sélectionner le mode',
-            start_skins:'🎨 Skins',
+            start_title:'🎯 Tire sur le Boss!', start_subtitle:'⚔️ Choisissez votre aventure! ⚔️',
+            start_play:'▶ Sélectionner le mode', start_skins:'🎨 Skins',
             mode_title:'🎮 Sélectionner le mode de jeu',
-            mode_15_label:'⚔️ 15 Niveaux',
-            mode_15_desc:'Vaincre les 15 boss',
-            mode_unlimited_label:'🔥 Mode Illimité',
-            mode_unlimited_desc:'Battez le chrono! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'Affrontez un rival IA!',
-            search_title:'🔍 Recherche d\'un adversaire...',
-            search_sub:'Trouver un rival digne',
+            mode_15_label:'⚔️ 15 Niveaux', mode_15_desc:'Vaincre les 15 boss',
+            mode_unlimited_label:'🔥 Mode Illimité', mode_unlimited_desc:'Battez le chrono! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Recherche d\'un adversaire...', search_sub:'Trouver un rival digne',
             how_title:'⚔️ Comment jouer',
             how_instruction1:'🎯 Cliquez sur les projectiles ennemis pour les détruire!',
             how_instruction2:'💙 Cliquez n\'importe où pour tirer sur le boss!',
@@ -530,72 +441,34 @@
             how_mode_info_unlimited:'🔥 Battez le chrono! Chaque niveau ajoute 370 secondes!',
             how_mode_info_matchmaking:'⚔️ Affrontez un rival IA! Votre Elo change à chaque match. Utilisez vos compétences pour surpasser l\'IA!',
             how_start:'⚔️ Commencer le jeu',
-            skin_title:'🎨 Choisissez votre skin',
-            skin_subtitle:'Sélectionnez un skin pour votre personnage',
-            skin_score_label:'⭐ Votre score:',
-            skin_status_select:'Sélectionnez un skin à équiper',
-            skin_status_unlock:'🎉 {name} débloqué!',
-            skin_status_not_enough:'❌ Pas assez de points',
+            skin_title:'🎨 Choisissez votre skin', skin_subtitle:'Sélectionnez un skin pour votre personnage',
+            skin_score_label:'⭐ Votre score:', skin_status_select:'Sélectionnez un skin à équiper',
+            skin_status_unlock:'🎉 {name} débloqué!', skin_status_not_enough:'❌ Pas assez de points',
             skin_status_equip:'✅ {name} équipé!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Score:',
-            team_hp:'🛡️ HP de l\'équipe:',
-            team_ammo:'🔫 Munitions de l\'équipe:',
-            skill_lasers:'🔵 Lasers',
-            skill_dmg:'🔴 x6 Dégâts',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Équipe',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Score:',
+            skill_lasers:'🔵 Lasers', skill_dmg:'🔴 x6 Dégâts', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Équipe',
             cooldown_ready:'✅ Prêt',
-            move_left:'⬅️ Gauche',
-            move_right:'Droite ➡️',
-            quit:'✕ Quitter',
-            back:'← Retour',
-            pause_title:'⏸️ PAUSE',
-            pause_sub:'Jeu en pause',
-            resume_btn:'▶ Reprendre',
-            retry_title:'💀 Vaincu!',
-            retry_desc:'Le boss était trop fort! Réessayez!',
-            retry_btn:'🔄 Réessayer le niveau',
-            timeup_title:'⏱️ Temps écoulé!',
-            timeup_desc:'Vous n\'avez plus de temps!',
-            timeup_score:'⭐ Score:',
-            timeup_retry:'🔄 Réessayer',
-            win_title_15:'🏆 VOUS ÊTES UNE LÉGENDE!',
-            win_subtitle_15:'Les 15 boss sont vaincus!',
-            win_title_unlimited:'🔥 MODE ILLIMITÉ TERMINÉ!',
-            win_subtitle_unlimited:'Vous avez survécu {level} niveaux! Incroyable!',
-            win_score:'⭐ Score:',
-            win_restart:'🔄 Rejouer',
-            match_result_title_win:'🏆 VICTOIRE!',
-            match_result_title_loss:'💀 DÉFAITE!',
-            match_result_sub_win:'Vous avez surpassé l\'IA!',
-            match_result_sub_loss:'L\'IA était trop forte cette fois!',
-            match_result_hits:'💥 Vos coups:',
-            match_result_ai_hits:'🤖 Coups IA:',
-            match_rematch:'🔄 Revanche',
-            match_home:'🏠 Accueil'
+            move_left:'⬅️ Gauche', move_right:'Droite ➡️',
+            quit:'✕ Quitter', back:'← Retour',
+            pause_title:'⏸️ PAUSE', pause_sub:'Jeu en pause', resume_btn:'▶ Reprendre',
+            retry_title:'💀 Vaincu!', retry_desc:'Le boss était trop fort! Réessayez!', retry_btn:'🔄 Réessayer le niveau',
+            timeup_title:'⏱️ Temps écoulé!', timeup_desc:'Vous n\'avez plus de temps!', timeup_score:'⭐ Score:', timeup_retry:'🔄 Réessayer',
+            win_title_15:'🏆 VOUS ÊTES UNE LÉGENDE!', win_subtitle_15:'Les 15 boss sont vaincus!',
+            win_title_unlimited:'🔥 MODE ILLIMITÉ TERMINÉ!', win_subtitle_unlimited:'Vous avez survécu {level} niveaux! Incroyable!',
+            win_score:'⭐ Score:', win_restart:'🔄 Rejouer',
+            match_result_title_win:'🏆 VICTOIRE!', match_result_title_loss:'💀 DÉFAITE!',
+            match_result_sub_win:'Vous avez surpassé l\'IA!', match_result_sub_loss:'L\'IA était trop forte cette fois!',
+            match_result_hits:'💥 Vos coups:', match_result_ai_hits:'🤖 Coups IA:',
+            match_rematch:'🔄 Revanche', match_home:'🏠 Accueil'
         },
         de: {
-            splash_by:'Spiel erstellt von:',
-            splash_loading:'Lade dein Abenteuer...',
-            loading_title:'🎮 Laden...',
-            loading_sub:'Bereite dein Abenteuer vor',
-            start_title:'🎯 Erschieße den Boss!',
-            start_subtitle:'⚔️ Wähle dein Abenteuer! ⚔️',
-            start_play:'▶ Modus wählen',
-            start_skins:'🎨 Skins',
+            start_title:'🎯 Erschieße den Boss!', start_subtitle:'⚔️ Wähle dein Abenteuer! ⚔️',
+            start_play:'▶ Modus wählen', start_skins:'🎨 Skins',
             mode_title:'🎮 Spielmodus wählen',
-            mode_15_label:'⚔️ 15 Level',
-            mode_15_desc:'Besiege alle 15 Bosse',
-            mode_unlimited_label:'🔥 Unbegrenzter Modus',
-            mode_unlimited_desc:'Schlage die Uhr! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'Kämpfe gegen einen KI-Rivalen!',
-            search_title:'🔍 Suche nach Gegner...',
-            search_sub:'Finde einen würdigen Rivalen',
+            mode_15_label:'⚔️ 15 Level', mode_15_desc:'Besiege alle 15 Bosse',
+            mode_unlimited_label:'🔥 Unbegrenzter Modus', mode_unlimited_desc:'Schlage die Uhr! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Suche nach Gegner...', search_sub:'Finde einen würdigen Rivalen',
             how_title:'⚔️ Spielanleitung',
             how_instruction1:'🎯 Klicke auf feindliche Projektile, um sie zu zerstören!',
             how_instruction2:'💙 Klicke irgendwo, um auf den Boss zu schießen!',
@@ -610,72 +483,34 @@
             how_mode_info_unlimited:'🔥 Schlage die Uhr! Jedes Level fügt 370 Sekunden hinzu!',
             how_mode_info_matchmaking:'⚔️ Kämpfe gegen einen KI-Rivalen! Dein Elo ändert sich mit jedem Spiel. Nutze Fähigkeiten, um die KI zu übertreffen!',
             how_start:'⚔️ Spiel starten',
-            skin_title:'🎨 Wähle deinen Skin',
-            skin_subtitle:'Wähle einen Skin für deinen Charakter',
-            skin_score_label:'⭐ Deine Punktzahl:',
-            skin_status_select:'Wähle einen Skin zum Ausrüsten',
-            skin_status_unlock:'🎉 {name} freigeschaltet!',
-            skin_status_not_enough:'❌ Nicht genug Punkte',
+            skin_title:'🎨 Wähle deinen Skin', skin_subtitle:'Wähle einen Skin für deinen Charakter',
+            skin_score_label:'⭐ Deine Punktzahl:', skin_status_select:'Wähle einen Skin zum Ausrüsten',
+            skin_status_unlock:'🎉 {name} freigeschaltet!', skin_status_not_enough:'❌ Nicht genug Punkte',
             skin_status_equip:'✅ {name} ausgerüstet!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Punktzahl:',
-            team_hp:'🛡️ Team-HP:',
-            team_ammo:'🔫 Team-Munition:',
-            skill_lasers:'🔵 Laser',
-            skill_dmg:'🔴 6x Schaden',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Team',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Punktzahl:',
+            skill_lasers:'🔵 Laser', skill_dmg:'🔴 6x Schaden', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Team',
             cooldown_ready:'✅ Bereit',
-            move_left:'⬅️ Links',
-            move_right:'Rechts ➡️',
-            quit:'✕ Beenden',
-            back:'← Zurück',
-            pause_title:'⏸️ PAUSE',
-            pause_sub:'Spiel pausiert',
-            resume_btn:'▶ Fortsetzen',
-            retry_title:'💀 Besiegt!',
-            retry_desc:'Der Boss war zu stark! Versuche es erneut!',
-            retry_btn:'🔄 Level wiederholen',
-            timeup_title:'⏱️ Zeit abgelaufen!',
-            timeup_desc:'Du hast keine Zeit mehr!',
-            timeup_score:'⭐ Punktzahl:',
-            timeup_retry:'🔄 Erneut versuchen',
-            win_title_15:'🏆 DU BIST EINE LEGENDE!',
-            win_subtitle_15:'Alle 15 Bosse besiegt!',
-            win_title_unlimited:'🔥 UNBEGRENZTER MODUS ABGESCHLOSSEN!',
-            win_subtitle_unlimited:'Du hast {level} Level überlebt! Unglaublich!',
-            win_score:'⭐ Punktzahl:',
-            win_restart:'🔄 Erneut spielen',
-            match_result_title_win:'🏆 SIEG!',
-            match_result_title_loss:'💀 NIEDERLAGE!',
-            match_result_sub_win:'Du hast die KI übertroffen!',
-            match_result_sub_loss:'Die KI war diesmal zu stark!',
-            match_result_hits:'💥 Deine Treffer:',
-            match_result_ai_hits:'🤖 KI-Treffer:',
-            match_rematch:'🔄 Revanche',
-            match_home:'🏠 Start'
+            move_left:'⬅️ Links', move_right:'Rechts ➡️',
+            quit:'✕ Beenden', back:'← Zurück',
+            pause_title:'⏸️ PAUSE', pause_sub:'Spiel pausiert', resume_btn:'▶ Fortsetzen',
+            retry_title:'💀 Besiegt!', retry_desc:'Der Boss war zu stark! Versuche es erneut!', retry_btn:'🔄 Level wiederholen',
+            timeup_title:'⏱️ Zeit abgelaufen!', timeup_desc:'Du hast keine Zeit mehr!', timeup_score:'⭐ Punktzahl:', timeup_retry:'🔄 Erneut versuchen',
+            win_title_15:'🏆 DU BIST EINE LEGENDE!', win_subtitle_15:'Alle 15 Bosse besiegt!',
+            win_title_unlimited:'🔥 UNBEGRENZTER MODUS ABGESCHLOSSEN!', win_subtitle_unlimited:'Du hast {level} Level überlebt! Unglaublich!',
+            win_score:'⭐ Punktzahl:', win_restart:'🔄 Erneut spielen',
+            match_result_title_win:'🏆 SIEG!', match_result_title_loss:'💀 NIEDERLAGE!',
+            match_result_sub_win:'Du hast die KI übertroffen!', match_result_sub_loss:'Die KI war diesmal zu stark!',
+            match_result_hits:'💥 Deine Treffer:', match_result_ai_hits:'🤖 KI-Treffer:',
+            match_rematch:'🔄 Revanche', match_home:'🏠 Start'
         },
         it: {
-            splash_by:'Gioco creato da:',
-            splash_loading:'Caricando la tua avventura...',
-            loading_title:'🎮 Caricamento...',
-            loading_sub:'Preparando la tua avventura',
-            start_title:'🎯 Spara al Boss!',
-            start_subtitle:'⚔️ Scegli la tua avventura! ⚔️',
-            start_play:'▶ Seleziona Modalità',
-            start_skins:'🎨 Skin',
+            start_title:'🎯 Spara al Boss!', start_subtitle:'⚔️ Scegli la tua avventura! ⚔️',
+            start_play:'▶ Seleziona Modalità', start_skins:'🎨 Skin',
             mode_title:'🎮 Seleziona Modalità di Gioco',
-            mode_15_label:'⚔️ 15 Livelli',
-            mode_15_desc:'Sconfiggi tutti i 15 boss',
-            mode_unlimited_label:'🔥 Modalità Illimitata',
-            mode_unlimited_desc:'Batti il tempo! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'Affronta un rivale IA!',
-            search_title:'🔍 Ricerca avversario...',
-            search_sub:'Trova un rivale degno',
+            mode_15_label:'⚔️ 15 Livelli', mode_15_desc:'Sconfiggi tutti i 15 boss',
+            mode_unlimited_label:'🔥 Modalità Illimitata', mode_unlimited_desc:'Batti il tempo! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Ricerca avversario...', search_sub:'Trova un rivale degno',
             how_title:'⚔️ Come Giocare',
             how_instruction1:'🎯 Clicca sui proiettili nemici per distruggerli!',
             how_instruction2:'💙 Clicca ovunque per sparare al boss!',
@@ -690,72 +525,34 @@
             how_mode_info_unlimited:'🔥 Batti il tempo! Ogni livello aggiunge 370 secondi!',
             how_mode_info_matchmaking:'⚔️ Affronta un rivale IA! Il tuo Elo cambia con ogni partita. Usa le abilità per superare l\'IA!',
             how_start:'⚔️ Inizia Gioco',
-            skin_title:'🎨 Scegli la tua Skin',
-            skin_subtitle:'Seleziona una skin per il tuo personaggio',
-            skin_score_label:'⭐ Il tuo Punteggio:',
-            skin_status_select:'Seleziona una skin da equipaggiare',
-            skin_status_unlock:'🎉 {name} sbloccato!',
-            skin_status_not_enough:'❌ Punti insufficienti',
+            skin_title:'🎨 Scegli la tua Skin', skin_subtitle:'Seleziona una skin per il tuo personaggio',
+            skin_score_label:'⭐ Il tuo Punteggio:', skin_status_select:'Seleziona una skin da equipaggiare',
+            skin_status_unlock:'🎉 {name} sbloccato!', skin_status_not_enough:'❌ Punti insufficienti',
             skin_status_equip:'✅ {name} equipaggiato!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Punteggio:',
-            team_hp:'🛡️ HP squadra:',
-            team_ammo:'🔫 Munizioni squadra:',
-            skill_lasers:'🔵 Laser',
-            skill_dmg:'🔴 x6 Danni',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Squadra',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Punteggio:',
+            skill_lasers:'🔵 Laser', skill_dmg:'🔴 x6 Danni', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Squadra',
             cooldown_ready:'✅ Pronto',
-            move_left:'⬅️ Sinistra',
-            move_right:'Destra ➡️',
-            quit:'✕ Esci',
-            back:'← Indietro',
-            pause_title:'⏸️ PAUSA',
-            pause_sub:'Gioco in pausa',
-            resume_btn:'▶ Riprendi',
-            retry_title:'💀 Sconfitto!',
-            retry_desc:'Il boss era troppo forte! Riprova!',
-            retry_btn:'🔄 Riprova Livello',
-            timeup_title:'⏱️ Tempo Scaduto!',
-            timeup_desc:'Hai finito il tempo!',
-            timeup_score:'⭐ Punteggio:',
-            timeup_retry:'🔄 Riprova',
-            win_title_15:'🏆 SEI UNA LEGGENDA!',
-            win_subtitle_15:'Tutti i 15 boss sconfitti!',
-            win_title_unlimited:'🔥 MODALITÀ ILLIMITATA COMPLETATA!',
-            win_subtitle_unlimited:'Hai sopravvissuto a {level} livelli! Incredibile!',
-            win_score:'⭐ Punteggio:',
-            win_restart:'🔄 Gioca Ancora',
-            match_result_title_win:'🏆 VITTORIA!',
-            match_result_title_loss:'💀 SCONFITTA!',
-            match_result_sub_win:'Hai superato l\'IA!',
-            match_result_sub_loss:'L\'IA era troppo forte questa volta!',
-            match_result_hits:'💥 I tuoi colpi:',
-            match_result_ai_hits:'🤖 Colpi IA:',
-            match_rematch:'🔄 Rivincita',
-            match_home:'🏠 Casa'
+            move_left:'⬅️ Sinistra', move_right:'Destra ➡️',
+            quit:'✕ Esci', back:'← Indietro',
+            pause_title:'⏸️ PAUSA', pause_sub:'Gioco in pausa', resume_btn:'▶ Riprendi',
+            retry_title:'💀 Sconfitto!', retry_desc:'Il boss era troppo forte! Riprova!', retry_btn:'🔄 Riprova Livello',
+            timeup_title:'⏱️ Tempo Scaduto!', timeup_desc:'Hai finito il tempo!', timeup_score:'⭐ Punteggio:', timeup_retry:'🔄 Riprova',
+            win_title_15:'🏆 SEI UNA LEGGENDA!', win_subtitle_15:'Tutti i 15 boss sconfitti!',
+            win_title_unlimited:'🔥 MODALITÀ ILLIMITATA COMPLETATA!', win_subtitle_unlimited:'Hai sopravvissuto a {level} livelli! Incredibile!',
+            win_score:'⭐ Punteggio:', win_restart:'🔄 Gioca Ancora',
+            match_result_title_win:'🏆 VITTORIA!', match_result_title_loss:'💀 SCONFITTA!',
+            match_result_sub_win:'Hai superato l\'IA!', match_result_sub_loss:'L\'IA era troppo forte questa volta!',
+            match_result_hits:'💥 I tuoi colpi:', match_result_ai_hits:'🤖 Colpi IA:',
+            match_rematch:'🔄 Rivincita', match_home:'🏠 Casa'
         },
         pt: {
-            splash_by:'Jogo criado por:',
-            splash_loading:'Carregando sua aventura...',
-            loading_title:'🎮 Carregando...',
-            loading_sub:'Preparando sua aventura',
-            start_title:'🎯 Atire no Chefe!',
-            start_subtitle:'⚔️ Escolha sua aventura! ⚔️',
-            start_play:'▶ Selecionar Modo',
-            start_skins:'🎨 Skins',
+            start_title:'🎯 Atire no Chefe!', start_subtitle:'⚔️ Escolha sua aventura! ⚔️',
+            start_play:'▶ Selecionar Modo', start_skins:'🎨 Skins',
             mode_title:'🎮 Selecionar Modo de Jogo',
-            mode_15_label:'⚔️ 15 Níveis',
-            mode_15_desc:'Derrote todos os 15 chefes',
-            mode_unlimited_label:'🔥 Modo Ilimitado',
-            mode_unlimited_desc:'Vença o relógio! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'Enfrente um rival IA!',
-            search_title:'🔍 Procurando oponente...',
-            search_sub:'Encontrando um rival à altura',
+            mode_15_label:'⚔️ 15 Níveis', mode_15_desc:'Derrote todos os 15 chefes',
+            mode_unlimited_label:'🔥 Modo Ilimitado', mode_unlimited_desc:'Vença o relógio! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Procurando oponente...', search_sub:'Encontrando um rival à altura',
             how_title:'⚔️ Como Jogar',
             how_instruction1:'🎯 Clique nos projéteis inimigos para destruí-los!',
             how_instruction2:'💙 Clique em qualquer lugar para atirar no chefe!',
@@ -770,72 +567,34 @@
             how_mode_info_unlimited:'🔥 Vença o relógio! Cada nível adiciona 370 segundos.',
             how_mode_info_matchmaking:'⚔️ Enfrente um rival IA! Seu Elo muda a cada partida. Use habilidades para superar a IA!',
             how_start:'⚔️ Iniciar Jogo',
-            skin_title:'🎨 Escolha sua Skin',
-            skin_subtitle:'Selecione uma skin para seu personagem',
-            skin_score_label:'⭐ Sua pontuação:',
-            skin_status_select:'Selecione uma skin para equipar',
-            skin_status_unlock:'🎉 {name} desbloqueada!',
-            skin_status_not_enough:'❌ Pontos insuficientes',
+            skin_title:'🎨 Escolha sua Skin', skin_subtitle:'Selecione uma skin para seu personagem',
+            skin_score_label:'⭐ Sua pontuação:', skin_status_select:'Selecione uma skin para equipar',
+            skin_status_unlock:'🎉 {name} desbloqueada!', skin_status_not_enough:'❌ Pontos insuficientes',
             skin_status_equip:'✅ {name} equipada!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Pontuação:',
-            team_hp:'🛡️ HP da equipe:',
-            team_ammo:'🔫 Munição da equipe:',
-            skill_lasers:'🔵 Lasers',
-            skill_dmg:'🔴 x6 Dano',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Equipe',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Pontuação:',
+            skill_lasers:'🔵 Lasers', skill_dmg:'🔴 x6 Dano', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Equipe',
             cooldown_ready:'✅ Pronto',
-            move_left:'⬅️ Esquerda',
-            move_right:'Direita ➡️',
-            quit:'✕ Sair',
-            back:'← Voltar',
-            pause_title:'⏸️ PAUSADO',
-            pause_sub:'Jogo pausado',
-            resume_btn:'▶ Retomar',
-            retry_title:'💀 Derrotado!',
-            retry_desc:'O chefe era forte demais! Tente novamente!',
-            retry_btn:'🔄 Repetir nível',
-            timeup_title:'⏱️ Tempo esgotado!',
-            timeup_desc:'Você ficou sem tempo!',
-            timeup_score:'⭐ Pontuação:',
-            timeup_retry:'🔄 Tentar novamente',
-            win_title_15:'🏆 VOCÊ É UMA LENDA!',
-            win_subtitle_15:'Todos os 15 chefes derrotados!',
-            win_title_unlimited:'🔥 MODO ILIMITADO COMPLETO!',
-            win_subtitle_unlimited:'Você sobreviveu a {level} níveis! Incrível!',
-            win_score:'⭐ Pontuação:',
-            win_restart:'🔄 Jogar novamente',
-            match_result_title_win:'🏆 VITÓRIA!',
-            match_result_title_loss:'💀 DERROTA!',
-            match_result_sub_win:'Você superou a IA!',
-            match_result_sub_loss:'A IA foi muito forte desta vez!',
-            match_result_hits:'💥 Seus acertos:',
-            match_result_ai_hits:'🤖 Acertos IA:',
-            match_rematch:'🔄 Revanche',
-            match_home:'🏠 Início'
+            move_left:'⬅️ Esquerda', move_right:'Direita ➡️',
+            quit:'✕ Sair', back:'← Voltar',
+            pause_title:'⏸️ PAUSADO', pause_sub:'Jogo pausado', resume_btn:'▶ Retomar',
+            retry_title:'💀 Derrotado!', retry_desc:'O chefe era forte demais! Tente novamente!', retry_btn:'🔄 Repetir nível',
+            timeup_title:'⏱️ Tempo esgotado!', timeup_desc:'Você ficou sem tempo!', timeup_score:'⭐ Pontuação:', timeup_retry:'🔄 Tentar novamente',
+            win_title_15:'🏆 VOCÊ É UMA LENDA!', win_subtitle_15:'Todos os 15 chefes derrotados!',
+            win_title_unlimited:'🔥 MODO ILIMITADO COMPLETO!', win_subtitle_unlimited:'Você sobreviveu a {level} níveis! Incrível!',
+            win_score:'⭐ Pontuação:', win_restart:'🔄 Jogar novamente',
+            match_result_title_win:'🏆 VITÓRIA!', match_result_title_loss:'💀 DERROTA!',
+            match_result_sub_win:'Você superou a IA!', match_result_sub_loss:'A IA foi muito forte desta vez!',
+            match_result_hits:'💥 Seus acertos:', match_result_ai_hits:'🤖 Acertos IA:',
+            match_rematch:'🔄 Revanche', match_home:'🏠 Início'
         },
         ru: {
-            splash_by:'Игра создана:',
-            splash_loading:'Загрузка приключения...',
-            loading_title:'🎮 Загрузка...',
-            loading_sub:'Подготовка приключения',
-            start_title:'🎯 Застрели Босса!',
-            start_subtitle:'⚔️ Выбери приключение! ⚔️',
-            start_play:'▶ Выбрать режим',
-            start_skins:'🎨 Скины',
+            start_title:'🎯 Застрели Босса!', start_subtitle:'⚔️ Выбери приключение! ⚔️',
+            start_play:'▶ Выбрать режим', start_skins:'🎨 Скины',
             mode_title:'🎮 Выбор режима игры',
-            mode_15_label:'⚔️ 15 Уровней',
-            mode_15_desc:'Победи всех 15 боссов',
-            mode_unlimited_label:'🔥 Бесконечный режим',
-            mode_unlimited_desc:'Обгони время! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'Сразитесь с ИИ-соперником!',
-            search_title:'🔍 Поиск противника...',
-            search_sub:'Поиск достойного соперника',
+            mode_15_label:'⚔️ 15 Уровней', mode_15_desc:'Победи всех 15 боссов',
+            mode_unlimited_label:'🔥 Бесконечный режим', mode_unlimited_desc:'Обгони время! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Поиск противника...', search_sub:'Поиск достойного соперника',
             how_title:'⚔️ Как играть',
             how_instruction1:'🎯 Кликай по вражеским снарядам, чтобы уничтожить их!',
             how_instruction2:'💙 Кликай в любое место, чтобы стрелять в босса!',
@@ -850,72 +609,34 @@
             how_mode_info_unlimited:'🔥 Обгони время! Каждый уровень добавляет 370 секунд!',
             how_mode_info_matchmaking:'⚔️ Сразитесь с ИИ-соперником! Ваш Elo меняется с каждым матчем. Используйте навыки, чтобы превзойти ИИ!',
             how_start:'⚔️ Начать игру',
-            skin_title:'🎨 Выбери скин',
-            skin_subtitle:'Выбери скин для персонажа',
-            skin_score_label:'⭐ Твой счёт:',
-            skin_status_select:'Выбери скин',
-            skin_status_unlock:'🎉 {name} разблокирован!',
-            skin_status_not_enough:'❌ Недостаточно очков',
+            skin_title:'🎨 Выбери скин', skin_subtitle:'Выбери скин для персонажа',
+            skin_score_label:'⭐ Твой счёт:', skin_status_select:'Выбери скин',
+            skin_status_unlock:'🎉 {name} разблокирован!', skin_status_not_enough:'❌ Недостаточно очков',
             skin_status_equip:'✅ {name} надет!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Счёт:',
-            team_hp:'🛡️ HP команды:',
-            team_ammo:'🔫 Патроны команды:',
-            skill_lasers:'🔵 Лазеры',
-            skill_dmg:'🔴 x6 Урон',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Команда',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Счёт:',
+            skill_lasers:'🔵 Лазеры', skill_dmg:'🔴 x6 Урон', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Команда',
             cooldown_ready:'✅ Готово',
-            move_left:'⬅️ Влево',
-            move_right:'Вправо ➡️',
-            quit:'✕ Выйти',
-            back:'← Назад',
-            pause_title:'⏸️ ПАУЗА',
-            pause_sub:'Игра на паузе',
-            resume_btn:'▶ Продолжить',
-            retry_title:'💀 Поражение!',
-            retry_desc:'Босс слишком силён! Попробуй снова!',
-            retry_btn:'🔄 Повторить уровень',
-            timeup_title:'⏱️ Время вышло!',
-            timeup_desc:'У тебя закончилось время!',
-            timeup_score:'⭐ Счёт:',
-            timeup_retry:'🔄 Попробовать снова',
-            win_title_15:'🏆 ТЫ ЛЕГЕНДА!',
-            win_subtitle_15:'Все 15 боссов побеждены!',
-            win_title_unlimited:'🔥 БЕСКОНЕЧНЫЙ РЕЖИМ ПРОЙДЕН!',
-            win_subtitle_unlimited:'Ты пережил {level} уровней! Потрясающе!',
-            win_score:'⭐ Счёт:',
-            win_restart:'🔄 Играть снова',
-            match_result_title_win:'🏆 ПОБЕДА!',
-            match_result_title_loss:'💀 ПОРАЖЕНИЕ!',
-            match_result_sub_win:'Вы превзошли ИИ!',
-            match_result_sub_loss:'ИИ был слишком силён в этот раз!',
-            match_result_hits:'💥 Ваши попадания:',
-            match_result_ai_hits:'🤖 Попадания ИИ:',
-            match_rematch:'🔄 Реванш',
-            match_home:'🏠 Домой'
+            move_left:'⬅️ Влево', move_right:'Вправо ➡️',
+            quit:'✕ Выйти', back:'← Назад',
+            pause_title:'⏸️ ПАУЗА', pause_sub:'Игра на паузе', resume_btn:'▶ Продолжить',
+            retry_title:'💀 Поражение!', retry_desc:'Босс слишком силён! Попробуй снова!', retry_btn:'🔄 Повторить уровень',
+            timeup_title:'⏱️ Время вышло!', timeup_desc:'У тебя закончилось время!', timeup_score:'⭐ Счёт:', timeup_retry:'🔄 Попробовать снова',
+            win_title_15:'🏆 ТЫ ЛЕГЕНДА!', win_subtitle_15:'Все 15 боссов побеждены!',
+            win_title_unlimited:'🔥 БЕСКОНЕЧНЫЙ РЕЖИМ ПРОЙДЕН!', win_subtitle_unlimited:'Ты пережил {level} уровней! Потрясающе!',
+            win_score:'⭐ Счёт:', win_restart:'🔄 Играть снова',
+            match_result_title_win:'🏆 ПОБЕДА!', match_result_title_loss:'💀 ПОРАЖЕНИЕ!',
+            match_result_sub_win:'Вы превзошли ИИ!', match_result_sub_loss:'ИИ был слишком силён в этот раз!',
+            match_result_hits:'💥 Ваши попадания:', match_result_ai_hits:'🤖 Попадания ИИ:',
+            match_rematch:'🔄 Реванш', match_home:'🏠 Домой'
         },
         ja: {
-            splash_by:'ゲーム制作：',
-            splash_loading:'冒険を読み込み中...',
-            loading_title:'🎮 ロード中...',
-            loading_sub:'冒険の準備中',
-            start_title:'🎯 ボスを撃て!',
-            start_subtitle:'⚔️ 冒険を選ぼう! ⚔️',
-            start_play:'▶ モード選択',
-            start_skins:'🎨 スキン',
+            start_title:'🎯 ボスを撃て!', start_subtitle:'⚔️ 冒険を選ぼう! ⚔️',
+            start_play:'▶ モード選択', start_skins:'🎨 スキン',
             mode_title:'🎮 ゲームモード選択',
-            mode_15_label:'⚔️ 15レベル',
-            mode_15_desc:'15体のボスを倒せ',
-            mode_unlimited_label:'🔥 無限モード',
-            mode_unlimited_desc:'時間と勝負! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 マッチメイキング',
-            mode_match_suffix:'AIライバルと対戦!',
-            search_title:'🔍 対戦相手を検索中...',
-            search_sub:'ふさわしいライバルを探しています',
+            mode_15_label:'⚔️ 15レベル', mode_15_desc:'15体のボスを倒せ',
+            mode_unlimited_label:'🔥 無限モード', mode_unlimited_desc:'時間と勝負! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 マッチメイキング —',
+            search_title:'🔍 対戦相手を検索中...', search_sub:'ふさわしいライバルを探しています',
             how_title:'⚔️ 遊び方',
             how_instruction1:'🎯 敵の弾をクリックして破壊!',
             how_instruction2:'💙 どこでもクリックしてボスを撃て!',
@@ -930,72 +651,34 @@
             how_mode_info_unlimited:'🔥 時間と勝負! 各レベル370秒追加!',
             how_mode_info_matchmaking:'⚔️ AIライバルと対戦! Eloは試合ごとに変動します。スキルを使ってAIを上回ろう!',
             how_start:'⚔️ ゲーム開始',
-            skin_title:'🎨 スキン選択',
-            skin_subtitle:'キャラクターのスキンを選択',
-            skin_score_label:'⭐ スコア:',
-            skin_status_select:'装備するスキンを選択',
-            skin_status_unlock:'🎉 {name} 解除!',
-            skin_status_not_enough:'❌ ポイント不足',
+            skin_title:'🎨 スキン選択', skin_subtitle:'キャラクターのスキンを選択',
+            skin_score_label:'⭐ スコア:', skin_status_select:'装備するスキンを選択',
+            skin_status_unlock:'🎉 {name} 解除!', skin_status_not_enough:'❌ ポイント不足',
             skin_status_equip:'✅ {name} 装備!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ スコア:',
-            team_hp:'🛡️ チームHP:',
-            team_ammo:'🔫 チーム弾薬:',
-            skill_lasers:'🔵 レーザー',
-            skill_dmg:'🔴 6倍ダメ',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ チーム',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ スコア:',
+            skill_lasers:'🔵 レーザー', skill_dmg:'🔴 6倍ダメ', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ チーム',
             cooldown_ready:'✅ 準備完了',
-            move_left:'⬅️ 左',
-            move_right:'右 ➡️',
-            quit:'✕ 終了',
-            back:'← 戻る',
-            pause_title:'⏸️ 一時停止',
-            pause_sub:'ゲーム停止中',
-            resume_btn:'▶ 再開',
-            retry_title:'💀 敗北!',
-            retry_desc:'ボスが強すぎた! 再挑戦!',
-            retry_btn:'🔄 レベル再挑戦',
-            timeup_title:'⏱️ 時間切れ!',
-            timeup_desc:'時間がなくなりました!',
-            timeup_score:'⭐ スコア:',
-            timeup_retry:'🔄 もう一度',
-            win_title_15:'🏆 あなたは伝説だ!',
-            win_subtitle_15:'15体のボスを全て倒した!',
-            win_title_unlimited:'🔥 無限モード完了!',
-            win_subtitle_unlimited:'{level}レベル生き残った! 驚異的!',
-            win_score:'⭐ スコア:',
-            win_restart:'🔄 もう一度',
-            match_result_title_win:'🏆 勝利!',
-            match_result_title_loss:'💀 敗北!',
-            match_result_sub_win:'AIライバルを打ち負かした!',
-            match_result_sub_loss:'AIが強すぎた!',
-            match_result_hits:'💥 あなたのヒット:',
-            match_result_ai_hits:'🤖 AIヒット:',
-            match_rematch:'🔄 再戦',
-            match_home:'🏠 ホーム'
+            move_left:'⬅️ 左', move_right:'右 ➡️',
+            quit:'✕ 終了', back:'← 戻る',
+            pause_title:'⏸️ 一時停止', pause_sub:'ゲーム停止中', resume_btn:'▶ 再開',
+            retry_title:'💀 敗北!', retry_desc:'ボスが強すぎた! 再挑戦!', retry_btn:'🔄 レベル再挑戦',
+            timeup_title:'⏱️ 時間切れ!', timeup_desc:'時間がなくなりました!', timeup_score:'⭐ スコア:', timeup_retry:'🔄 もう一度',
+            win_title_15:'🏆 あなたは伝説だ!', win_subtitle_15:'15体のボスを全て倒した!',
+            win_title_unlimited:'🔥 無限モード完了!', win_subtitle_unlimited:'{level}レベル生き残った! 驚異的!',
+            win_score:'⭐ スコア:', win_restart:'🔄 もう一度',
+            match_result_title_win:'🏆 勝利!', match_result_title_loss:'💀 敗北!',
+            match_result_sub_win:'AIライバルを打ち負かした!', match_result_sub_loss:'AIが強すぎた!',
+            match_result_hits:'💥 あなたのヒット:', match_result_ai_hits:'🤖 AIヒット:',
+            match_rematch:'🔄 再戦', match_home:'🏠 ホーム'
         },
         ko: {
-            splash_by:'게임 제작:',
-            splash_loading:'모험을 불러오는 중...',
-            loading_title:'🎮 로딩 중...',
-            loading_sub:'모험 준비 중',
-            start_title:'🎯 보스를 쏴라!',
-            start_subtitle:'⚔️ 모험을 선택하세요! ⚔️',
-            start_play:'▶ 모드 선택',
-            start_skins:'🎨 스킨',
+            start_title:'🎯 보스를 쏴라!', start_subtitle:'⚔️ 모험을 선택하세요! ⚔️',
+            start_play:'▶ 모드 선택', start_skins:'🎨 스킨',
             mode_title:'🎮 게임 모드 선택',
-            mode_15_label:'⚔️ 15 레벨',
-            mode_15_desc:'15명의 보스를 물리치세요',
-            mode_unlimited_label:'🔥 무한 모드',
-            mode_unlimited_desc:'시간을 이겨라! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 매치메이킹',
-            mode_match_suffix:'AI 라이벌과 대결!',
-            search_title:'🔍 상대 검색 중...',
-            search_sub:'적절한 라이벌 찾는 중',
+            mode_15_label:'⚔️ 15 레벨', mode_15_desc:'15명의 보스를 물리치세요',
+            mode_unlimited_label:'🔥 무한 모드', mode_unlimited_desc:'시간을 이겨라! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 매치메이킹 —',
+            search_title:'🔍 상대 검색 중...', search_sub:'적절한 라이벌 찾는 중',
             how_title:'⚔️ 게임 방법',
             how_instruction1:'🎯 적 탄환을 클릭하여 파괴하세요!',
             how_instruction2:'💙 아무 곳이나 클릭하여 보스를 쏘세요!',
@@ -1010,72 +693,34 @@
             how_mode_info_unlimited:'🔥 시간을 이겨라! 각 레벨 370초 추가!',
             how_mode_info_matchmaking:'⚔️ AI 라이벌과 대결! 매 경기마다 Elo가 변합니다. 스킬을 사용하여 AI를 이겨내세요!',
             how_start:'⚔️ 게임 시작',
-            skin_title:'🎨 스킨 선택',
-            skin_subtitle:'캐릭터 스킨을 선택하세요',
-            skin_score_label:'⭐ 점수:',
-            skin_status_select:'장착할 스킨 선택',
-            skin_status_unlock:'🎉 {name} 해금!',
-            skin_status_not_enough:'❌ 포인트 부족',
+            skin_title:'🎨 스킨 선택', skin_subtitle:'캐릭터 스킨을 선택하세요',
+            skin_score_label:'⭐ 점수:', skin_status_select:'장착할 스킨 선택',
+            skin_status_unlock:'🎉 {name} 해금!', skin_status_not_enough:'❌ 포인트 부족',
             skin_status_equip:'✅ {name} 장착!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ 점수:',
-            team_hp:'🛡️ 팀 HP:',
-            team_ammo:'🔫 팀 탄약:',
-            skill_lasers:'🔵 레이저',
-            skill_dmg:'🔴 6배 데미지',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ 팀',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ 점수:',
+            skill_lasers:'🔵 레이저', skill_dmg:'🔴 6배 데미지', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ 팀',
             cooldown_ready:'✅ 준비됨',
-            move_left:'⬅️ 왼쪽',
-            move_right:'오른쪽 ➡️',
-            quit:'✕ 종료',
-            back:'← 뒤로',
-            pause_title:'⏸️ 일시정지',
-            pause_sub:'게임 일시정지',
-            resume_btn:'▶ 계속',
-            retry_title:'💀 패배!',
-            retry_desc:'보스가 너무 강했습니다! 다시 시도!',
-            retry_btn:'🔄 레벨 재도전',
-            timeup_title:'⏱️ 시간 초과!',
-            timeup_desc:'시간이 다 되었습니다!',
-            timeup_score:'⭐ 점수:',
-            timeup_retry:'🔄 다시 시도',
-            win_title_15:'🏆 당신은 전설입니다!',
-            win_subtitle_15:'15명의 보스를 모두 물리쳤습니다!',
-            win_title_unlimited:'🔥 무한 모드 완료!',
-            win_subtitle_unlimited:'{level}레벨 생존! 놀랍습니다!',
-            win_score:'⭐ 점수:',
-            win_restart:'🔄 다시 플레이',
-            match_result_title_win:'🏆 승리!',
-            match_result_title_loss:'💀 패배!',
-            match_result_sub_win:'AI를 능가했습니다!',
-            match_result_sub_loss:'이번에는 AI가 너무 강했습니다!',
-            match_result_hits:'💥 당신의 히트:',
-            match_result_ai_hits:'🤖 AI 히트:',
-            match_rematch:'🔄 재대결',
-            match_home:'🏠 홈'
+            move_left:'⬅️ 왼쪽', move_right:'오른쪽 ➡️',
+            quit:'✕ 종료', back:'← 뒤로',
+            pause_title:'⏸️ 일시정지', pause_sub:'게임 일시정지', resume_btn:'▶ 계속',
+            retry_title:'💀 패배!', retry_desc:'보스가 너무 강했습니다! 다시 시도!', retry_btn:'🔄 레벨 재도전',
+            timeup_title:'⏱️ 시간 초과!', timeup_desc:'시간이 다 되었습니다!', timeup_score:'⭐ 점수:', timeup_retry:'🔄 다시 시도',
+            win_title_15:'🏆 당신은 전설입니다!', win_subtitle_15:'15명의 보스를 모두 물리쳤습니다!',
+            win_title_unlimited:'🔥 무한 모드 완료!', win_subtitle_unlimited:'{level}레벨 생존! 놀랍습니다!',
+            win_score:'⭐ 점수:', win_restart:'🔄 다시 플레이',
+            match_result_title_win:'🏆 승리!', match_result_title_loss:'💀 패배!',
+            match_result_sub_win:'AI를 능가했습니다!', match_result_sub_loss:'이번에는 AI가 너무 강했습니다!',
+            match_result_hits:'💥 당신의 히트:', match_result_ai_hits:'🤖 AI 히트:',
+            match_rematch:'🔄 재대결', match_home:'🏠 홈'
         },
         zh: {
-            splash_by:'游戏制作：',
-            splash_loading:'加载你的冒险...',
-            loading_title:'🎮 加载中...',
-            loading_sub:'准备你的冒险',
-            start_title:'🎯 射击老板!',
-            start_subtitle:'⚔️ 选择你的冒险! ⚔️',
-            start_play:'▶ 选择模式',
-            start_skins:'🎨 皮肤',
+            start_title:'🎯 射击老板!', start_subtitle:'⚔️ 选择你的冒险! ⚔️',
+            start_play:'▶ 选择模式', start_skins:'🎨 皮肤',
             mode_title:'🎮 选择游戏模式',
-            mode_15_label:'⚔️ 15关',
-            mode_15_desc:'击败所有15个老板',
-            mode_unlimited_label:'🔥 无限模式',
-            mode_unlimited_desc:'争分夺秒! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 匹配',
-            mode_match_suffix:'与AI对手对战!',
-            search_title:'🔍 搜索对手...',
-            search_sub:'寻找合适的对手',
+            mode_15_label:'⚔️ 15关', mode_15_desc:'击败所有15个老板',
+            mode_unlimited_label:'🔥 无限模式', mode_unlimited_desc:'争分夺秒! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 匹配 —',
+            search_title:'🔍 搜索对手...', search_sub:'寻找合适的对手',
             how_title:'⚔️ 游戏玩法',
             how_instruction1:'🎯 点击敌方弹幕将其摧毁!',
             how_instruction2:'💙 点击任意位置射击老板!',
@@ -1090,72 +735,34 @@
             how_mode_info_unlimited:'🔥 争分夺秒! 每关增加370秒!',
             how_mode_info_matchmaking:'⚔️ 与AI对手对战! 每场比赛Elo都会变化。使用技能击败AI!',
             how_start:'⚔️ 开始游戏',
-            skin_title:'🎨 选择你的皮肤',
-            skin_subtitle:'为你的角色选择皮肤',
-            skin_score_label:'⭐ 你的分数:',
-            skin_status_select:'选择要装备的皮肤',
-            skin_status_unlock:'🎉 {name} 已解锁!',
-            skin_status_not_enough:'❌ 积分不足',
+            skin_title:'🎨 选择你的皮肤', skin_subtitle:'为你的角色选择皮肤',
+            skin_score_label:'⭐ 你的分数:', skin_status_select:'选择要装备的皮肤',
+            skin_status_unlock:'🎉 {name} 已解锁!', skin_status_not_enough:'❌ 积分不足',
             skin_status_equip:'✅ {name} 已装备!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ 分数:',
-            team_hp:'🛡️ 团队生命:',
-            team_ammo:'🔫 团队弹药:',
-            skill_lasers:'🔵 激光',
-            skill_dmg:'🔴 6倍伤害',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ 团队',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ 分数:',
+            skill_lasers:'🔵 激光', skill_dmg:'🔴 6倍伤害', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ 团队',
             cooldown_ready:'✅ 就绪',
-            move_left:'⬅️ 左',
-            move_right:'右 ➡️',
-            quit:'✕ 退出',
-            back:'← 返回',
-            pause_title:'⏸️ 暂停',
-            pause_sub:'游戏已暂停',
-            resume_btn:'▶ 继续',
-            retry_title:'💀 失败!',
-            retry_desc:'老板太强了! 再试一次!',
-            retry_btn:'🔄 重试关卡',
-            timeup_title:'⏱️ 时间到!',
-            timeup_desc:'你的时间用完了!',
-            timeup_score:'⭐ 分数:',
-            timeup_retry:'🔄 再试一次',
-            win_title_15:'🏆 你是传奇!',
-            win_subtitle_15:'所有15个老板都被击败!',
-            win_title_unlimited:'🔥 无限模式完成!',
-            win_subtitle_unlimited:'你存活了{level}关! 太棒了!',
-            win_score:'⭐ 分数:',
-            win_restart:'🔄 再玩一次',
-            match_result_title_win:'🏆 胜利!',
-            match_result_title_loss:'💀 失败!',
-            match_result_sub_win:'你击败了AI对手!',
-            match_result_sub_loss:'这次AI太强了!',
-            match_result_hits:'💥 你的命中:',
-            match_result_ai_hits:'🤖 AI命中:',
-            match_rematch:'🔄 再战',
-            match_home:'🏠 首页'
+            move_left:'⬅️ 左', move_right:'右 ➡️',
+            quit:'✕ 退出', back:'← 返回',
+            pause_title:'⏸️ 暂停', pause_sub:'游戏已暂停', resume_btn:'▶ 继续',
+            retry_title:'💀 失败!', retry_desc:'老板太强了! 再试一次!', retry_btn:'🔄 重试关卡',
+            timeup_title:'⏱️ 时间到!', timeup_desc:'你的时间用完了!', timeup_score:'⭐ 分数:', timeup_retry:'🔄 再试一次',
+            win_title_15:'🏆 你是传奇!', win_subtitle_15:'所有15个老板都被击败!',
+            win_title_unlimited:'🔥 无限模式完成!', win_subtitle_unlimited:'你存活了{level}关! 太棒了!',
+            win_score:'⭐ 分数:', win_restart:'🔄 再玩一次',
+            match_result_title_win:'🏆 胜利!', match_result_title_loss:'💀 失败!',
+            match_result_sub_win:'你击败了AI对手!', match_result_sub_loss:'这次AI太强了!',
+            match_result_hits:'💥 你的命中:', match_result_ai_hits:'🤖 AI命中:',
+            match_rematch:'🔄 再战', match_home:'🏠 首页'
         },
         ar: {
-            splash_by:'صنع اللعبة:',
-            splash_loading:'تحميل مغامرتك...',
-            loading_title:'🎮 جاري التحميل...',
-            loading_sub:'تحضير مغامرتك',
-            start_title:'🎯 أطلق النار على الزعيم!',
-            start_subtitle:'⚔️ اختر مغامرتك! ⚔️',
-            start_play:'▶ اختر الوضع',
-            start_skins:'🎨 الأشكال',
+            start_title:'🎯 أطلق النار على الزعيم!', start_subtitle:'⚔️ اختر مغامرتك! ⚔️',
+            start_play:'▶ اختر الوضع', start_skins:'🎨 الأشكال',
             mode_title:'🎮 اختر وضع اللعبة',
-            mode_15_label:'⚔️ 15 مستوى',
-            mode_15_desc:'اهزم جميع الـ 15 زعيماً',
-            mode_unlimited_label:'🔥 وضع غير محدود',
-            mode_unlimited_desc:'تغلب على الوقت! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 مباراة',
-            mode_match_suffix:'واجه خصمًا ذكاءً اصطناعيًا!',
-            search_title:'🔍 البحث عن خصم...',
-            search_sub:'البحث عن منافس جدير',
+            mode_15_label:'⚔️ 15 مستوى', mode_15_desc:'اهزم جميع الـ 15 زعيماً',
+            mode_unlimited_label:'🔥 وضع غير محدود', mode_unlimited_desc:'تغلب على الوقت! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 مباراة —',
+            search_title:'🔍 البحث عن خصم...', search_sub:'البحث عن منافس جدير',
             how_title:'⚔️ كيفية اللعب',
             how_instruction1:'🎯 انقر على قذائف العدو لتدميرها!',
             how_instruction2:'💙 انقر في أي مكان لإطلاق النار على الزعيم!',
@@ -1170,72 +777,34 @@
             how_mode_info_unlimited:'🔥 تغلب على الوقت! كل مستوى يضيف 370 ثانية!',
             how_mode_info_matchmaking:'⚔️ واجه خصمًا ذكاءً اصطناعيًا! يتغير Elo الخاص بك مع كل مباراة. استخدم المهارات لتتفوق على الذكاء الاصطناعي!',
             how_start:'⚔️ ابدأ اللعبة',
-            skin_title:'🎨 اختر شكلك',
-            skin_subtitle:'اختر شكلاً لشخصيتك',
-            skin_score_label:'⭐ نتيجتك:',
-            skin_status_select:'اختر شكلاً لتجهيزه',
-            skin_status_unlock:'🎉 {name} تم فتحه!',
-            skin_status_not_enough:'❌ نقاط غير كافية',
+            skin_title:'🎨 اختر شكلك', skin_subtitle:'اختر شكلاً لشخصيتك',
+            skin_score_label:'⭐ نتيجتك:', skin_status_select:'اختر شكلاً لتجهيزه',
+            skin_status_unlock:'🎉 {name} تم فتحه!', skin_status_not_enough:'❌ نقاط غير كافية',
             skin_status_equip:'✅ {name} تم تجهيزه!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ النتيجة:',
-            team_hp:'🛡️ صحة الفريق:',
-            team_ammo:'🔫 ذخيرة الفريق:',
-            skill_lasers:'🔵 ليزر',
-            skill_dmg:'🔴 ضرر x6',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ فريق',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ النتيجة:',
+            skill_lasers:'🔵 ليزر', skill_dmg:'🔴 ضرر x6', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ فريق',
             cooldown_ready:'✅ جاهز',
-            move_left:'⬅️ يسار',
-            move_right:'يمين ➡️',
-            quit:'✕ خروج',
-            back:'← رجوع',
-            pause_title:'⏸️ إيقاف مؤقت',
-            pause_sub:'اللعبة متوقفة',
-            resume_btn:'▶ استئناف',
-            retry_title:'💀 هُزمت!',
-            retry_desc:'الزعيم كان قوياً جداً! حاول مرة أخرى!',
-            retry_btn:'🔄 أعد المحاولة',
-            timeup_title:'⏱️ انتهى الوقت!',
-            timeup_desc:'نفد وقتك!',
-            timeup_score:'⭐ النتيجة:',
-            timeup_retry:'🔄 حاول مرة أخرى',
-            win_title_15:'🏆 أنت أسطورة!',
-            win_subtitle_15:'تم هزيمة جميع الـ 15 زعيماً!',
-            win_title_unlimited:'🔥 اكتمل الوضع غير المحدود!',
-            win_subtitle_unlimited:'لقد نجوت من {level} مستوى! مذهل!',
-            win_score:'⭐ النتيجة:',
-            win_restart:'🔄 العب مرة أخرى',
-            match_result_title_win:'🏆 انتصار!',
-            match_result_title_loss:'💀 هزيمة!',
-            match_result_sub_win:'لقد تفوقت على الذكاء الاصطناعي!',
-            match_result_sub_loss:'كان الذكاء الاصطناعي قويًا جدًا هذه المرة!',
-            match_result_hits:'💥 ضرباتك:',
-            match_result_ai_hits:'🤖 ضربات الذكاء الاصطناعي:',
-            match_rematch:'🔄 مباراة العودة',
-            match_home:'🏠 الرئيسية'
+            move_left:'⬅️ يسار', move_right:'يمين ➡️',
+            quit:'✕ خروج', back:'← رجوع',
+            pause_title:'⏸️ إيقاف مؤقت', pause_sub:'اللعبة متوقفة', resume_btn:'▶ استئناف',
+            retry_title:'💀 هُزمت!', retry_desc:'الزعيم كان قوياً جداً! حاول مرة أخرى!', retry_btn:'🔄 أعد المحاولة',
+            timeup_title:'⏱️ انتهى الوقت!', timeup_desc:'نفد وقتك!', timeup_score:'⭐ النتيجة:', timeup_retry:'🔄 حاول مرة أخرى',
+            win_title_15:'🏆 أنت أسطورة!', win_subtitle_15:'تم هزيمة جميع الـ 15 زعيماً!',
+            win_title_unlimited:'🔥 اكتمل الوضع غير المحدود!', win_subtitle_unlimited:'لقد نجوت من {level} مستوى! مذهل!',
+            win_score:'⭐ النتيجة:', win_restart:'🔄 العب مرة أخرى',
+            match_result_title_win:'🏆 انتصار!', match_result_title_loss:'💀 هزيمة!',
+            match_result_sub_win:'لقد تفوقت على الذكاء الاصطناعي!', match_result_sub_loss:'كان الذكاء الاصطناعي قويًا جدًا هذه المرة!',
+            match_result_hits:'💥 ضرباتك:', match_result_ai_hits:'🤖 ضربات الذكاء الاصطناعي:',
+            match_rematch:'🔄 مباراة العودة', match_home:'🏠 الرئيسية'
         },
         hi: {
-            splash_by:'गेम निर्माता:',
-            splash_loading:'आपका साहसिक लोड हो रहा है...',
-            loading_title:'🎮 लोड हो रहा है...',
-            loading_sub:'आपका साहसिक तैयार किया जा रहा है',
-            start_title:'🎯 बॉस को गोली मारो!',
-            start_subtitle:'⚔️ अपना साहसिक चुनें! ⚔️',
-            start_play:'▶ मोड चुनें',
-            start_skins:'🎨 स्किन्स',
+            start_title:'🎯 बॉस को गोली मारो!', start_subtitle:'⚔️ अपना साहसिक चुनें! ⚔️',
+            start_play:'▶ मोड चुनें', start_skins:'🎨 स्किन्स',
             mode_title:'🎮 गेम मोड चुनें',
-            mode_15_label:'⚔️ 15 स्तर',
-            mode_15_desc:'सभी 15 बॉस को हराएं',
-            mode_unlimited_label:'🔥 असीमित मोड',
-            mode_unlimited_desc:'समय को हराएं! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 मैचमेकिंग',
-            mode_match_suffix:'AI प्रतिद्वंद्वी से लड़ें!',
-            search_title:'🔍 प्रतिद्वंद्वी खोज रहे हैं...',
-            search_sub:'एक योग्य प्रतिद्वंद्वी ढूंढ रहे हैं',
+            mode_15_label:'⚔️ 15 स्तर', mode_15_desc:'सभी 15 बॉस को हराएं',
+            mode_unlimited_label:'🔥 असीमित मोड', mode_unlimited_desc:'समय को हराएं! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 मैचमेकिंग —',
+            search_title:'🔍 प्रतिद्वंद्वी खोज रहे हैं...', search_sub:'एक योग्य प्रतिद्वंद्वी ढूंढ रहे हैं',
             how_title:'⚔️ कैसे खेलें',
             how_instruction1:'🎯 दुश्मन के प्रोजेक्टाइल पर क्लिक करके उन्हें नष्ट करें!',
             how_instruction2:'💙 बॉस पर गोली चलाने के लिए कहीं भी क्लिक करें!',
@@ -1250,72 +819,34 @@
             how_mode_info_unlimited:'🔥 समय को हराएं! प्रत्येक स्तर 370 सेकंड जोड़ता है!',
             how_mode_info_matchmaking:'⚔️ AI प्रतिद्वंद्वी से लड़ें! हर मैच के साथ आपका Elo बदलता है। AI को हराने के लिए कौशल का उपयोग करें!',
             how_start:'⚔️ खेल शुरू करें',
-            skin_title:'🎨 अपनी स्किन चुनें',
-            skin_subtitle:'अपने चरित्र के लिए एक स्किन चुनें',
-            skin_score_label:'⭐ आपका स्कोर:',
-            skin_status_select:'लैस करने के लिए स्किन चुनें',
-            skin_status_unlock:'🎉 {name} अनलॉक!',
-            skin_status_not_enough:'❌ पर्याप्त अंक नहीं',
+            skin_title:'🎨 अपनी स्किन चुनें', skin_subtitle:'अपने चरित्र के लिए एक स्किन चुनें',
+            skin_score_label:'⭐ आपका स्कोर:', skin_status_select:'लैस करने के लिए स्किन चुनें',
+            skin_status_unlock:'🎉 {name} अनलॉक!', skin_status_not_enough:'❌ पर्याप्त अंक नहीं',
             skin_status_equip:'✅ {name} लैस!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ स्कोर:',
-            team_hp:'🛡️ टीम HP:',
-            team_ammo:'🔫 टीम गोला-बारूद:',
-            skill_lasers:'🔵 लेजर',
-            skill_dmg:'🔴 6x क्षति',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ टीम',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ स्कोर:',
+            skill_lasers:'🔵 लेजर', skill_dmg:'🔴 6x क्षति', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ टीम',
             cooldown_ready:'✅ तैयार',
-            move_left:'⬅️ बाएं',
-            move_right:'दाएं ➡️',
-            quit:'✕ छोड़ें',
-            back:'← वापस',
-            pause_title:'⏸️ रुका हुआ',
-            pause_sub:'खेल रुका हुआ है',
-            resume_btn:'▶ फिर शुरू करें',
-            retry_title:'💀 हार गए!',
-            retry_desc:'बॉस बहुत मजबूत था! पुनः प्रयास करें!',
-            retry_btn:'🔄 स्तर पुनः प्रयास करें',
-            timeup_title:'⏱️ समय समाप्त!',
-            timeup_desc:'आपका समय समाप्त हो गया!',
-            timeup_score:'⭐ स्कोर:',
-            timeup_retry:'🔄 पुनः प्रयास करें',
-            win_title_15:'🏆 आप एक किंवदंती हैं!',
-            win_subtitle_15:'सभी 15 बॉस हरा दिए गए!',
-            win_title_unlimited:'🔥 असीमित मोड पूरा!',
-            win_subtitle_unlimited:'आप {level} स्तरों तक जीवित रहे! अद्भुत!',
-            win_score:'⭐ स्कोर:',
-            win_restart:'🔄 फिर से खेलें',
-            match_result_title_win:'🏆 जीत!',
-            match_result_title_loss:'💀 हार!',
-            match_result_sub_win:'आपने AI को हरा दिया!',
-            match_result_sub_loss:'इस बार AI बहुत मजबूत था!',
-            match_result_hits:'💥 आपकी हिट्स:',
-            match_result_ai_hits:'🤖 AI हिट्स:',
-            match_rematch:'🔄 पुनर्मैच',
-            match_home:'🏠 होम'
+            move_left:'⬅️ बाएं', move_right:'दाएं ➡️',
+            quit:'✕ छोड़ें', back:'← वापस',
+            pause_title:'⏸️ रुका हुआ', pause_sub:'खेल रुका हुआ है', resume_btn:'▶ फिर शुरू करें',
+            retry_title:'💀 हार गए!', retry_desc:'बॉस बहुत मजबूत था! पुनः प्रयास करें!', retry_btn:'🔄 स्तर पुनः प्रयास करें',
+            timeup_title:'⏱️ समय समाप्त!', timeup_desc:'आपका समय समाप्त हो गया!', timeup_score:'⭐ स्कोर:', timeup_retry:'🔄 पुनः प्रयास करें',
+            win_title_15:'🏆 आप एक किंवदंती हैं!', win_subtitle_15:'सभी 15 बॉस हरा दिए गए!',
+            win_title_unlimited:'🔥 असीमित मोड पूरा!', win_subtitle_unlimited:'आप {level} स्तरों तक जीवित रहे! अद्भुत!',
+            win_score:'⭐ स्कोर:', win_restart:'🔄 फिर से खेलें',
+            match_result_title_win:'🏆 जीत!', match_result_title_loss:'💀 हार!',
+            match_result_sub_win:'आपने AI को हरा दिया!', match_result_sub_loss:'इस बार AI बहुत मजबूत था!',
+            match_result_hits:'💥 आपकी हिट्स:', match_result_ai_hits:'🤖 AI हिट्स:',
+            match_rematch:'🔄 पुनर्मैच', match_home:'🏠 होम'
         },
         nl: {
-            splash_by:'Spel gemaakt door:',
-            splash_loading:'Je avontuur laden...',
-            loading_title:'🎮 Laden...',
-            loading_sub:'Je avontuur voorbereiden',
-            start_title:'🎯 Schiet de Baas!',
-            start_subtitle:'⚔️ Kies je avontuur! ⚔️',
-            start_play:'▶ Selecteer modus',
-            start_skins:'🎨 Skins',
+            start_title:'🎯 Schiet de Baas!', start_subtitle:'⚔️ Kies je avontuur! ⚔️',
+            start_play:'▶ Selecteer modus', start_skins:'🎨 Skins',
             mode_title:'🎮 Selecteer spelmodus',
-            mode_15_label:'⚔️ 15 Levels',
-            mode_15_desc:'Versla alle 15 bazen',
-            mode_unlimited_label:'🔥 Onbeperkte modus',
-            mode_unlimited_desc:'Versla de klok! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'Strijd tegen een AI-rivaal!',
-            search_title:'🔍 Zoeken naar tegenstander...',
-            search_sub:'Een waardige rivaal vinden',
+            mode_15_label:'⚔️ 15 Levels', mode_15_desc:'Versla alle 15 bazen',
+            mode_unlimited_label:'🔥 Onbeperkte modus', mode_unlimited_desc:'Versla de klok! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Zoeken naar tegenstander...', search_sub:'Een waardige rivaal vinden',
             how_title:'⚔️ Hoe te spelen',
             how_instruction1:'🎯 Klik op vijandelijke projectielen om ze te vernietigen!',
             how_instruction2:'💙 Klik ergens om op de baas te schieten!',
@@ -1330,72 +861,34 @@
             how_mode_info_unlimited:'🔥 Versla de klok! Elk level voegt 370 seconden toe!',
             how_mode_info_matchmaking:'⚔️ Strijd tegen een AI-rivaal! Je Elo verandert met elke wedstrijd. Gebruik vaardigheden om de AI te overtreffen!',
             how_start:'⚔️ Start spel',
-            skin_title:'🎨 Kies je skin',
-            skin_subtitle:'Selecteer een skin voor je personage',
-            skin_score_label:'⭐ Jouw score:',
-            skin_status_select:'Selecteer een skin om uit te rusten',
-            skin_status_unlock:'🎉 {name} ontgrendeld!',
-            skin_status_not_enough:'❌ Niet genoeg punten',
+            skin_title:'🎨 Kies je skin', skin_subtitle:'Selecteer een skin voor je personage',
+            skin_score_label:'⭐ Jouw score:', skin_status_select:'Selecteer een skin om uit te rusten',
+            skin_status_unlock:'🎉 {name} ontgrendeld!', skin_status_not_enough:'❌ Niet genoeg punten',
             skin_status_equip:'✅ {name} uitgerust!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Score:',
-            team_hp:'🛡️ Team HP:',
-            team_ammo:'🔫 Team munitie:',
-            skill_lasers:'🔵 Lasers',
-            skill_dmg:'🔴 6x Schade',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Team',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Score:',
+            skill_lasers:'🔵 Lasers', skill_dmg:'🔴 6x Schade', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Team',
             cooldown_ready:'✅ Klaar',
-            move_left:'⬅️ Links',
-            move_right:'Rechts ➡️',
-            quit:'✕ Stoppen',
-            back:'← Terug',
-            pause_title:'⏸️ GEPAUZEERD',
-            pause_sub:'Spel is gepauzeerd',
-            resume_btn:'▶ Hervatten',
-            retry_title:'💀 Verslagen!',
-            retry_desc:'De baas was te sterk! Probeer opnieuw!',
-            retry_btn:'🔄 Level opnieuw',
-            timeup_title:'⏱️ Tijd is om!',
-            timeup_desc:'Je tijd is op!',
-            timeup_score:'⭐ Score:',
-            timeup_retry:'🔄 Probeer opnieuw',
-            win_title_15:'🏆 JE BENT EEN LEGENDE!',
-            win_subtitle_15:'Alle 15 bazen verslagen!',
-            win_title_unlimited:'🔥 ONBEPERKTE MODUS VOLTOOID!',
-            win_subtitle_unlimited:'Je hebt {level} levels overleefd! Geweldig!',
-            win_score:'⭐ Score:',
-            win_restart:'🔄 Opnieuw spelen',
-            match_result_title_win:'🏆 OVERWINNING!',
-            match_result_title_loss:'💀 NEDERLAAG!',
-            match_result_sub_win:'Je hebt de AI overtroffen!',
-            match_result_sub_loss:'De AI was deze keer te sterk!',
-            match_result_hits:'💥 Jouw treffers:',
-            match_result_ai_hits:'🤖 AI-treffers:',
-            match_rematch:'🔄 Rematch',
-            match_home:'🏠 Home'
+            move_left:'⬅️ Links', move_right:'Rechts ➡️',
+            quit:'✕ Stoppen', back:'← Terug',
+            pause_title:'⏸️ GEPAUZEERD', pause_sub:'Spel is gepauzeerd', resume_btn:'▶ Hervatten',
+            retry_title:'💀 Verslagen!', retry_desc:'De baas was te sterk! Probeer opnieuw!', retry_btn:'🔄 Level opnieuw',
+            timeup_title:'⏱️ Tijd is om!', timeup_desc:'Je tijd is op!', timeup_score:'⭐ Score:', timeup_retry:'🔄 Probeer opnieuw',
+            win_title_15:'🏆 JE BENT EEN LEGENDE!', win_subtitle_15:'Alle 15 bazen verslagen!',
+            win_title_unlimited:'🔥 ONBEPERKTE MODUS VOLTOOID!', win_subtitle_unlimited:'Je hebt {level} levels overleefd! Geweldig!',
+            win_score:'⭐ Score:', win_restart:'🔄 Opnieuw spelen',
+            match_result_title_win:'🏆 OVERWINNING!', match_result_title_loss:'💀 NEDERLAAG!',
+            match_result_sub_win:'Je hebt de AI overtroffen!', match_result_sub_loss:'De AI was deze keer te sterk!',
+            match_result_hits:'💥 Jouw treffers:', match_result_ai_hits:'🤖 AI-treffers:',
+            match_rematch:'🔄 Rematch', match_home:'🏠 Home'
         },
         pl: {
-            splash_by:'Gra stworzona przez:',
-            splash_loading:'Ładowanie przygody...',
-            loading_title:'🎮 Ładowanie...',
-            loading_sub:'Przygotowywanie przygody',
-            start_title:'🎯 Zastrzel Szefa!',
-            start_subtitle:'⚔️ Wybierz przygodę! ⚔️',
-            start_play:'▶ Wybierz tryb',
-            start_skins:'🎨 Skórki',
+            start_title:'🎯 Zastrzel Szefa!', start_subtitle:'⚔️ Wybierz przygodę! ⚔️',
+            start_play:'▶ Wybierz tryb', start_skins:'🎨 Skórki',
             mode_title:'🎮 Wybierz tryb gry',
-            mode_15_label:'⚔️ 15 Poziomów',
-            mode_15_desc:'Pokonaj wszystkich 15 szefów',
-            mode_unlimited_label:'🔥 Tryb nieograniczony',
-            mode_unlimited_desc:'Pokonaj czas! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking',
-            mode_match_suffix:'Zmierz się z rywalem AI!',
-            search_title:'🔍 Szukanie przeciwnika...',
-            search_sub:'Znajdź godnego rywala',
+            mode_15_label:'⚔️ 15 Poziomów', mode_15_desc:'Pokonaj wszystkich 15 szefów',
+            mode_unlimited_label:'🔥 Tryb nieograniczony', mode_unlimited_desc:'Pokonaj czas! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Matchmaking —',
+            search_title:'🔍 Szukanie przeciwnika...', search_sub:'Znajdź godnego rywala',
             how_title:'⚔️ Jak grać',
             how_instruction1:'🎯 Kliknij na wrogie pociski, aby je zniszczyć!',
             how_instruction2:'💙 Kliknij gdziekolwiek, aby strzelić do szefa!',
@@ -1410,72 +903,34 @@
             how_mode_info_unlimited:'🔥 Pokonaj czas! Każdy poziom dodaje 370 sekund!',
             how_mode_info_matchmaking:'⚔️ Zmierz się z rywalem AI! Twój Elo zmienia się z każdym meczem. Użyj umiejętności, aby pokonać AI!',
             how_start:'⚔️ Rozpocznij grę',
-            skin_title:'🎨 Wybierz skórkę',
-            skin_subtitle:'Wybierz skórkę dla swojej postaci',
-            skin_score_label:'⭐ Twój wynik:',
-            skin_status_select:'Wybierz skórkę do założenia',
-            skin_status_unlock:'🎉 {name} odblokowana!',
-            skin_status_not_enough:'❌ Za mało punktów',
+            skin_title:'🎨 Wybierz skórkę', skin_subtitle:'Wybierz skórkę dla swojej postaci',
+            skin_score_label:'⭐ Twój wynik:', skin_status_select:'Wybierz skórkę do założenia',
+            skin_status_unlock:'🎉 {name} odblokowana!', skin_status_not_enough:'❌ Za mało punktów',
             skin_status_equip:'✅ {name} założona!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Wynik:',
-            team_hp:'🛡️ HP drużyny:',
-            team_ammo:'🔫 Amunicja drużyny:',
-            skill_lasers:'🔵 Lasery',
-            skill_dmg:'🔴 6x Obrażenia',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Drużyna',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Wynik:',
+            skill_lasers:'🔵 Lasery', skill_dmg:'🔴 6x Obrażenia', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Drużyna',
             cooldown_ready:'✅ Gotowe',
-            move_left:'⬅️ Lewo',
-            move_right:'Prawo ➡️',
-            quit:'✕ Wyjdź',
-            back:'← Wstecz',
-            pause_title:'⏸️ WSTRZYMANO',
-            pause_sub:'Gra wstrzymana',
-            resume_btn:'▶ Wznów',
-            retry_title:'💀 Pokonany!',
-            retry_desc:'Szef był zbyt silny! Spróbuj ponownie!',
-            retry_btn:'🔄 Powtórz poziom',
-            timeup_title:'⏱️ Czas minął!',
-            timeup_desc:'Skończył ci się czas!',
-            timeup_score:'⭐ Wynik:',
-            timeup_retry:'🔄 Spróbuj ponownie',
-            win_title_15:'🏆 JESTEŚ LEGENDĄ!',
-            win_subtitle_15:'Wszystkich 15 szefów pokonanych!',
-            win_title_unlimited:'🔥 TRYB NIEOGRANICZONY UKOŃCZONY!',
-            win_subtitle_unlimited:'Przetrwałeś {level} poziomów! Niesamowite!',
-            win_score:'⭐ Wynik:',
-            win_restart:'🔄 Zagraj ponownie',
-            match_result_title_win:'🏆 ZWYCIĘSTWO!',
-            match_result_title_loss:'💀 PORAŻKA!',
-            match_result_sub_win:'Pokonałeś AI!',
-            match_result_sub_loss:'AI było zbyt silne tym razem!',
-            match_result_hits:'💥 Twoje trafienia:',
-            match_result_ai_hits:'🤖 Trafienia AI:',
-            match_rematch:'🔄 Rewanż',
-            match_home:'🏠 Strona główna'
+            move_left:'⬅️ Lewo', move_right:'Prawo ➡️',
+            quit:'✕ Wyjdź', back:'← Wstecz',
+            pause_title:'⏸️ WSTRZYMANO', pause_sub:'Gra wstrzymana', resume_btn:'▶ Wznów',
+            retry_title:'💀 Pokonany!', retry_desc:'Szef był zbyt silny! Spróbuj ponownie!', retry_btn:'🔄 Powtórz poziom',
+            timeup_title:'⏱️ Czas minął!', timeup_desc:'Skończył ci się czas!', timeup_score:'⭐ Wynik:', timeup_retry:'🔄 Spróbuj ponownie',
+            win_title_15:'🏆 JESTEŚ LEGENDĄ!', win_subtitle_15:'Wszystkich 15 szefów pokonanych!',
+            win_title_unlimited:'🔥 TRYB NIEOGRANICZONY UKOŃCZONY!', win_subtitle_unlimited:'Przetrwałeś {level} poziomów! Niesamowite!',
+            win_score:'⭐ Wynik:', win_restart:'🔄 Zagraj ponownie',
+            match_result_title_win:'🏆 ZWYCIĘSTWO!', match_result_title_loss:'💀 PORAŻKA!',
+            match_result_sub_win:'Pokonałeś AI!', match_result_sub_loss:'AI było zbyt silne tym razem!',
+            match_result_hits:'💥 Twoje trafienia:', match_result_ai_hits:'🤖 Trafienia AI:',
+            match_rematch:'🔄 Rewanż', match_home:'🏠 Strona główna'
         },
         tr: {
-            splash_by:'Oyun yapımcısı:',
-            splash_loading:'Macera yükleniyor...',
-            loading_title:'🎮 Yükleniyor...',
-            loading_sub:'Macera hazırlanıyor',
-            start_title:'🎯 Patronu Vur!',
-            start_subtitle:'⚔️ Maceranı seç! ⚔️',
-            start_play:'▶ Mod Seç',
-            start_skins:'🎨 Görünümler',
+            start_title:'🎯 Patronu Vur!', start_subtitle:'⚔️ Maceranı seç! ⚔️',
+            start_play:'▶ Mod Seç', start_skins:'🎨 Görünümler',
             mode_title:'🎮 Oyun Modunu Seç',
-            mode_15_label:'⚔️ 15 Seviye',
-            mode_15_desc:'Tüm 15 patronu yen',
-            mode_unlimited_label:'🔥 Sınırsız Mod',
-            mode_unlimited_desc:'Zamana karşı yarış! ⏱️',
-            mode_match_desc_prefix:'⚔️ 1v1 Eşleştirme',
-            mode_match_suffix:'Yapay zeka rakibiyle savaş!',
-            search_title:'🔍 Rakip aranıyor...',
-            search_sub:'Uygun bir rakip bulunuyor',
+            mode_15_label:'⚔️ 15 Seviye', mode_15_desc:'Tüm 15 patronu yen',
+            mode_unlimited_label:'🔥 Sınırsız Mod', mode_unlimited_desc:'Zamana karşı yarış! ⏱️',
+            mode_match_desc_prefix:'⚔️ 1v1 Eşleştirme —',
+            search_title:'🔍 Rakip aranıyor...', search_sub:'Uygun bir rakip bulunuyor',
             how_title:'⚔️ Nasıl Oynanır',
             how_instruction1:'🎯 Düşman mermilerine tıklayarak onları yok et!',
             how_instruction2:'💙 Patrona ateş etmek için herhangi bir yere tıkla!',
@@ -1490,53 +945,25 @@
             how_mode_info_unlimited:'🔥 Zamana karşı yarış! Her seviye 370 saniye ekler!',
             how_mode_info_matchmaking:'⚔️ Yapay zeka rakibiyle savaş! Her maçta Elo puanın değişir. Yapay zekayı yenmek için yeteneklerini kullan!',
             how_start:'⚔️ Oyunu Başlat',
-            skin_title:'🎨 Görünümünü Seç',
-            skin_subtitle:'Karakterin için bir görünüm seç',
-            skin_score_label:'⭐ Skorun:',
-            skin_status_select:'Kuşanmak için görünüm seç',
-            skin_status_unlock:'🎉 {name} açıldı!',
-            skin_status_not_enough:'❌ Yeterli puan yok',
+            skin_title:'🎨 Görünümünü Seç', skin_subtitle:'Karakterin için bir görünüm seç',
+            skin_score_label:'⭐ Skorun:', skin_status_select:'Kuşanmak için görünüm seç',
+            skin_status_unlock:'🎉 {name} açıldı!', skin_status_not_enough:'❌ Yeterli puan yok',
             skin_status_equip:'✅ {name} kuşanıldı!',
-            game_health:'❤️',
-            game_boss:'👹',
-            game_level:'📊',
-            game_timer:'⏱️',
-            game_score:'⭐ Skor:',
-            team_hp:'🛡️ Takım HP:',
-            team_ammo:'🔫 Takım mermi:',
-            skill_lasers:'🔵 Lazer',
-            skill_dmg:'🔴 6x Hasar',
-            skill_hp:'🟢 +1000 HP',
-            skill_team:'🛡️ Takım',
+            game_health:'❤️', game_boss:'👹', game_level:'📊', game_timer:'⏱️', game_score:'⭐ Skor:',
+            skill_lasers:'🔵 Lazer', skill_dmg:'🔴 6x Hasar', skill_hp:'🟢 +1000 HP', skill_team:'🛡️ Takım',
             cooldown_ready:'✅ Hazır',
-            move_left:'⬅️ Sol',
-            move_right:'Sağ ➡️',
-            quit:'✕ Çık',
-            back:'← Geri',
-            pause_title:'⏸️ DURAKLATILDI',
-            pause_sub:'Oyun duraklatıldı',
-            resume_btn:'▶ Devam',
-            retry_title:'💀 Yenildin!',
-            retry_desc:'Patron çok güçlüydü! Tekrar dene!',
-            retry_btn:'🔄 Seviyeyi Tekrar Dene',
-            timeup_title:'⏱️ Süre Doldu!',
-            timeup_desc:'Zamanın tükendi!',
-            timeup_score:'⭐ Skor:',
-            timeup_retry:'🔄 Tekrar Dene',
-            win_title_15:'🏆 SEN BİR EFSANESİN!',
-            win_subtitle_15:'Tüm 15 patron yenildi!',
-            win_title_unlimited:'🔥 SINIRSIZ MOD TAMAMLANDI!',
-            win_subtitle_unlimited:'{level} seviye hayatta kaldın! İnanılmaz!',
-            win_score:'⭐ Skor:',
-            win_restart:'🔄 Tekrar Oyna',
-            match_result_title_win:'🏆 ZAFER!',
-            match_result_title_loss:'💀 YENİLGİ!',
-            match_result_sub_win:'Yapay zekayı geçtin!',
-            match_result_sub_loss:'Bu sefer yapay zeka çok güçlüydü!',
-            match_result_hits:'💥 Senin isabetlerin:',
-            match_result_ai_hits:'🤖 Yapay zeka isabetleri:',
-            match_rematch:'🔄 Rövanş',
-            match_home:'🏠 Ana Sayfa'
+            move_left:'⬅️ Sol', move_right:'Sağ ➡️',
+            quit:'✕ Çık', back:'← Geri',
+            pause_title:'⏸️ DURAKLATILDI', pause_sub:'Oyun duraklatıldı', resume_btn:'▶ Devam',
+            retry_title:'💀 Yenildin!', retry_desc:'Patron çok güçlüydü! Tekrar dene!', retry_btn:'🔄 Seviyeyi Tekrar Dene',
+            timeup_title:'⏱️ Süre Doldu!', timeup_desc:'Zamanın tükendi!', timeup_score:'⭐ Skor:', timeup_retry:'🔄 Tekrar Dene',
+            win_title_15:'🏆 SEN BİR EFSANESİN!', win_subtitle_15:'Tüm 15 patron yenildi!',
+            win_title_unlimited:'🔥 SINIRSIZ MOD TAMAMLANDI!', win_subtitle_unlimited:'{level} seviye hayatta kaldın! İnanılmaz!',
+            win_score:'⭐ Skor:', win_restart:'🔄 Tekrar Oyna',
+            match_result_title_win:'🏆 ZAFER!', match_result_title_loss:'💀 YENİLGİ!',
+            match_result_sub_win:'Yapay zekayı geçtin!', match_result_sub_loss:'Bu sefer yapay zeka çok güçlüydü!',
+            match_result_hits:'💥 Senin isabetlerin:', match_result_ai_hits:'🤖 Yapay zeka isabetleri:',
+            match_rematch:'🔄 Rövanş', match_home:'🏠 Ana Sayfa'
         }
     };
 
@@ -1546,35 +973,21 @@
         currentLang = lang;
         try { localStorage.setItem('gameLanguage', lang); } catch(_) {}
         var dict = TRANSLATIONS[lang] || TRANSLATIONS.en;
-        // Update all elements with data-i18n
         document.querySelectorAll('[data-i18n]').forEach(function(el) {
             var key = el.getAttribute('data-i18n');
-            if(dict[key] !== undefined) {
-                // if key contains HTML or placeholders, use innerHTML
-                el.innerHTML = dict[key];
-            }
+            if(dict[key] !== undefined) el.innerHTML = dict[key];
         });
-        // Update dynamic parts
+        var matchDesc = document.getElementById('modeMatchDesc');
         var matchSub = document.getElementById('modeMatchSub');
-        if(matchSub) {
-            var prefix = dict.mode_match_desc_prefix || '⚔️ 1v1 Matchmaking';
-            var suffix = dict.mode_match_suffix || 'Battle an AI rival!';
+        if(matchDesc && matchSub) {
+            var prefix = dict.mode_match_desc_prefix || '⚔️ 1v1 Matchmaking —';
+            matchDesc.textContent = prefix;
             var eloVal = document.getElementById('modeMatchEloValue');
             var eloText = eloVal ? eloVal.textContent : '1000';
-            matchSub.innerHTML = prefix + ' — ' + suffix + ' <span style="color:#ffd700;font-weight:bold;">Elo: <span id="modeMatchEloValue">' + eloText + '</span></span>';
+            matchSub.innerHTML = prefix + ' <span style="color:#ffd700;font-weight:bold;">Elo: <span id="modeMatchEloValue">' + eloText + '</span></span>';
         }
-        // Update mode info text
         updateModeInfoText();
-        // Update win screen if visible
-        if (document.getElementById('winScreen').style.display !== 'none') {
-            updateWinScreen(isUnlimited, level);
-        }
-        // Update match result if visible
-        var matchResult = document.getElementById('matchResultScreen');
-        if (matchResult.style.display !== 'none') {
-            // will be re-applied when match ends
-        }
-        // Update skin status messages dynamically later
+        updateWinScreen(isUnlimited, level);
     }
 
     function updateModeInfoText() {
@@ -1599,15 +1012,1520 @@
     }
 
     // ============================================================
-    //  REST OF THE GAME CODE (unchanged)
-    //  The rest of your game logic remains exactly as before.
-    //  Only the translation object and data-i18n attributes were added.
+    //  SOUND SYSTEM (ad-free) – kept but bypassed in init
     // ============================================================
-    // ... (insert all your existing game code here from the original)
-    // For brevity, I'm omitting the repetitive game logic,
-    // but in the actual file you'd keep everything after this point.
-    // Since the user asked to "add translations", I've focused on that.
-    // The full file with all game logic is provided in the response.
+    var soundCache = {}, bgmAudio = null, activeAudioInstances = [], currentBGMKey = null;
+    var SOUND_FILES = {
+        bgm:'sounds/disco.mp3',
+        bossmusic2:'sounds/bossmusic2.mp3',
+        bossmusic3:'sounds/bossmusic3.mp3',
+        bossmusic4:'sounds/bossmusic4.mp3',
+        matchgo:'sounds/matchgo.mp3',
+        matchwin:'sounds/matchwin.mp3',
+        matchlose:'sounds/matchlose.mp3',
+        enemyShoot1:'sounds/enemy-shootingfx1.mp3',
+        enemyShoot2:'sounds/enemy-shootingfx2.mp3',
+        enemyHit:'sounds/getting-hit.mp3',
+        playerShoot:'sounds/player-shooting-fx.mp3',
+        skill1:'sounds/skill1fx.mp3',
+        powerup:'sounds/getting-hit.mp3',
+        coin:'sounds/getting-hit.mp3'
+    };
+
+    function loadSound(name, url) {
+        return new Promise(function(resolve) {
+            var audio = new Audio(url);
+            audio.preload = 'auto';
+            var done = false;
+            function finish() { if(done) return; done = true; soundCache[name] = audio; resolve(); }
+            audio.addEventListener('canplaythrough', finish);
+            audio.addEventListener('error', function() { if(done) return; done = true; resolve(); });
+            setTimeout(function() { if(!done) { done = true; resolve(); } }, 5000);
+            audio.load();
+        });
+    }
+
+    function loadAllSounds() {
+        return Promise.all(Object.keys(SOUND_FILES).map(function(k) { return loadSound(k, SOUND_FILES[k]); }));
+    }
+
+    function playSound(name, volume) {
+        if(gamePaused) return;
+        if(!soundCache[name]) return;
+        var audio = soundCache[name];
+        if(name === 'bgm' || name === 'bossmusic2' || name === 'bossmusic3' || name === 'bossmusic4') {
+            if(bgmAudio && bgmAudio !== audio) { bgmAudio.pause(); bgmAudio = null; }
+            audio.loop = true;
+            audio.volume = volume !== undefined ? volume : 0.25;
+            if(!bgmAudio) bgmAudio = audio;
+            audio.currentTime = 0;
+            audio.play().catch(function(){});
+            currentBGMKey = name;
+            return;
+        }
+        var clone = audio.cloneNode();
+        clone._soundName = name;
+        clone.volume = volume !== undefined ? volume : 0.6;
+        clone.currentTime = 0;
+        activeAudioInstances.push(clone);
+        clone.play().catch(function(){});
+        clone.addEventListener('ended', function() {
+            var idx = activeAudioInstances.indexOf(clone);
+            if(idx > -1) activeAudioInstances.splice(idx, 1);
+        });
+        clone.addEventListener('error', function() {
+            var idx = activeAudioInstances.indexOf(clone);
+            if(idx > -1) activeAudioInstances.splice(idx, 1);
+        });
+    }
+
+    function stopBGM() { if(bgmAudio) { bgmAudio.pause(); bgmAudio.currentTime = 0; bgmAudio = null; } currentBGMKey = null; }
+    function stopOneShotSound(name) {
+        if(soundCache[name]) { try { soundCache[name].pause(); soundCache[name].currentTime = 0; } catch(_) {} }
+        activeAudioInstances = activeAudioInstances.filter(function(a) {
+            try { if(a._soundName === name) { a.pause(); return false; } } catch(_) {}
+            return true;
+        });
+    }
+    function stopAllOneShotSounds() {
+        for(var i=0;i<activeAudioInstances.length;i++){ try { activeAudioInstances[i].pause(); activeAudioInstances[i].currentTime = 0; } catch(_) {} }
+        activeAudioInstances = [];
+    }
+    function getRandomBGMKey() { var bgmList = ['bgm','bossmusic2','bossmusic3','bossmusic4']; return bgmList[Math.floor(Math.random()*bgmList.length)]; }
+
+    // ============================================================
+    //  DOM REFS
+    // ============================================================
+    function $(id){ return document.getElementById(id); }
+    var ui = $('ui'), bossBar = $('bossHealthBar'), controls = $('controls');
+    var playerHealthEl = $('playerHealth'), bossHealthEl = $('bossHealth');
+    var levelDisplay = $('levelDisplay'), maxLevelDisplay = $('maxLevelDisplay');
+    var timerDisplay = $('timerDisplay'), scoreDisplay = $('scoreDisplay');
+    var scoreValue = $('scoreValue'), bossFill = $('bossHealthFill');
+    var exitBtn = $('exitBtn'), pauseOverlay = $('pauseOverlay');
+    var teamHealthDisplay = $('teamHealthDisplay'), teamHealthValue = $('teamHealthValue');
+    var teamAmmoDisplay = $('teamAmmoDisplay'), teamAmmoValue = $('teamAmmoValue');
+    var eloBadge = $('eloBadge'), eloBadgeValue = $('eloBadgeValue');
+    var vsLabel = $('vsLabel'), splashScreen = $('splashScreen'), searchScreen = $('searchScreen'), searchBarFill = $('searchBarFill');
+
+    // ============================================================
+    //  GAME STATE
+    // ============================================================
+    var gameRunning = false, gamePaused = false;
+    var animId = null, lastTime = 0, frameCount = 0;
+    var level = 1, maxLevels = 15, isUnlimited = false, isMatchmaking = false;
+    var totalScore = 0, timerRemaining = 500, timerRunning = false, timerInterval = null;
+    var playerHealth = 3000, bossHealth = 100;
+    var boss = null, bullets = [], enemyBullets = [], lasers = [], monsters = [];
+    var heart = { x:400, y:540, size:30 };
+    var movingLeft = false, movingRight = false;
+    var SPEED = 7;
+    var autoShootInterval = null;
+    var superPowerActive = false, superPowerEnd = 0;
+    var cd1 = 0, cd2 = 0, cd3 = 0, cdTeam = 0;
+    var lastEnemyShot = 0;
+    var playerTeam = [], aiTeam = [];
+    var TEAM_MAX_AMMO = 2500, TEAM_MAX_HEALTH = 10000, TEAM_COOLDOWN = 60000, TEAM_SHOOT_INTERVAL = 150;
+
+    // ---- MATCHMAKING ----
+    var playerElo = 1000, matchTotalGames = 0, matchWins = 0, matchLosses = 0;
+    var aiAvatarHealth = 100000;
+    var AI_AVATAR_HEALTH_MAX = 100000;
+    var matchYourHits = 0, matchAiHits = 0;
+    var aiCooldown1 = 0, aiCooldown2 = 0, aiCooldown3 = 0, aiCooldownTeam = 0;
+    var aiSuperPowerActive = false, aiSuperPowerEnd = 0;
+    var aiRewardBoostActive = false, aiRewardBoostEnd = 0;
+    var aiLastHealTime = 0;
+    var aiBullets = [], aiLasers = [];
+
+    // ---- SKINS ----
+    var SKINS = {
+        default:{ name:'Default', emoji:'❤️', color:'#ff6b6b', unlocked:true },
+        gold:{ name:'Gold', emoji:'⭐', color:'#ffd700', unlocked:false, cost:1000 },
+        rainbow:{ name:'Rainbow', emoji:'🌈', color:'#ff6bff', unlocked:false, cost:2000 },
+        dark:{ name:'Dark', emoji:'🖤', color:'#444466', unlocked:false, cost:1500 },
+        flame:{ name:'Flame', emoji:'🔥', color:'#ff4500', unlocked:false, cost:2500 },
+        ice:{ name:'Ice', emoji:'❄️', color:'#00bfff', unlocked:false, cost:2500 },
+        galaxy:{ name:'Galaxy', emoji:'🌌', color:'#8b00ff', unlocked:false, cost:3000 },
+        crystal:{ name:'Crystal', emoji:'💎', color:'#00ffcc', unlocked:false, cost:3500 }
+    };
+    var currentSkin = 'default';
+    var RAINBOW_COLORS = ['#FF0000','#FF7F00','#FFFF00','#00FF00','#0000FF','#4B0082','#8B00FF'];
+    var bulletColorCounter = 0;
+    function getNextRainbowColor() { var c = RAINBOW_COLORS[bulletColorCounter % RAINBOW_COLORS.length]; bulletColorCounter++; return c; }
+    function getHeartGradient(x,y,size) {
+        if(currentSkin !== 'rainbow') { var s = SKINS[currentSkin] || SKINS.default; return s.color; }
+        var grad = ctx.createLinearGradient(x, y-size, x, y+size);
+        var stops = [0,1/6,2/6,3/6,4/6,5/6,1];
+        RAINBOW_COLORS.forEach(function(c,i){ grad.addColorStop(stops[i], c); });
+        return grad;
+    }
+    function getBulletColor() {
+        if(currentSkin === 'rainbow') return getNextRainbowColor();
+        var s = SKINS[currentSkin] || SKINS.default;
+        return s.color;
+    }
+
+    function loadSkins() {
+        try {
+            var raw = loadData('shootBossSkins', null);
+            if(raw) { var data = JSON.parse(raw); Object.keys(data).forEach(function(k){ if(SKINS[k]) SKINS[k].unlocked = data[k]; }); }
+            var equipped = loadData('shootBossSkin', null);
+            if(equipped && SKINS[equipped]) currentSkin = equipped;
+        } catch(_) {}
+    }
+    function saveSkins() {
+        try {
+            var data = {};
+            Object.keys(SKINS).forEach(function(k){ data[k] = SKINS[k].unlocked; });
+            saveData('shootBossSkins', JSON.stringify(data));
+            saveData('shootBossSkin', currentSkin);
+            saveData('shootBossTotalScore', totalScore || 0);
+        } catch(_) {}
+    }
+    function unlockSkin(key) {
+        var s = SKINS[key];
+        if(!s || s.unlocked) return false;
+        if(totalScore >= s.cost) { s.unlocked = true; totalScore -= s.cost; saveSkins(); updateUI(); renderSkins(); return true; }
+        return false;
+    }
+    function equipSkin(key) {
+        if(SKINS[key] && SKINS[key].unlocked) { currentSkin = key; saveSkins(); renderSkins(); return true; }
+        return false;
+    }
+    function renderSkins() {
+        var grid = $('skinGrid'); grid.innerHTML = '';
+        $('skinScore').textContent = totalScore;
+        Object.keys(SKINS).forEach(function(key) {
+            var s = SKINS[key];
+            var div = document.createElement('div');
+            div.className = 'skin-option';
+            if(currentSkin === key) div.classList.add('selected');
+            if(!s.unlocked) div.classList.add('locked');
+            div.innerHTML = '<span class="preview">'+s.emoji+'</span><span class="name">'+s.name+'</span>' + (!s.unlocked ? '<span style="font-size:8px;color:#ffd700;">💰 '+s.cost+'</span>' : '');
+            div.addEventListener('click', function() {
+                var dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+                if(s.unlocked) {
+                    equipSkin(key);
+                    $('skinStatus').textContent = (dict.skin_status_equip || '✅ {name} equipped!').replace(/{name}/g, s.name);
+                } else {
+                    if(unlockSkin(key)) {
+                        equipSkin(key);
+                        $('skinStatus').textContent = (dict.skin_status_unlock || '🎉 {name} unlocked!').replace(/{name}/g, s.name);
+                    } else $('skinStatus').textContent = dict.skin_status_not_enough || '❌ Not enough points';
+                }
+            });
+            grid.appendChild(div);
+        });
+    }
+
+    function saveMatchmakingData() {
+        try {
+            saveData('shootBossElo', playerElo);
+            saveData('shootBossMatchStats', { totalGames:matchTotalGames||0, wins:matchWins||0, losses:matchLosses||0 });
+            saveData('shootBossTotalScore', totalScore||0);
+        } catch(_) {}
+    }
+    function loadMatchmakingData() {
+        try {
+            var elo = loadData('shootBossElo', null);
+            if(elo !== null && typeof elo === 'number') playerElo = elo;
+            var stats = loadData('shootBossMatchStats', null);
+            if(stats) { matchTotalGames = stats.totalGames||0; matchWins = stats.wins||0; matchLosses = stats.losses||0; }
+            var savedScore = loadData('shootBossTotalScore', null);
+            if(savedScore !== null && typeof savedScore === 'number') totalScore = savedScore;
+        } catch(_) {}
+        updateEloPreview();
+    }
+    function updateEloPreview() {
+        var eloVal = document.getElementById('modeMatchEloValue');
+        if(eloVal) eloVal.textContent = playerElo;
+        if(eloBadgeValue) eloBadgeValue.textContent = playerElo;
+    }
+
+    // ============================================================
+    //  BOSS / AI
+    // ============================================================
+    var BOSS_COLORS = ['#FF1744','#FF6D00','#FFD600','#00E676','#2979FF','#651FFF','#D500F9','#FF4081','#00BCD4','#FFAB00','#FF3D00','#00BFA5','#3D5AFE','#AA00FF','#FF1744'];
+    var BOSS_NAMES = ['Blaze','Frost','Storm','Shadow','Thunder','Venom','Crystal','Inferno','Titan','Void','Chaos','Eclipse','Nova','Omega','Legend'];
+    var BOSS_EYE_COLORS = ['#FF1744','#2979FF','#00E676','#FFD600','#D500F9','#FF6D00','#00BCD4','#FF4081','#651FFF','#FFAB00'];
+
+    function genBossPixels(lvl) {
+        var size = Math.max(60 - lvl*1.5, 25), ps = Math.max(4, 8 - lvl*0.3), cols = Math.floor(size/ps), rows = Math.floor(size/ps), pixels = [], step = 2;
+        var hex = BOSS_COLORS[(lvl-1) % BOSS_COLORS.length];
+        var r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+        for(var row=0; row<rows; row+=step) {
+            for(var col=0; col<cols; col+=step) {
+                var x = (col/cols)-0.5, y = (row/rows)-0.5, d = Math.hypot(x,y);
+                if(d < 0.7) {
+                    var bright = 0.6 + (1-d)*0.4;
+                    pixels.push({ x:col-cols/2, y:row-rows/2, color:'rgb('+Math.min(255,r*bright)+','+Math.min(255,g*bright)+','+Math.min(255,b*bright)+')', size:ps*step });
+                }
+            }
+        }
+        return pixels;
+    }
+
+    function spawnBoss() {
+        var size = Math.max(60 - level*1.5, 25), eyeColor = BOSS_EYE_COLORS[(level-1) % BOSS_EYE_COLORS.length];
+        boss = {
+            x: Math.random()*(W*0.7-size*2)+size,
+            y: Math.random()*(H*0.4-size*2)+size,
+            size: size,
+            health: 100,
+            speed: 0.8 + level*0.4,
+            targetX: null, targetY: null,
+            name: BOSS_NAMES[(level-1) % BOSS_NAMES.length],
+            color: BOSS_COLORS[(level-1) % BOSS_COLORS.length],
+            pixels: genBossPixels(level),
+            attackTimer: 0,
+            attackRate: Math.max(800 - level*30, 300),
+            eyeColor: eyeColor,
+            isAi: false
+        };
+        bossHealth = 100;
+        updateBossUI();
+        if(level >= 10) spawnMonsters(Math.min(level-9, 3));
+    }
+
+    function pickAiSkin() {
+        var AI_SKIN_POOL = [
+            { name:'Rival', color:'#FF6B00', emoji:'🔥' },
+            { name:'Rival', color:'#00BFFF', emoji:'❄️' },
+            { name:'Rival', color:'#8B00FF', emoji:'👾' },
+            { name:'Rival', color:'#FF1744', emoji:'😈' },
+            { name:'Rival', color:'#00E676', emoji:'🤖' },
+            { name:'Rival', color:'#FFD600', emoji:'⚡' }
+        ];
+        var playerColor = (SKINS[currentSkin] || SKINS.default).color;
+        var pool = AI_SKIN_POOL.filter(function(s){ return s.color !== playerColor; });
+        if(!pool.length) pool = AI_SKIN_POOL;
+        return pool[Math.floor(Math.random()*pool.length)];
+    }
+
+    function spawnAiOpponent() {
+        var size = 30, aiSkinChoice = pickAiSkin();
+        boss = {
+            x: Math.random()*(W*0.7-size*2)+size,
+            y: Math.random()*(H*0.4-size*2)+size,
+            size: size,
+            health: 100,
+            speed: 1.2 + Math.min(level*0.3, 1.8),
+            targetX: null, targetY: null,
+            name: 'AI Rival',
+            color: aiSkinChoice.color,
+            aiEmoji: aiSkinChoice.emoji,
+            pixels: null,
+            attackTimer: 0,
+            attackRate: 600,
+            eyeColor: '#FFD700',
+            isAi: true,
+            aiSkinColor: aiSkinChoice.color
+        };
+        aiAvatarHealth = AI_AVATAR_HEALTH_MAX;
+        bossHealth = 100;
+        matchYourHits = 0; matchAiHits = 0;
+        aiBullets = []; aiLasers = [];
+        aiSuperPowerActive = false; aiRewardBoostActive = false;
+        aiCooldown1 = Date.now() + 8000;
+        aiCooldown2 = Date.now() + 12000;
+        aiCooldown3 = Date.now() + 0;
+        aiCooldownTeam = Date.now() + 20000;
+        aiLastHealTime = 0;
+        playerTeam = []; aiTeam = [];
+        updateBossUI();
+        eloBadge.style.display = 'block';
+        vsLabel.style.display = 'block';
+        updateEloPreview();
+    }
+
+    function spawnMonsters(count) {
+        for(var i=0;i<count;i++) {
+            var a = Math.random()*2*Math.PI, d = 100 + Math.random()*60;
+            monsters.push({
+                x: boss.x + Math.cos(a)*d, y: boss.y + Math.sin(a)*d,
+                size: 12 + level*0.3, speed: 0.4 + level*0.08,
+                health: 15 + level*1.5, maxHealth: 15 + level*1.5,
+                angle: a, orbitSpeed: (0.015+Math.random()*0.015) * (level%2===0?1:-1),
+                color: 'hsl('+(Math.random()*60+300)+',70%,50%)',
+                glow: 'hsl('+(Math.random()*60+300)+',100%,70%)',
+                pulse: Math.random()*2*Math.PI,
+                damage: 15 + level*2
+            });
+        }
+    }
+
+    function setBossTarget() {
+        if(!boss) return;
+        var m = boss.size + 20;
+        boss.targetX = Math.random()*(W*0.7-m*2)+m;
+        boss.targetY = Math.random()*(H*0.4-m*2)+m;
+    }
+
+    function updateBossUI() {
+        var pct = isMatchmaking ? (aiAvatarHealth / AI_AVATAR_HEALTH_MAX)*100 : bossHealth;
+        bossHealthEl.textContent = pct.toFixed(1);
+        bossFill.style.width = pct + '%';
+        bossFill.style.background = pct > 60 ? 'linear-gradient(90deg,#00E676,#69F0AE)' : pct > 30 ? 'linear-gradient(90deg,#FFD600,#FFAB00)' : 'linear-gradient(90deg,#FF1744,#FF5252)';
+    }
+
+    function updateUI() {
+        if(isUnlimited || isMatchmaking) { scoreValue.textContent = totalScore; scoreDisplay.style.display = 'block'; }
+        $('skinScore').textContent = totalScore;
+        var totalTeamHP = 0, totalTeamAmmo = 0;
+        playerTeam.forEach(function(t){ totalTeamHP += t.health; totalTeamAmmo += t.ammo||0; });
+        teamHealthValue.textContent = Math.floor(totalTeamHP);
+        teamAmmoValue.textContent = totalTeamAmmo;
+        if(playerTeam.length === 0) { teamHealthDisplay.style.display = 'none'; teamAmmoDisplay.style.display = 'none'; }
+        else { teamHealthDisplay.style.display = 'block'; teamAmmoDisplay.style.display = 'block'; }
+        if(isMatchmaking) updateEloPreview();
+    }
+
+    function updateCooldowns() {
+        var now = Date.now();
+        var dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+        var upd = function(id, end) {
+            var el = document.getElementById(id);
+            if(now < end) { var s = Math.ceil((end - now)/1000); el.textContent = '⏳ '+s+'s'; }
+            else el.textContent = dict.cooldown_ready || '✅ Ready';
+        };
+        upd('cd1', cd1); upd('cd2', cd2); upd('cd3', cd3); upd('cdTeam', cdTeam);
+    }
+
+    // ---- SKILLS ----
+    function skill1() {
+        var now = Date.now();
+        if(now < cd1 || gamePaused) return;
+        cd1 = now + 35000;
+        playSound('skill1');
+        var hues = [210,200,190,180,170], w=6, sp=w*2.5, sx=heart.x-sp*2;
+        for(var i=0;i<5;i++) lasers.push({ x:sx+i*sp, y:0, width:w, height:H, color:'hsl('+hues[i]+',100%,60%)', lifetime:20 });
+    }
+    function skill2() {
+        var now = Date.now();
+        if(now < cd2 || gamePaused) return;
+        superPowerActive = true; superPowerEnd = now + 20000;
+        cd2 = now + 55000;
+        playSound('powerup');
+        setTimeout(function(){ superPowerActive = false; }, 30000);
+    }
+    function skill3() {
+        var now = Date.now();
+        if(now < cd3 || gamePaused) return;
+        playerHealth += 1000;
+        playerHealthEl.textContent = playerHealth.toFixed(0);
+        cd3 = now + 0;
+        playSound('coin');
+    }
+    function skillTeam() {
+        var now = Date.now();
+        if(now < cdTeam || gamePaused) return;
+        if(playerTeam.length > 0) return;
+        var skin = SKINS[currentSkin] || SKINS.default;
+        var color = skin.color;
+        for(var i=0;i<4;i++) {
+            var angle = (i/4)*2*Math.PI + Math.random()*0.3;
+            var dist = 40 + Math.random()*20;
+            var tx = heart.x + Math.cos(angle)*dist, ty = heart.y + Math.sin(angle)*dist - 20;
+            playerTeam.push({
+                x:tx, y:ty, size:18, health:TEAM_MAX_HEALTH, maxHealth:TEAM_MAX_HEALTH,
+                speed:1.2+Math.random()*0.5, damage:2.5, shootTimer:0,
+                shootInterval:TEAM_SHOOT_INTERVAL+Math.random()*50,
+                angle:angle, color:color, skin:skin, alive:true,
+                dodgeTimer:0, dodgeDirection:1, ammo:TEAM_MAX_AMMO, isAi:false
+            });
+        }
+        cdTeam = now + TEAM_COOLDOWN;
+        playSound('powerup');
+        updateUI();
+    }
+
+    function startAutoShoot() {
+        if(autoShootInterval) clearInterval(autoShootInterval);
+        autoShootInterval = setInterval(function() {
+            if(boss && level >= 4 && !gamePaused) {
+                var tx = boss.x + (Math.random()-0.5)*boss.size*0.4;
+                var ty = boss.y + (Math.random()-0.5)*boss.size*0.4;
+                var dmgMult = 1;
+                if(superPowerActive) dmgMult *= 6;
+                bullets.push({ x:heart.x, y:heart.y, targetX:tx, targetY:ty, color:getBulletColor(), damageMult:dmgMult });
+                playSound('playerShoot');
+            }
+        }, Math.max(450 - level*20, 180));
+    }
+
+    // ---- AI OPPONENT TICK ----
+    function aiOpponentTick(dt) {
+        if(!boss || !boss.isAi) return;
+        var now = Date.now();
+        moveBoss(dt);
+
+        if(now >= aiCooldown1) {
+            aiCooldown1 = now + 35000;
+            var w=6, sp=w*2.5, sx=boss.x-sp*2;
+            for(var i=0;i<5;i++) aiLasers.push({ x:sx+i*sp, y:0, width:w, height:H, color:'hsl('+(210+i*5)+',100%,60%)', lifetime:20 });
+            playSound('skill1');
+        }
+        if(now >= aiCooldown2) {
+            aiCooldown2 = now + 55000;
+            aiSuperPowerActive = true; aiSuperPowerEnd = now + 30000;
+            setTimeout(function(){ aiSuperPowerActive = false; }, 30000);
+            playSound('powerup');
+        }
+        var hpPct = aiAvatarHealth / AI_AVATAR_HEALTH_MAX;
+        if(hpPct < 0.8 && now - aiLastHealTime > 800) {
+            aiAvatarHealth = Math.min(AI_AVATAR_HEALTH_MAX, aiAvatarHealth + 1000);
+            aiLastHealTime = now;
+            bossHealth = (aiAvatarHealth / AI_AVATAR_HEALTH_MAX)*100;
+            updateBossUI();
+        }
+        if(hpPct < 0.7 && now - aiLastHealTime > 12000) {
+            aiAvatarHealth = Math.min(AI_AVATAR_HEALTH_MAX, aiAvatarHealth + 20000);
+            aiLastHealTime = now;
+            bossHealth = (aiAvatarHealth / AI_AVATAR_HEALTH_MAX)*100;
+            updateBossUI();
+            playSound('powerup');
+        }
+        if(now >= aiCooldownTeam && aiTeam.length === 0) {
+            aiCooldownTeam = now + TEAM_COOLDOWN;
+            var aiColor = (boss && boss.aiSkinColor) ? boss.aiSkinColor : '#FF6B00';
+            for(var j=0;j<4;j++) {
+                var ang = (j/4)*2*Math.PI + Math.random()*0.3;
+                var dist2 = 40 + Math.random()*20;
+                var tx2 = boss.x + Math.cos(ang)*dist2, ty2 = boss.y + Math.sin(ang)*dist2 - 20;
+                aiTeam.push({
+                    x:tx2, y:ty2, size:18, health:TEAM_MAX_HEALTH, maxHealth:TEAM_MAX_HEALTH,
+                    speed:1.2+Math.random()*0.5, damage:2.5, shootTimer:0,
+                    shootInterval:TEAM_SHOOT_INTERVAL+Math.random()*50,
+                    angle:ang, color:aiColor, alive:true,
+                    dodgeTimer:0, dodgeDirection:1, ammo:TEAM_MAX_AMMO, isAi:true
+                });
+            }
+            playSound('powerup');
+        }
+        var shootRate = Math.max(500 - level*20, 200);
+        if(now - lastEnemyShot > shootRate) {
+            var tx = heart.x + (Math.random()-0.5)*20, ty = heart.y + (Math.random()-0.5)*20;
+            var dmgMult = aiSuperPowerActive ? 6 : 1;
+            if(aiRewardBoostActive) dmgMult *= 2.5;
+            aiBullets.push({ x:boss.x, y:boss.y, targetX:tx, targetY:ty, color:'#ff6b00', damageMult:dmgMult, speed:10+level*0.3 });
+            lastEnemyShot = now;
+            playSound('enemyShoot1');
+        }
+        if(!aiRewardBoostActive && hpPct < 0.5 && now - aiLastHealTime > 10000) {
+            aiRewardBoostActive = true;
+            aiRewardBoostEnd = now + 180000;
+            aiAvatarHealth = Math.min(AI_AVATAR_HEALTH_MAX, aiAvatarHealth + 50000);
+            bossHealth = (aiAvatarHealth / AI_AVATAR_HEALTH_MAX)*100;
+            updateBossUI();
+            setTimeout(function(){ aiRewardBoostActive = false; }, 180000);
+            playSound('powerup');
+        }
+        for(var k=aiLasers.length-1;k>=0;k--) { aiLasers[k].lifetime--; if(aiLasers[k].lifetime <= 0) aiLasers.splice(k,1); }
+        for(var k=aiBullets.length-1;k>=0;k--) {
+            var b = aiBullets[k];
+            var dx = b.targetX - b.x, dy = b.targetY - b.y, d = Math.hypot(dx, dy);
+            if(d < 10) { aiBullets.splice(k,1); continue; }
+            var spd = b.speed || 10;
+            b.x += (dx/d)*spd; b.y += (dy/d)*spd;
+            if(Math.hypot(b.x - heart.x, b.y - heart.y) < heart.size + 8) {
+                var dmg = 25 + level*4;
+                if(aiSuperPowerActive) dmg *= 6;
+                if(aiRewardBoostActive) dmg *= 2.5;
+                playerHealth -= dmg;
+                playerHealthEl.textContent = Math.max(0, playerHealth).toFixed(0);
+                matchAiHits++;
+                aiBullets.splice(k,1);
+                playSound('enemyHit');
+                continue;
+            }
+        }
+        for(var k=aiLasers.length-1;k>=0;k--) {
+            var l = aiLasers[k];
+            if(l.lifetime <= 0) { aiLasers.splice(k,1); continue; }
+            if(Math.abs(l.x - heart.x) < heart.size && l.y < heart.y + heart.size) {
+                var dmg = 20 + level*3;
+                if(aiSuperPowerActive) dmg *= 6;
+                if(aiRewardBoostActive) dmg *= 2.5;
+                playerHealth -= dmg;
+                playerHealthEl.textContent = Math.max(0, playerHealth).toFixed(0);
+                matchAiHits++;
+                playSound('enemyHit');
+            }
+        }
+        aiTeam = aiTeam.filter(function(t){ return t.alive; });
+        for(var t of aiTeam) {
+            var angleOff = 0.05;
+            t.angle += angleOff;
+            var rad = 40 + Math.sin(now/1000 + t.angle)*10;
+            t.x = boss.x + Math.cos(t.angle + now/2000)*rad;
+            t.y = boss.y + Math.sin(t.angle + now/2000)*rad - 10;
+            t.x = Math.max(t.size, Math.min(W - t.size, t.x));
+            t.y = Math.max(t.size, Math.min(H - t.size, t.y));
+            if(t.ammo > 0) {
+                t.shootTimer += 16;
+                if(t.shootTimer >= t.shootInterval) {
+                    t.shootTimer = 0;
+                    var dmgMultTeam = aiSuperPowerActive ? 6 : 1;
+                    if(aiRewardBoostActive) dmgMultTeam *= 2.5;
+                    aiBullets.push({ x:t.x, y:t.y, targetX:heart.x+(Math.random()-0.5)*20, targetY:heart.y+(Math.random()-0.5)*20, color:'#ff6b00', damageMult:dmgMultTeam, speed:10+level*0.3, isTeam:true });
+                    t.ammo--;
+                    playSound('enemyShoot1');
+                }
+            } else { t.alive = false; }
+        }
+        aiTeam = aiTeam.filter(function(t){ return t.alive; });
+    }
+
+    // ---- BOSS ATTACKS ----
+    function spawnSwirly() {
+        var angle = Math.random()*2*Math.PI, dist = 40+level*3, count = Math.min(2+Math.floor(level/4), 5);
+        playSound(Math.random()<0.5?'enemyShoot1':'enemyShoot2');
+        for(var i=0;i<count;i++) {
+            var a = angle + (i/count)*2*Math.PI, spd = 1.5+level*0.2;
+            enemyBullets.push({
+                x: boss.x + Math.cos(a)*dist, y: boss.y + Math.sin(a)*dist,
+                type:'swirly', size:10+level*0.3, angle:0,
+                vx: Math.cos(a)*spd, vy: Math.sin(a)*spd,
+                life:0, maxLife:150+level*15,
+                followsPlayer: level>=3, homing:0.02+level*0.004
+            });
+        }
+    }
+    function spawnLine() {
+        playSound(Math.random()<0.5?'enemyShoot1':'enemyShoot2');
+        var count = Math.min(2+Math.floor(level/5),5);
+        for(var i=0;i<count;i++) {
+            var x = (i+0.5)/count*W + (Math.random()-0.5)*30;
+            enemyBullets.push({ x:x, y:-20-Math.random()*30, type:'line', width:6+level*0.3, length:30+level*3, color:Math.random()*60, speed:2.5+level*0.2 });
+        }
+    }
+    function bossAttack() {
+        if(!boss || boss.isAi) return;
+        var r = Math.random();
+        if(r < 0.35 || level < 3) {
+            var count = Math.min(2+Math.floor(level/2),6);
+            playSound(Math.random()<0.5?'enemyShoot1':'enemyShoot2');
+            for(var i=0;i<count;i++) {
+                var a = (i/count)*2*Math.PI + Math.random()*0.3, spd = 1.5+level*0.3;
+                enemyBullets.push({ x:boss.x, y:boss.y, vx:Math.cos(a)*spd, vy:Math.sin(a)*spd, size:6+level*0.2, color:'hsl('+(Math.random()*60+340)+',100%,50%)' });
+            }
+        } else if(r < 0.6 && level >= 3) spawnSwirly();
+        else if(r < 0.85 && level >= 5) spawnLine();
+        else if(level >= 7 && monsters.length < 5) spawnMonsters(1);
+    }
+
+    // ============================================================
+    //  UPDATE GAME
+    // ============================================================
+    function updateGame() {
+        var now = Date.now();
+
+        for(var i=bullets.length-1;i>=0;i--) {
+            var b = bullets[i];
+            var dx = b.targetX - b.x, dy = b.targetY - b.y, d = Math.hypot(dx,dy);
+            if(boss) {
+                var bd = Math.hypot(b.x - boss.x, b.y - boss.y);
+                if(bd < boss.size) {
+                    var dmg = Math.max(0.4 - (level-1)*0.025, 0.05);
+                    if(b.damageMult) dmg *= b.damageMult;
+                    if(superPowerActive) dmg *= 6;
+                    if(isMatchmaking && boss.isAi) {
+                        var healthDmg = dmg * (AI_AVATAR_HEALTH_MAX/100);
+                        aiAvatarHealth -= healthDmg;
+                        matchYourHits++;
+                        bossHealth = (aiAvatarHealth / AI_AVATAR_HEALTH_MAX)*100;
+                        updateBossUI();
+                    } else {
+                        bossHealth = Math.max(0, bossHealth - dmg);
+                        updateBossUI();
+                        if(isUnlimited) { totalScore += Math.floor(dmg*10); updateUI(); }
+                    }
+                    bullets.splice(i,1);
+                    playSound('enemyHit');
+                    for(var j=monsters.length-1;j>=0;j--) {
+                        var m = monsters[j];
+                        if(Math.hypot(b.x - m.x, b.y - m.y) < m.size + 8) {
+                            m.health -= 8;
+                            if(m.health <= 0) { monsters.splice(j,1); if(isUnlimited){ totalScore += 50; updateUI(); } playSound('coin'); }
+                        }
+                    }
+                    continue;
+                }
+            }
+            if(d < 10) bullets.splice(i,1);
+            else { b.x += (dx/d)*12; b.y += (dy/d)*12; }
+        }
+
+        for(var i=enemyBullets.length-1;i>=0;i--) {
+            var b = enemyBullets[i];
+            if(b.type === 'swirly') {
+                b.angle += 0.1; b.life++;
+                if(b.followsPlayer && b.life < b.maxLife) {
+                    var dx = heart.x - b.x, dy = heart.y - b.y, d = Math.hypot(dx,dy);
+                    if(d > 0) { b.vx += (dx/d)*b.homing; b.vy += (dy/d)*b.homing; var spd = Math.hypot(b.vx,b.vy), maxSpd = 2.5+level*0.25; if(spd > maxSpd){ b.vx=(b.vx/spd)*maxSpd; b.vy=(b.vy/spd)*maxSpd; } }
+                }
+                b.x += b.vx; b.y += b.vy;
+                if(b.life > b.maxLife) { enemyBullets.splice(i,1); continue; }
+            } else if(b.type === 'line') {
+                b.y += b.speed || 3.5;
+                if(b.y > H+50) { enemyBullets.splice(i,1); continue; }
+            } else { b.x += b.vx; b.y += b.vy; }
+            if(b.toRemove) { enemyBullets.splice(i,1); continue; }
+            var d = Math.hypot(b.x - heart.x, b.y - heart.y);
+            var hitR = b.type === 'swirly' ? (b.size||12) : (b.type === 'line' ? b.width/2 : (b.size||8));
+            if(d < heart.size + hitR) {
+                var dmg = 25 + level*6;
+                if(b.type === 'swirly') dmg *= 1.3;
+                if(b.type === 'line') dmg *= 1.8;
+                playerHealth -= dmg;
+                playerHealthEl.textContent = Math.max(0, playerHealth).toFixed(0);
+                enemyBullets.splice(i,1);
+                playSound('enemyHit');
+                continue;
+            }
+            for(var t of playerTeam) {
+                var dT = Math.hypot(b.x - t.x, b.y - t.y);
+                if(dT < t.size + hitR) {
+                    var dmg = 25 + level*6;
+                    if(b.type === 'swirly') dmg *= 1.3;
+                    if(b.type === 'line') dmg *= 1.8;
+                    t.health -= dmg;
+                    if(t.health <= 0) t.alive = false;
+                    enemyBullets.splice(i,1);
+                    playSound('enemyHit');
+                    break;
+                }
+            }
+        }
+
+        for(var i=monsters.length-1;i>=0;i--) {
+            var m = monsters[i];
+            m.angle += m.orbitSpeed;
+            var dx = heart.x - m.x, dy = heart.y - m.y, d = Math.hypot(dx,dy);
+            if(d > 80) { m.x += (dx/d)*m.speed; m.y += (dy/d)*m.speed; }
+            else { m.x += Math.cos(m.angle)*m.speed*0.5; m.y += Math.sin(m.angle)*m.speed*0.5; }
+            if(d < m.size + heart.size) {
+                playerHealth -= m.damage;
+                playerHealthEl.textContent = Math.max(0, playerHealth).toFixed(0);
+                monsters.splice(i,1);
+                playSound('enemyHit');
+                continue;
+            }
+            for(var t of playerTeam) {
+                if(Math.hypot(m.x - t.x, m.y - t.y) < m.size + t.size) {
+                    t.health -= m.damage;
+                    if(t.health <= 0) t.alive = false;
+                    monsters.splice(i,1);
+                    playSound('enemyHit');
+                    break;
+                }
+            }
+        }
+
+        for(var i=lasers.length-1;i>=0;i--) {
+            var l = lasers[i];
+            if(l.lifetime <= 0) { lasers.splice(i,1); continue; }
+            if(boss) {
+                if(l.x >= boss.x - boss.size && l.x <= boss.x + boss.size && l.y <= boss.y + boss.size) {
+                    var dmg = 2;
+                    if(superPowerActive) dmg *= 6;
+                    if(isMatchmaking && boss.isAi) {
+                        var healthDmg = dmg * (AI_AVATAR_HEALTH_MAX/100);
+                        aiAvatarHealth -= healthDmg;
+                        matchYourHits++;
+                        bossHealth = (aiAvatarHealth / AI_AVATAR_HEALTH_MAX)*100;
+                        updateBossUI();
+                    } else {
+                        bossHealth = Math.max(0, bossHealth - dmg);
+                        updateBossUI();
+                        if(isUnlimited) { totalScore += 20; updateUI(); }
+                    }
+                    playSound('enemyHit');
+                }
+                for(var j=monsters.length-1;j>=0;j--) {
+                    var m = monsters[j];
+                    if(Math.abs(l.x - m.x) < m.size && l.y < m.y + m.size) {
+                        m.health -= 4;
+                        if(m.health <= 0) { monsters.splice(j,1); if(isUnlimited){ totalScore += 50; updateUI(); } playSound('coin'); }
+                    }
+                }
+            }
+            l.lifetime--;
+        }
+
+        playerTeam = playerTeam.filter(function(t){ return t.alive; });
+        if(playerTeam.length > 0 && boss) {
+            for(var t of playerTeam) {
+                var dodging = false, dodgeAngle = 0;
+                for(var b of enemyBullets) {
+                    var dist = Math.hypot(b.x - t.x, b.y - t.y);
+                    if(dist < 100) { var angle = Math.atan2(b.y - t.y, b.x - t.x); dodgeAngle = angle + Math.PI/2*t.dodgeDirection; dodging = true; t.dodgeDirection *= -1; break; }
+                }
+                for(var b of aiBullets) {
+                    var dist = Math.hypot(b.x - t.x, b.y - t.y);
+                    if(dist < 100) { var angle = Math.atan2(b.y - t.y, b.x - t.x); dodgeAngle = angle + Math.PI/2*t.dodgeDirection; dodging = true; t.dodgeDirection *= -1; break; }
+                }
+                for(var m of monsters) {
+                    var dist = Math.hypot(m.x - t.x, m.y - t.y);
+                    if(dist < 80) { var angle = Math.atan2(m.y - t.y, m.x - t.x); dodgeAngle = angle + Math.PI/2*t.dodgeDirection; dodging = true; t.dodgeDirection *= -1; break; }
+                }
+                if(dodging) { t.x += Math.cos(dodgeAngle)*t.speed*1.5; t.y += Math.sin(dodgeAngle)*t.speed*1.5; }
+                else {
+                    var dx = boss.x - t.x, dy = boss.y - t.y, d = Math.hypot(dx,dy);
+                    if(d > 0) { t.x += (dx/d)*t.speed*0.8 + (Math.random()-0.5)*0.5; t.y += (dy/d)*t.speed*0.8 + (Math.random()-0.5)*0.5; }
+                }
+                t.x = Math.max(t.size, Math.min(W-t.size, t.x));
+                t.y = Math.max(t.size, Math.min(H-t.size, t.y));
+                if(t.ammo > 0) {
+                    t.shootTimer += 16;
+                    if(t.shootTimer >= t.shootInterval) {
+                        t.shootTimer = 0;
+                        var dmgMult = 1;
+                        if(superPowerActive) dmgMult *= 6;
+                        bullets.push({ x:t.x, y:t.y, targetX:boss.x+(Math.random()-0.5)*boss.size*0.5, targetY:boss.y+(Math.random()-0.5)*boss.size*0.5, team:true, damage:t.damage*dmgMult, speed:14, color:getBulletColor(), damageMult:dmgMult });
+                        t.ammo--;
+                        playSound('playerShoot');
+                    }
+                } else { t.alive = false; }
+            }
+            playerTeam = playerTeam.filter(function(t){ return t.alive; });
+        }
+        updateUI();
+    }
+
+    function moveBoss(dt) {
+        if(!boss) return;
+        if(!boss.targetX || !boss.targetY) setBossTarget();
+        var dx = boss.targetX - boss.x, dy = boss.targetY - boss.y, d = Math.hypot(dx,dy);
+        if(d < 10) setBossTarget();
+        else { var move = boss.speed * (dt/16); boss.x += (dx/d)*move; boss.y += (dy/d)*move; }
+    }
+
+    // ============================================================
+    //  DRAWING
+    // ============================================================
+    function drawHeartWithEyes(x, y, size, fillStyle, drawEyes) {
+        drawEyes = (drawEyes !== undefined) ? drawEyes : true;
+        ctx.save();
+        ctx.shadowBlur = 20;
+        if(typeof fillStyle === 'string') ctx.shadowColor = fillStyle + '88';
+        else ctx.shadowColor = '#ff6b6b88';
+        ctx.fillStyle = fillStyle;
+        ctx.beginPath();
+        var top = size * 0.3;
+        ctx.moveTo(x, y + top);
+        ctx.bezierCurveTo(x - size/2, y - size/2, x - size, y + size/3, x, y + size);
+        ctx.bezierCurveTo(x + size, y + size/3, x + size/2, y - size/2, x, y + top);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        if(drawEyes) {
+            var eyeSize = size * 0.15, eyeOffsetX = size * 0.2, eyeOffsetY = -size * 0.05;
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath(); ctx.arc(x - eyeOffsetX, y + eyeOffsetY, eyeSize*1.4, 0, 2*Math.PI); ctx.fill();
+            ctx.beginPath(); ctx.arc(x + eyeOffsetX, y + eyeOffsetY, eyeSize*1.4, 0, 2*Math.PI); ctx.fill();
+            ctx.fillStyle = '#000000';
+            ctx.beginPath(); ctx.arc(x - eyeOffsetX + eyeSize*0.3, y + eyeOffsetY, eyeSize*0.8, 0, 2*Math.PI); ctx.fill();
+            ctx.beginPath(); ctx.arc(x + eyeOffsetX + eyeSize*0.3, y + eyeOffsetY, eyeSize*0.8, 0, 2*Math.PI); ctx.fill();
+        }
+        ctx.restore();
+    }
+
+    function drawBoss() {
+        if(!boss) return;
+        var x=boss.x, y=boss.y, size=boss.size, name=boss.name, eyeColor=boss.eyeColor||'#ffffff';
+        if(boss.isAi) {
+            var aiColor = boss.aiSkinColor || '#FF6B00', aiEmoji = boss.aiEmoji || '🤖';
+            var lighterColor = aiColor + 'CC';
+            var grad = ctx.createRadialGradient(x-size/3, y-size/3, 0, x, y, size);
+            grad.addColorStop(0, lighterColor); grad.addColorStop(1, aiColor);
+            drawHeartWithEyes(x, y, size, grad, true);
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 12px Arial';
+            ctx.textAlign = 'center';
+            ctx.shadowBlur = 10; ctx.shadowColor = aiColor;
+            ctx.fillText(aiEmoji + ' ' + name, x, y - size - 12);
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.font = '10px Arial';
+            ctx.fillText('Elo: ' + playerElo, x, y + size + 18);
+        } else {
+            var color = boss.color, pixels = boss.pixels;
+            ctx.save();
+            var grad = ctx.createRadialGradient(x, y, 0, x, y, size*1.3);
+            grad.addColorStop(0, color+'30'); grad.addColorStop(1, 'transparent');
+            ctx.fillStyle = grad;
+            ctx.beginPath(); ctx.arc(x, y, size*1.3, 0, 2*Math.PI); ctx.fill();
+            pixels.forEach(function(p){ ctx.fillStyle = p.color; ctx.fillRect(x + p.x*p.size, y + p.y*p.size, p.size, p.size); });
+            var eyeSize = size*0.2, eyeY = y - size*0.05, eyeSpacing = size*0.22, eyeX1 = x-eyeSpacing, eyeX2 = x+eyeSpacing;
+            ctx.shadowBlur = 8; ctx.shadowColor = 'rgba(255,255,255,0.3)';
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath(); ctx.arc(eyeX1, eyeY, eyeSize*1.2, 0, 2*Math.PI); ctx.fill();
+            ctx.beginPath(); ctx.arc(eyeX2, eyeY, eyeSize*1.2, 0, 2*Math.PI); ctx.fill();
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = eyeColor;
+            ctx.beginPath(); ctx.arc(eyeX1, eyeY, eyeSize*0.8, 0, 2*Math.PI); ctx.fill();
+            ctx.beginPath(); ctx.arc(eyeX2, eyeY, eyeSize*0.8, 0, 2*Math.PI); ctx.fill();
+            var pupilOff = eyeSize*0.15;
+            ctx.fillStyle = '#000000';
+            ctx.beginPath(); ctx.arc(eyeX1 + pupilOff, eyeY, eyeSize*0.4, 0, 2*Math.PI); ctx.fill();
+            ctx.beginPath(); ctx.arc(eyeX2 - pupilOff, eyeY, eyeSize*0.4, 0, 2*Math.PI); ctx.fill();
+            ctx.strokeStyle = '#222222';
+            ctx.lineWidth = size*0.045; ctx.lineCap = 'round';
+            ctx.beginPath(); ctx.moveTo(eyeX1 - eyeSize*1.3, eyeY - eyeSize*1.2); ctx.lineTo(eyeX1 + eyeSize*1.1, eyeY - eyeSize*0.2); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(eyeX2 + eyeSize*1.3, eyeY - eyeSize*1.2); ctx.lineTo(eyeX2 - eyeSize*1.1, eyeY - eyeSize*0.2); ctx.stroke();
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 14px Arial';
+            ctx.textAlign = 'center';
+            ctx.shadowBlur = 20; ctx.shadowColor = color;
+            ctx.fillText('👑 ' + name, x, y - size - 15);
+            ctx.shadowBlur = 0;
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.font = '10px Arial';
+            ctx.fillText('Level ' + level, x, y + size + 20);
+            ctx.restore();
+        }
+    }
+
+    function drawMonsters() {
+        monsters.forEach(function(m){
+            var grad = ctx.createRadialGradient(m.x - m.size/3, m.y - m.size/3, 0, m.x, m.y, m.size);
+            grad.addColorStop(0, m.glow); grad.addColorStop(1, m.color);
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            for(var i=0;i<8;i++){ var a=(i/8)*2*Math.PI + m.angle; var r = m.size * (i%2===0?1:0.7); i===0 ? ctx.moveTo(m.x+Math.cos(a)*r, m.y+Math.sin(a)*r) : ctx.lineTo(m.x+Math.cos(a)*r, m.y+Math.sin(a)*r); }
+            ctx.closePath(); ctx.fill();
+            var hp = m.health / m.maxHealth;
+            ctx.fillStyle = 'rgba(0,0,0,0.5)';
+            ctx.fillRect(m.x - m.size, m.y - m.size - 8, m.size*2, 3);
+            ctx.fillStyle = hp > 0.5 ? '#4CAF50' : '#FF1744';
+            ctx.fillRect(m.x - m.size, m.y - m.size - 8, m.size*2*hp, 3);
+            m.pulse += 0.05;
+        });
+    }
+
+    function drawBullets() {
+        if(!bullets.length) return;
+        bullets.forEach(function(b){
+            var color = b.color || '#ff6b6b';
+            ctx.fillStyle = color;
+            ctx.beginPath(); ctx.arc(b.x, b.y, b.team ? 4 : 6, 0, 2*Math.PI); ctx.fill();
+            if(b.team) { ctx.shadowBlur = 12; ctx.shadowColor = color+'66'; ctx.fill(); ctx.shadowBlur = 0; }
+        });
+    }
+
+    function drawEnemyBullets() {
+        enemyBullets.forEach(function(b){
+            if(b.type === 'swirly') {
+                ctx.fillStyle = 'hsl(' + (Date.now()/30%360) + ',100%,50%)';
+                ctx.beginPath(); ctx.arc(b.x, b.y, b.size||12, 0, 2*Math.PI); ctx.fill();
+                ctx.strokeStyle = 'rgba(255,255,255,0.2)'; ctx.lineWidth = 1.5;
+                for(var i=0;i<4;i++){ var a=(i/4)*2*Math.PI + b.angle; ctx.beginPath(); ctx.moveTo(b.x,b.y); ctx.lineTo(b.x+Math.cos(a)*b.size*0.6, b.y+Math.sin(a)*b.size*0.6); ctx.stroke(); }
+            } else if(b.type === 'line') {
+                ctx.fillStyle = 'hsl(' + (b.color||0) + ',100%,50%)';
+                ctx.fillRect(b.x - b.width/2, b.y, b.width, b.length);
+            } else {
+                ctx.fillStyle = b.color || '#ff1744';
+                ctx.beginPath(); ctx.arc(b.x, b.y, b.size||8, 0, 2*Math.PI); ctx.fill();
+            }
+        });
+    }
+
+    function drawLasers() {
+        lasers.forEach(function(l){ ctx.fillStyle = l.color; ctx.fillRect(l.x - l.width/2, l.y, l.width, l.height); ctx.fillStyle = l.color+'40'; ctx.fillRect(l.x - l.width, l.y, l.width*2, l.height); });
+    }
+
+    function drawAiBullets() {
+        aiBullets.forEach(function(b){ ctx.fillStyle = '#ff6b00'; ctx.shadowBlur = 15; ctx.shadowColor = '#ff6b0066'; ctx.beginPath(); ctx.arc(b.x, b.y, 8, 0, 2*Math.PI); ctx.fill(); ctx.shadowBlur = 0; });
+    }
+
+    function drawAiLasers() {
+        aiLasers.forEach(function(l){ ctx.fillStyle = '#ff6b00'; ctx.fillRect(l.x - l.width/2, l.y, l.width, l.height); ctx.fillStyle = '#ff6b0040'; ctx.fillRect(l.x - l.width, l.y, l.width*2, l.height); });
+    }
+
+    function drawTeamMembers(team, isAiTeam) {
+        team.forEach(function(t){
+            var fill = isAiTeam ? '#FF6B00' : getHeartGradient(t.x, t.y, t.size);
+            drawHeartWithEyes(t.x, t.y, t.size, fill, true);
+            var hp = t.health / t.maxHealth;
+            ctx.fillStyle = 'rgba(0,0,0,0.5)';
+            ctx.fillRect(t.x - t.size, t.y - t.size - 8, t.size*2, 3);
+            ctx.fillStyle = hp > 0.5 ? '#00ffaa' : '#ff4444';
+            ctx.fillRect(t.x - t.size, t.y - t.size - 8, t.size*2*hp, 3);
+            ctx.fillStyle = 'rgba(255,255,255,0.3)';
+            ctx.font = '6px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('🔫'+t.ammo, t.x, t.y + t.size + 10);
+        });
+    }
+
+    // ============================================================
+    //  TIMER
+    // ============================================================
+    function startTimer() {
+        if(timerInterval) clearInterval(timerInterval);
+        timerRunning = true;
+        timerInterval = setInterval(function() {
+            if(!gamePaused) {
+                timerRemaining--;
+                timerDisplay.textContent = Math.max(0, timerRemaining);
+                timerDisplay.style.color = timerRemaining <= 10 ? '#ff4444' : '#ff6bff';
+                if(timerRemaining <= 0) { clearInterval(timerInterval); timerInterval = null; timerRunning = false; showTimeUp(); }
+            }
+        }, 1000);
+    }
+
+    // ============================================================
+    //  MATCHMAKING RESULT
+    // ============================================================
+    function computeEloChange(playerWon) {
+        var K = 32;
+        var expected = 1 / (1 + Math.pow(10, (playerElo - 1000)/400));
+        var actual = playerWon ? 1 : 0;
+        return Math.round(K * (actual - expected));
+    }
+
+    function endMatch(playerWon) {
+        stopBGM();
+        stopAllOneShotSounds();
+        if(playerWon) playSound('matchwin'); else playSound('matchlose');
+        gameRunning = false;
+        if(timerInterval) { clearInterval(timerInterval); timerInterval = null; timerRunning = false; }
+        if(autoShootInterval) { clearInterval(autoShootInterval); autoShootInterval = null; }
+        if(animId) { cancelAnimationFrame(animId); animId = null; }
+
+        var eloChange = computeEloChange(playerWon);
+        playerElo = Math.max(100, playerElo + eloChange);
+        matchTotalGames++;
+        if(playerWon) matchWins++; else matchLosses++;
+        saveMatchmakingData();
+
+        var dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+        var titleEl = document.getElementById('matchResultTitle');
+        var subEl = document.getElementById('matchResultSub');
+        if(playerWon) {
+            titleEl.textContent = dict.match_result_title_win || '🏆 VICTORY!';
+            titleEl.style.color = '#4CAF50';
+            subEl.textContent = dict.match_result_sub_win || 'You outplayed the AI opponent!';
+        } else {
+            titleEl.textContent = dict.match_result_title_loss || '💀 DEFEAT!';
+            titleEl.style.color = '#ff4444';
+            subEl.textContent = dict.match_result_sub_loss || 'The AI was too strong this time!';
+        }
+        document.getElementById('matchYourHitsDisplay').textContent = matchYourHits;
+        document.getElementById('matchAiHitsDisplay').textContent = matchAiHits;
+
+        var eloChangeDisplay = document.getElementById('matchEloChangeDisplay');
+        var sign = eloChange >= 0 ? '+' : '';
+        eloChangeDisplay.textContent = sign + eloChange;
+        eloChangeDisplay.className = eloChange >= 0 ? 'elo-change-positive' : 'elo-change-negative';
+        document.getElementById('matchEloAfterDisplay').textContent = playerElo;
+
+        document.getElementById('matchResultScreen').style.display = 'flex';
+        ui.style.display = 'none';
+        bossBar.style.display = 'none';
+        controls.style.display = 'none';
+        eloBadge.style.display = 'none';
+        vsLabel.style.display = 'none';
+        pauseOverlay.style.display = 'none';
+        celebrate();
+    }
+
+    function celebrate() { /* happy moment placeholder */ }
+
+    // ============================================================
+    //  GAME FLOW
+    // ============================================================
+    function startMatchmaking() {
+        isMatchmaking = true; isUnlimited = false;
+        maxLevels = Infinity; level = 1;
+        totalScore = 0; scoreValue.textContent = '0';
+        scoreDisplay.style.display = 'block';
+        maxLevelDisplay.textContent = '∞';
+        timerDisplay.style.color = '#ff6bff';
+        timerRemaining = 370; timerDisplay.textContent = timerRemaining;
+        exitBtn.style.display = 'block';
+        eloBadge.style.display = 'block';
+        vsLabel.style.display = 'block';
+        updateEloPreview();
+        resizeCanvas();
+        startMatchLevel();
+    }
+
+    function startMatchLevel() {
+        if(autoShootInterval) clearInterval(autoShootInterval);
+        var bgmKey = getRandomBGMKey();
+        stopBGM(); stopAllOneShotSounds();
+        playSound(bgmKey, 0.25);
+        playSound('matchgo');
+
+        playerHealth = 25000;
+        playerHealthEl.textContent = playerHealth.toFixed(0);
+        playerTeam = []; aiTeam = [];
+        aiAvatarHealth = AI_AVATAR_HEALTH_MAX;
+        aiBullets = []; aiLasers = [];
+        aiSuperPowerActive = false; aiRewardBoostActive = false;
+        aiLastHealTime = 0;
+        matchYourHits = 0; matchAiHits = 0;
+        spawnAiOpponent();
+        bullets.length = 0; enemyBullets.length = 0; lasers.length = 0; monsters.length = 0;
+        lastEnemyShot = performance.now();
+        $('retryScreen').style.display = 'none';
+        $('winScreen').style.display = 'none';
+        $('timeUpScreen').style.display = 'none';
+        $('matchResultScreen').style.display = 'none';
+        ui.style.display = 'block';
+        bossBar.style.display = 'block';
+        controls.style.display = 'flex';
+        levelDisplay.textContent = '1v1';
+        timerRemaining = 370;
+        timerDisplay.textContent = timerRemaining;
+        timerDisplay.style.color = '#ff6bff';
+        if(timerInterval) clearInterval(timerInterval);
+        timerRunning = true;
+        startTimer();
+        startAutoShoot();
+        updateCooldowns();
+        updateUI();
+        gameRunning = true;
+        lastTime = 0;
+        if(animId) cancelAnimationFrame(animId);
+        animId = requestAnimationFrame(gameLoop);
+    }
+
+    function startLevel() {
+        if(autoShootInterval) clearInterval(autoShootInterval);
+        if(!bgmAudio || bgmAudio.paused) { stopBGM(); playSound('bgm', 0.25); }
+        playerHealth = Math.max(3000 * Math.pow(0.92, level-1), 500);
+        playerHealthEl.textContent = playerHealth.toFixed(0);
+        playerTeam = []; aiTeam = [];
+        updateUI();
+        spawnBoss();
+        bullets.length = 0; enemyBullets.length = 0; lasers.length = 0; monsters.length = 0;
+        lastEnemyShot = performance.now();
+        if(level > 1) celebrate();
+        $('retryScreen').style.display = 'none';
+        $('winScreen').style.display = 'none';
+        $('timeUpScreen').style.display = 'none';
+        $('matchResultScreen').style.display = 'none';
+        ui.style.display = 'block';
+        bossBar.style.display = 'block';
+        controls.style.display = 'flex';
+        levelDisplay.textContent = level;
+        var t = isUnlimited ? 370 : 500;
+        if(level === 1) timerRemaining = t;
+        else timerRemaining += t;
+        timerDisplay.textContent = timerRemaining;
+        timerDisplay.style.color = '#ff6bff';
+        if(timerInterval) clearInterval(timerInterval);
+        timerRunning = true;
+        startTimer();
+        updateCooldowns();
+        if(level >= 4) startAutoShoot();
+        else if(autoShootInterval) clearInterval(autoShootInterval);
+        updateUI();
+        gameRunning = true;
+        lastTime = 0;
+        if(animId) cancelAnimationFrame(animId);
+        animId = requestAnimationFrame(gameLoop);
+    }
+
+    function startGame() {
+        if(autoShootInterval) clearInterval(autoShootInterval);
+        if(timerInterval) clearInterval(timerInterval);
+        isMatchmaking = false;
+        totalScore = 0;
+        scoreValue.textContent = '0';
+        scoreDisplay.style.display = isUnlimited ? 'block' : 'none';
+        maxLevelDisplay.textContent = isUnlimited ? '∞' : maxLevels;
+        timerDisplay.style.color = '#ff6bff';
+        var t = isUnlimited ? 370 : 500;
+        timerRemaining = t;
+        timerDisplay.textContent = timerRemaining;
+        exitBtn.style.display = 'block';
+        eloBadge.style.display = 'none';
+        vsLabel.style.display = 'none';
+        resizeCanvas();
+        startLevel();
+    }
+
+    function showRetry() {
+        stopBGM();
+        $('retryScreen').style.display = 'flex';
+        ui.style.display = 'none';
+        bossBar.style.display = 'none';
+        controls.style.display = 'none';
+        eloBadge.style.display = 'none';
+        vsLabel.style.display = 'none';
+        pauseOverlay.style.display = 'none';
+        gameRunning = false;
+        if(timerInterval) clearInterval(timerInterval);
+        timerRunning = false;
+        if(animId) cancelAnimationFrame(animId);
+    }
+
+    function showWin() {
+        stopBGM();
+        celebrate();
+        $('winScreen').style.display = 'flex';
+        updateWinScreen(isUnlimited, level);
+        $('winScore').textContent = totalScore || '🎉';
+        ui.style.display = 'none';
+        bossBar.style.display = 'none';
+        controls.style.display = 'none';
+        eloBadge.style.display = 'none';
+        vsLabel.style.display = 'none';
+        pauseOverlay.style.display = 'none';
+        gameRunning = false;
+        if(timerInterval) clearInterval(timerInterval);
+        timerRunning = false;
+        if(animId) cancelAnimationFrame(animId);
+        playSound('powerup');
+    }
+
+    function showTimeUp() {
+        stopBGM();
+        $('timeUpScreen').style.display = 'flex';
+        $('finalScore').textContent = totalScore;
+        ui.style.display = 'none';
+        bossBar.style.display = 'none';
+        controls.style.display = 'none';
+        eloBadge.style.display = 'none';
+        vsLabel.style.display = 'none';
+        pauseOverlay.style.display = 'none';
+        gameRunning = false;
+        if(timerInterval) clearInterval(timerInterval);
+        timerRunning = false;
+        if(animId) cancelAnimationFrame(animId);
+        playSound('enemyHit');
+    }
+
+    function goHome() {
+        stopBGM();
+        stopAllOneShotSounds();
+        isMatchmaking = false; isUnlimited = false;
+        $('startScreen').style.display = 'none';
+        $('modeScreen').style.display = 'none';
+        $('howScreen').style.display = 'none';
+        $('skinScreen').style.display = 'none';
+        $('retryScreen').style.display = 'none';
+        $('winScreen').style.display = 'none';
+        $('timeUpScreen').style.display = 'none';
+        $('matchResultScreen').style.display = 'none';
+        ui.style.display = 'none';
+        bossBar.style.display = 'none';
+        controls.style.display = 'none';
+        exitBtn.style.display = 'none';
+        eloBadge.style.display = 'none';
+        vsLabel.style.display = 'none';
+        pauseOverlay.style.display = 'none';
+        bullets.length = 0; enemyBullets.length = 0; lasers.length = 0; monsters.length = 0;
+        aiBullets = []; aiLasers = [];
+        boss = null; playerTeam = []; aiTeam = [];
+        if(autoShootInterval) clearInterval(autoShootInterval);
+        if(timerInterval) clearInterval(timerInterval);
+        timerRunning = false; gameRunning = false;
+        if(animId) cancelAnimationFrame(animId);
+        $('startScreen').style.display = 'flex';
+        updateEloPreview();
+    }
+
+    // ============================================================
+    //  GAME LOOP
+    // ============================================================
+    function gameLoop(timestamp) {
+        if(gamePaused) { lastTime = 0; animId = requestAnimationFrame(gameLoop); return; }
+        if(!lastTime) lastTime = timestamp;
+        var dt = Math.min(timestamp - lastTime, 33);
+        lastTime = timestamp;
+        frameCount++;
+
+        if(movingLeft) heart.x -= SPEED;
+        if(movingRight) heart.x += SPEED;
+        heart.x = Math.min(Math.max(heart.x, heart.size), W - heart.size);
+
+        if(frameCount % 10 === 0) updateCooldowns();
+
+        if(boss) {
+            moveBoss(dt);
+            if(isMatchmaking && boss.isAi) {
+                aiOpponentTick(dt);
+            } else {
+                boss.attackTimer += dt;
+                if(boss.attackTimer > boss.attackRate) { boss.attackTimer = 0; bossAttack(); }
+                var now = performance.now();
+                if(now - lastEnemyShot > Math.max(900 - level*40, 250)) {
+                    var count = Math.min(1 + Math.floor(level/5), 3);
+                    playSound(Math.random()<0.5?'enemyShoot1':'enemyShoot2');
+                    for(var i=0;i<count;i++) {
+                        var a = (i/count)*2*Math.PI + Math.random()*0.5, spd = 1.5+level*0.25;
+                        enemyBullets.push({ x:boss.x, y:boss.y, vx:Math.cos(a)*spd, vy:Math.sin(a)*spd, size:6+level*0.2, color:'hsl('+(Math.random()*60+340)+',100%,50%)' });
+                    }
+                    lastEnemyShot = now;
+                }
+            }
+
+            if(isMatchmaking && boss.isAi) {
+                if(aiAvatarHealth <= 0) { endMatch(true); return; }
+                if(playerHealth <= 0) { endMatch(false); return; }
+            } else {
+                if(bossHealth <= 0) {
+                    playSound('powerup');
+                    celebrate();
+                    level++;
+                    if(isUnlimited) { totalScore += 100; updateUI(); }
+                    if(!isUnlimited && level > maxLevels) { showWin(); return; }
+                    gamePaused = true;
+                    if(timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+                    if(autoShootInterval) { clearInterval(autoShootInterval); autoShootInterval = null; }
+                    gamePaused = false;
+                    if(timerRunning && !timerInterval) startTimer();
+                    if(level >= 4 && !autoShootInterval && gameRunning) startAutoShoot();
+                    lastTime = 0;
+                    if(animId) { cancelAnimationFrame(animId); animId = null; }
+                    if(gameRunning) startLevel();
+                    return;
+                }
+                if(playerHealth <= 0) { playSound('enemyHit'); showRetry(); return; }
+            }
+        }
+
+        ctx.clearRect(0, 0, W, H);
+        var heartFill = getHeartGradient(heart.x, heart.y, heart.size);
+        drawHeartWithEyes(heart.x, heart.y, heart.size, heartFill, true);
+        if(boss) { drawBoss(); drawMonsters(); }
+        drawTeamMembers(playerTeam, false);
+        drawTeamMembers(aiTeam, true);
+        drawBullets(); drawEnemyBullets(); drawLasers(); drawAiBullets(); drawAiLasers();
+        updateGame();
+        animId = requestAnimationFrame(gameLoop);
+    }
+
+    // ============================================================
+    //  CANVAS RESIZE
+    // ============================================================
+    var canvas = document.getElementById('gameCanvas'), ctx = canvas.getContext('2d'), W=800, H=600;
+    function resizeCanvas() {
+        var cw = window.innerWidth || 800, ch = window.innerHeight || 600;
+        var uiVisible = ui.style.display !== 'none';
+        var controlsVisible = controls.style.display !== 'none';
+        var bossBarVisible = bossBar.style.display !== 'none';
+        var eloVisible = eloBadge.style.display !== 'none';
+        var vsVisible = vsLabel.style.display !== 'none';
+        var topUI = uiVisible ? 50 : 0;
+        var bossH = bossBarVisible ? 28 : 0;
+        var eloH = eloVisible ? 22 : 0;
+        var vsH = vsVisible ? 20 : 0;
+        var controlsH = controlsVisible ? 100 : 0;
+        var padding = 16;
+        var totalUI = topUI + bossH + eloH + vsH + controlsH + padding;
+        if(ch < 450) totalUI = Math.min(totalUI, ch * 0.45);
+        if(ch < 350) totalUI = Math.min(totalUI, ch * 0.4);
+        var availW = cw - 16, availH = ch - totalUI;
+        if(availH < 100) availH = 100;
+        var w = availW, h = w * (H / W);
+        if(h > availH) { h = availH; w = h * (W / H); }
+        w = Math.max(240, Math.min(w, availW));
+        h = Math.max(180, Math.min(h, availH));
+        canvas.width = W; canvas.height = H;
+        canvas.style.width = Math.floor(w) + 'px';
+        canvas.style.height = Math.floor(h) + 'px';
+    }
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('orientationchange', function(){ setTimeout(resizeCanvas, 300); });
+
+    // ============================================================
+    //  EVENTS
+    // ============================================================
+    var moveLeft = $('moveLeft'), moveRight = $('moveRight');
+    function attachMove(el, onStart, onEnd) {
+        el.addEventListener('mousedown', function(e){ e.preventDefault(); if(!gamePaused) onStart(); });
+        el.addEventListener('mouseup', onEnd);
+        el.addEventListener('mouseleave', onEnd);
+        el.addEventListener('touchstart', function(e){ e.preventDefault(); if(!gamePaused) onStart(); }, {passive:false});
+        el.addEventListener('touchend', function(e){ e.preventDefault(); onEnd(); }, {passive:false});
+    }
+    attachMove(moveLeft, function(){ movingLeft = true; }, function(){ movingLeft = false; });
+    attachMove(moveRight, function(){ movingRight = true; }, function(){ movingRight = false; });
+
+    $('skill1Btn').addEventListener('click', skill1);
+    $('skill2Btn').addEventListener('click', skill2);
+    $('skill3Btn').addEventListener('click', skill3);
+    $('skillTeamBtn').addEventListener('click', skillTeam);
+    exitBtn.addEventListener('click', goHome);
+
+    document.getElementById('manualResumeBtn').addEventListener('click', function() {
+        if(gameRunning && gamePaused) {
+            gamePaused = false;
+            pauseOverlay.style.display = 'none';
+            if(timerRunning && !timerInterval) startTimer();
+            if(level >= 4 && !autoShootInterval && gameRunning) startAutoShoot();
+            lastTime = 0;
+            if(animId) { cancelAnimationFrame(animId); animId = null; }
+            animId = requestAnimationFrame(gameLoop);
+        }
+    });
+
+    canvas.addEventListener('click', function(e) {
+        if(gamePaused || !gameRunning) return;
+        var rect = canvas.getBoundingClientRect();
+        var sx = W / rect.width, sy = H / rect.height;
+        var cx = (e.clientX - rect.left) * sx, cy = (e.clientY - rect.top) * sy;
+        var hit = false;
+        for(var i=enemyBullets.length-1;i>=0;i--) {
+            var b = enemyBullets[i];
+            var isHit = false;
+            if(b.type === 'line') isHit = Math.abs(b.x - cx) < b.width/2 && cy >= b.y && cy <= b.y + b.length;
+            else isHit = Math.hypot(b.x - cx, b.y - cy) < (b.size || 8);
+            if(isHit) { enemyBullets.splice(i,1); hit = true; if(isUnlimited){ totalScore += 10; updateUI(); } playSound('coin'); break; }
+        }
+        if(!hit) {
+            for(var i=aiBullets.length-1;i>=0;i--) {
+                var b = aiBullets[i];
+                if(Math.hypot(b.x - cx, b.y - cy) < 8) { aiBullets.splice(i,1); hit = true; if(isUnlimited){ totalScore += 10; updateUI(); } playSound('coin'); break; }
+            }
+        }
+        if(!hit) {
+            for(var i=monsters.length-1;i>=0;i--) {
+                var m = monsters[i];
+                if(Math.hypot(m.x - cx, m.y - cy) < m.size) { m.health -= 12; if(m.health <= 0) { monsters.splice(i,1); if(isUnlimited){ totalScore += 50; updateUI(); } playSound('enemyHit'); } hit = true; break; }
+            }
+        }
+        if(!hit) {
+            var dmgMult = 1;
+            if(superPowerActive) dmgMult *= 6;
+            bullets.push({ x:heart.x, y:heart.y, targetX:cx, targetY:cy, team:false, damage:1, color:getBulletColor(), damageMult:dmgMult });
+            playSound('playerShoot');
+        }
+    });
+
+    // ============================================================
+    //  NAVIGATION
+    // ============================================================
+    $('playBtn').onclick = function(){ $('startScreen').style.display = 'none'; $('modeScreen').style.display = 'flex'; updateEloPreview(); };
+    $('quitModeBtn').onclick = goHome;
+    $('mode15Btn').onclick = function(){ isMatchmaking=false; isUnlimited=false; maxLevels=15; level=1; $('modeScreen').style.display='none'; $('howScreen').style.display='flex'; updateModeInfoText(); };
+    $('modeUnlimitedBtn').onclick = function(){ isMatchmaking=false; isUnlimited=true; maxLevels=Infinity; level=1; $('modeScreen').style.display='none'; $('howScreen').style.display='flex'; updateModeInfoText(); };
+    $('modeMatchBtn').onclick = function(){
+        var eloTier = playerElo;
+        var minWait, maxWait;
+        if(eloTier < 800){ minWait=6000; maxWait=14000; }
+        else if(eloTier < 1200){ minWait=4000; maxWait=10000; }
+        else if(eloTier < 1600){ minWait=8000; maxWait=18000; }
+        else if(eloTier < 2000){ minWait=12000; maxWait=22000; }
+        else { minWait=15000; maxWait=28000; }
+        var totalWait = minWait + Math.random()*(maxWait-minWait);
+        var startTime = Date.now();
+        searchScreen.style.display = 'flex';
+        searchBarFill.style.width = '0%';
+        var searchH2 = searchScreen.querySelector('h2');
+        var searchP = searchScreen.querySelector('p');
+        if(eloTier >= 1600) { if(searchH2) searchH2.textContent = '🔍 Searching for elite opponent...'; if(searchP) searchP.textContent = 'High Elo bracket — this may take a moment'; }
+        else if(eloTier >= 1200) { if(searchH2) searchH2.textContent = '🔍 Searching for opponent...'; if(searchP) searchP.textContent = 'Finding a worthy rival in your bracket'; }
+        else { if(searchH2) searchH2.textContent = '🔍 Searching for opponent...'; if(searchP) searchP.textContent = 'Finding a worthy rival'; }
+        var currentProgress = 0;
+        function animateProgress() {
+            var now = Date.now();
+            var elapsed = now - startTime;
+            var fraction = elapsed / totalWait;
+            var eased;
+            if(fraction < 0.3) eased = fraction * 1.1;
+            else if(fraction < 0.6) eased = 0.33 + (fraction - 0.3) * 0.5;
+            else if(fraction < 0.85) eased = 0.48 + (fraction - 0.6) * 1.4;
+            else if(fraction < 0.95) eased = 0.83 + (fraction - 0.85) * 0.4;
+            else eased = 0.87 + (fraction - 0.95) * 2.6;
+            currentProgress = Math.min(eased * 100, 99);
+            searchBarFill.style.width = currentProgress + '%';
+            if(fraction < 1) { requestAnimationFrame(animateProgress); }
+            else {
+                searchBarFill.style.width = '100%';
+                setTimeout(function() {
+                    searchScreen.style.display = 'none';
+                    if(searchH2) searchH2.textContent = '🔍 Searching for opponent...';
+                    if(searchP) searchP.textContent = 'Finding a worthy rival';
+                    isMatchmaking = true; isUnlimited = false;
+                    maxLevels = Infinity; level = 1;
+                    $('modeScreen').style.display = 'none';
+                    $('howScreen').style.display = 'flex';
+                    updateModeInfoText();
+                    updateEloPreview();
+                }, 300);
+            }
+        }
+        requestAnimationFrame(animateProgress);
+    };
+    $('quitHowBtn').onclick = goHome;
+    $('startGameBtn').onclick = function(){
+        $('howScreen').style.display = 'none';
+        if(isMatchmaking) startMatchmaking();
+        else startGame();
+    };
+    $('retryBtn').onclick = function(){ $('retryScreen').style.display = 'none'; if(isMatchmaking) startMatchLevel(); else startLevel(); };
+    $('quitRetry').onclick = goHome;
+    $('timeUpRetry').onclick = function(){ $('timeUpScreen').style.display = 'none'; if(isMatchmaking) startMatchLevel(); else startLevel(); };
+    $('quitTimeUp').onclick = goHome;
+    $('restartBtn').onclick = function(){ $('winScreen').style.display = 'none'; if(isUnlimited){ level=1; totalScore=0; updateUI(); startGame(); } else { level=1; startGame(); } };
+    $('quitWin').onclick = goHome;
+    $('skinBtn').onclick = function(){ $('startScreen').style.display = 'none'; $('skinScreen').style.display = 'flex'; renderSkins(); };
+    $('skinBackBtn').onclick = function(){ $('skinScreen').style.display = 'none'; $('startScreen').style.display = 'flex'; };
+    $('matchRematchBtn').onclick = function(){ $('matchResultScreen').style.display = 'none'; stopAllOneShotSounds(); startMatchLevel(); };
+    $('matchHomeBtn').onclick = goHome;
+    $('quitMatchResult').onclick = goHome;
+
+    // ============================================================
+    //  LANGUAGE & VISIBILITY
+    // ============================================================
+    var langSelector = $('langSelector');
+    langSelector.addEventListener('change', function(){ applyLanguage(this.value); });
+
+    var wasPausedByTab = false;
+    document.addEventListener('visibilitychange', function() {
+        if(document.hidden) {
+            if(gameRunning && !gamePaused) {
+                wasPausedByTab = true;
+                gamePaused = true;
+                pauseOverlay.style.display = 'flex';
+                if(timerInterval) clearInterval(timerInterval);
+                if(autoShootInterval) clearInterval(autoShootInterval);
+                if(animId) { cancelAnimationFrame(animId); animId = null; }
+            }
+        } else {
+            if(gameRunning && wasPausedByTab && gamePaused) {
+                wasPausedByTab = false;
+                gamePaused = false;
+                pauseOverlay.style.display = 'none';
+                if(timerRunning && !timerInterval) startTimer();
+                if(level >= 4 && !autoShootInterval && gameRunning) startAutoShoot();
+                lastTime = 0;
+                if(animId) { cancelAnimationFrame(animId); animId = null; }
+                animId = requestAnimationFrame(gameLoop);
+            }
+        }
+    });
+
+    // ============================================================
+    //  INIT – FIXED: skip sound loading
+    // ============================================================
+    var initialLang = loadData('gameLanguage', null);
+    if(!initialLang || !TRANSLATIONS[initialLang]) initialLang = 'en';
+    langSelector.value = initialLang;
+    applyLanguage(initialLang);
+
+    splashScreen.style.display = 'flex';
+
+    // Load game data and show start screen after 2 seconds (skip sound loading)
+    loadSkins();
+    loadMatchmakingData();
+    resizeCanvas();
+    $('loadingScreen').style.display = 'none';
+
+    setTimeout(function() {
+        splashScreen.style.display = 'none';
+        $('startScreen').style.display = 'flex';
+        updateEloPreview();
+    }, 2000);
+
+    setTimeout(resizeCanvas, 100);
 })();
 </script>
 </body>
